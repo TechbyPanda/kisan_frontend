@@ -9,12 +9,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationPageComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
