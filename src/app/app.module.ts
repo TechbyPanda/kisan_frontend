@@ -7,10 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+
 import { MatCardModule } from '@angular/material/card';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SigninComponent } from './signin/signin.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SigninComponent } from './signin/signin.component';
     HomeComponent,
     RegistrationPageComponent,
     SigninComponent
+    Navbar2Component,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
