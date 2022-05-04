@@ -7,14 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+
 import { MatCardModule } from '@angular/material/card';
+import { Navbar2Component } from './navbar2/navbar2.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    Navbar2Component,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
