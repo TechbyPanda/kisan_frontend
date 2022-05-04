@@ -1,0 +1,33 @@
+.carousel{
+    z-index: -100;
+}
+
+.carousel-item img{
+    height:500px;
+}
+
+.works{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/technicalFarming.jpg');
+    height:300px;
+    width:90%;
+    margin:auto;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    transition:.5s;
+}
+
+.works:hover{
+    transform:scale(1.2);
+    z-index:2;
+}
+
+.works h1{
+    font-size:28px;
+    padding:5px;
+    color:#FEFFED;
+    font-weight:bold;
+}
+
+.works p{
+    font-size:24px;
+    color:#FEFFED;
+}
