@@ -82,6 +82,8 @@
   }
   
   .form_item input[type="text"],
+  .form_item input[type="email"],
+  .form_item input[type="password"],
   .form_item select{
     width: 100%;
     padding: 10px;
