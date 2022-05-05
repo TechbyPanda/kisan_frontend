@@ -16,7 +16,11 @@ import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
+
+import { EquipmentsComponent } from './equipments/equipments.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,11 @@ import { ContractFarmingComponent } from './contract-farming/contract-farming.co
     SigninComponent,
     Navbar2Component,
     HomeComponent,
+
     ContractFarmingComponent,
+
+    EquipmentsComponent,
+
   ],
   imports: [
     BrowserModule,
