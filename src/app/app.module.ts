@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { MatCardModule } from '@angular/material/card';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
@@ -15,7 +16,11 @@ import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+
+import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
+
 import { EquipmentsComponent } from './equipments/equipments.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,11 @@ import { EquipmentsComponent } from './equipments/equipments.component';
     SigninComponent,
     Navbar2Component,
     HomeComponent,
+
+    ContractFarmingComponent,
+
     EquipmentsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -34,6 +43,7 @@ import { EquipmentsComponent } from './equipments/equipments.component';
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
+    ToastrModule,
     MatCardModule,
     HttpClientModule,
     FormsModule,
