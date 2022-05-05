@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     HomeComponent,
     RegistrationPageComponent,
-    SigninComponent
+    SigninComponent,
     Navbar2Component,
     HomeComponent,
   ],
