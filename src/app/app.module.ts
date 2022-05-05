@@ -13,14 +13,15 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     RegistrationPageComponent,
-    SigninComponent
+    SigninComponent,
     Navbar2Component,
     HomeComponent,
   ],
@@ -31,7 +32,9 @@ import { HomeComponent } from './home/home.component';
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
