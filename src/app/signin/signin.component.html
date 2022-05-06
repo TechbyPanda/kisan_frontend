@@ -1,27 +1,26 @@
-<div class="wrapper">
+<div class="wrapper mt-5">
     <div class="form_container">
       
         <div class="heading">
             <h2>Login Form</h2>
-         </div>
-       
+        </div>
           <div class="form_wrap">
             <div class="form_item">
               <label>Email Address</label>
-              <input [(ngModel)]="user.email"   class="form-control" type="email">
-           </div>
-         </div>
-         <div class="form_wrap">
+              <input [(ngModel)]="user.email" #email="ngModel"  class="form-control" type="email" required>
+              <span class="text-danger"*ngIf="email.untouched&&email.dirty">Please enter your email address</span>
+            </div>
+        </div>
+        <div class="form_wrap">
             <div class="form_item">
               <label>Password</label>
               <input  [(ngModel)]="user.password" class="form-control" type="password">
-           </div>
-         </div>
+          </div>
+        </div>
 
           <div class="btn">
             <input (click)="signIn()" type="submit" value="Get Started">
-         </div>
+        </div>
         
     </div>
-   </div>
-   
+  </div>

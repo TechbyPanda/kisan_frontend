@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="navbar">
+<div class="navbar" (scroll)="onScroll()" [class.fixed]="fixed">
     <div class="nav">
         <div class="logo ">
             <img src="../../assets/img/logo2.jpg" width="50px" alt="">
@@ -45,9 +45,9 @@
                         </a>
                     </div>
             </div>
-            <div class="menubar">
-                <i class="fa-solid fa-bars ms-5 me-5" id="toggle_menu"></i>
-            </div>
+            
+            <i class="fa-solid fa-bars ms-5 me-5" id="toggle_menu"></i>
+            
         </div>
     </div>
 </div>

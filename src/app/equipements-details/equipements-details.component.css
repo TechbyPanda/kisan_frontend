@@ -1,0 +1,103 @@
+.banner{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../../assets/img/equipments_bg.jpg');
+    background-size:cover;
+    width:100%;
+    height:400px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1{
+    font-size:28px;
+    color:#FEFFED;
+    font-weight:bold;
+}
+
+.banner p{
+    font-size:24px;
+    color:#FEFFED;
+    text-align:center;
+}
+
+.description{
+    background-image:url('../../assets/img/backround_img.jpg');
+    padding:10px;
+}
+
+.description h1{
+    font-size:28px;
+    color: #FEFFED;
+    text-align: center;
+}
+
+.description p{
+    font-size:24px;
+    color:#FEFFED;
+}
+
+.description img{
+    width:100%;
+    height:300px;
+}
+
+.service_form{
+    background-image:url('../../assets/img/bg_img.jpg');
+    padding:10px;
+}
+
+.customer_details{
+    display:flex;
+    flex-direction:column;
+    width:80%;
+    height:80%;
+    margin:auto;
+    padding:10px;
+}
+
+.customer_details button{
+    background-color:#72A603;
+    color:#FEFFED;
+    padding:10px;
+    border-radius: 10px;
+    width:fit-content;
+    font-size:18px;
+    margin-top:10px;
+}
+
+.customer_details button:hover{
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+}
+
+.customer_details .book{
+    background-color:#72A603;
+}
+
+mat-form-field+mat-form-field{
+    margin-top:10px;
+}
+
+mat-form-field input{
+    font-size: 18px;
+}
+
+.items{
+    padding:10px;
+    width:100%;
+    border:1px solid #72A603;
+    display:flex;
+    
+    flex-wrap: wrap;
+}
+
+.items mat-checkbox{
+    margin:10px;
+}
+
+.datebox{
+    margin-top:10px;
+    width:fit-content;
+    font-size:18px;
+}
