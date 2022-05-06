@@ -9,34 +9,23 @@
 
 <div class="container m-5">
     <div class="row">
-        <div class="col-md-4 col-sm-12">
-            <!-- <div class="card service_card border-0 shadow-sm">
-                
-                    <div class="img_card">
-                        <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                    </div>
-                    <div class="content_card p-2">
-                        <h1>Harvester</h1>
-                        <p>Price :1000</p>
-                    </div>
-                
-            </div> -->
-
+        <div *ngFor="let item of tools" class="col-md-4 col-sm-12">
             <div class="flip-card card service_card border-0 shadow-sm">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="img_card">
-                            <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
+                            <img src="{{item.images}}" alt="">
                         </div>
                         <div class="content_card p-2">
-                            <h1>Harvester</h1>
-                            <p>Price :1000</p>
+                            <h1>{{item.toolname}}</h1>
+                            <p>Price :{{item.charges}}</p>
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <p>Service name : Reaper binding</p>
-                        <p>Charges : 1000</p>
-                        <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
+                        <p>Service name : {{item.toolname}}</p>
+                        <p>Charges : {{item.charges}}</p>
+                        <p>Description :{{item.desc}}</p>
+                        <p>Travelling charges :{{item.travelling_charges}}</p>
                         <button class="btn">Book Now</button>
                     </div>
                 </div>
