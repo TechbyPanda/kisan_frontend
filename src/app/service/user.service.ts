@@ -15,4 +15,8 @@ export class UserService {
   sign_In(user:User){
     return this.http.post<any>(this.signIn,user);
   }
+  
+  public checkToken():boolean{
+    return !!localStorage.getItem('token');
+  }
 }
