@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 banner">
+            <h1>Kisan Sakha</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa repellendus molestiae tenetur quaerat fuga, accusamus dolorum deleniti labore exercitationem veritatis.</p>
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 description">
+            <img src="../../assets/img/card_img1.jpeg" alt="">
+            <h1>Service : Harvester</h1>
+            <p>Price : 10000</p>
+            <p> Description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, rerum. Qui accusamus numquam eius placeat incidunt? Ipsa molestias ullam sapiente.</p>
+        </div>
+        <div class=" col-md-6 service_form">
+
+            <div class="customer_details">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your name</mat-label>
+                    <input matInput placeholder="Placeholder" value="Devika">
+                    <mat-icon matSuffix><i class="fas fa-user"></i></mat-icon>
+                </mat-form-field>
+    
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="Placeholder" value="devika@gmail.com">
+                    <mat-icon matSuffix><i class="fa-solid fa-envelope"></i></mat-icon>
+                </mat-form-field>
+    
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your moble no.</mat-label>
+                    <input matInput placeholder="Placeholder" value="9999900000">
+                    <mat-icon matSuffix><i class="fa-solid fa-phone"></i></mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your address</mat-label>
+                    <input matInput placeholder="Placeholder" value="Manik Bagh chouraha">
+                    <mat-icon matSuffix><i class="fa-solid fa-location-dot"></i></mat-icon>
+                </mat-form-field>
+    
+    
+                <div class="items">
+                    <mat-checkbox class="example-margin"> Apple</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Mango</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Banana</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Watermelon</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Orange</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Guava</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Lemon</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Strawberry</mat-checkbox>
+                    <mat-checkbox class="example-margin"> Grapes</mat-checkbox>
+                </div>
+                
+                <mat-form-field class="datebox" appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <button >Book Service</button>
+            </div>
+        </div>
+    </div>
+</div>

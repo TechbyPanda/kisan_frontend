@@ -46,14 +46,17 @@
     100%{transform:translateY(0px)}
 }
 
-.service{
+.services{
+    margin:5px;
     display:flex;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
 }
 
 .service_card{
-    width:80%;
+    width:350px;
     height:450px;
+    margin:20px;
     perspective: 1000px;
 }
 
@@ -138,6 +141,7 @@
     padding:10px;
     background-color: #72A603;
     width:fit-content;
+    color:brown;
     box-shadow:inset 0px 0px 0px 0px #72a603d0;
     transition:ease-out 0.4s;
 }
