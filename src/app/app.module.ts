@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
+import { ToastrModule } from 'ngx-toastr';
 
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { Navbar3Component } from './navbar3/navbar3.component';
@@ -65,7 +66,8 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
     MatCheckboxModule,
     MatButtonModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]
