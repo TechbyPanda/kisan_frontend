@@ -27,6 +27,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { Navbar3Component } from './navbar3/navbar3.component';
 import { EquipementsDetailsComponent } from './equipements-details/equipements-details.component';
+import { Registration2Component } from './registration2/registration2.component';
+import { StorageComponent } from './storage/storage.component';
+import { StorageDetailsComponent } from './storage-details/storage-details.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { EquipementsDetailsComponent } from './equipements-details/equipements-d
     EquipmentsComponent,
       Navbar3Component,
       EquipementsDetailsComponent,
+      Registration2Component,
+      StorageComponent,
+      StorageDetailsComponent,
 
   ],
   imports: [
