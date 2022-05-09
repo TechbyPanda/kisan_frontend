@@ -7,6 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
@@ -19,7 +24,7 @@ import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -43,7 +48,7 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
 
     ContractFarmingComponent,
 
-    EquipmentsComponent,
+      EquipmentsComponent,
       Navbar3Component,
       EquipementsDetailsComponent,
       Registration2Component,
@@ -67,9 +72,26 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
-    ToastrModule
+    ToastrModule,
+    SocialLoginModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'
+          )
+        },
+      ]
+    } as SocialAuthServiceConfig,
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
