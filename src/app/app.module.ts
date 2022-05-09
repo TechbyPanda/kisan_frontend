@@ -7,13 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
@@ -30,6 +31,7 @@ import { EquipementsDetailsComponent } from './equipements-details/equipements-d
 import { Registration2Component } from './registration2/registration2.component';
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
+import { Navbar4Component } from './navbar4/navbar4.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
       Registration2Component,
       StorageComponent,
       StorageDetailsComponent,
+      Navbar4Component,
 
   ],
   imports: [
@@ -67,7 +70,12 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
+<<<<<<< HEAD
+    MatSidenavModule,
+    MatListModule,
+=======
     ToastrModule
+>>>>>>> b05158c13e4a12f2cb704e91d727961880ce4106
   ],
   providers: [],
   bootstrap: [AppComponent]

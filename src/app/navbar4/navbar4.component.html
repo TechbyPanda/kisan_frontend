@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <h1>Angular Material</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a mat-list-item>Home</a>
+            <a mat-list-item>Home</a>
+            <a mat-list-item>Home</a>
+            <a mat-list-item>Home</a>
+            <a mat-list-item>Home</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height:88vh;position:absolute;z-index:9999"></div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
