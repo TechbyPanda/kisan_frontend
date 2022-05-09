@@ -7,10 +7,11 @@ import { ContractFarmingComponent } from './contract-farming/contract-farming.co
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { EquipementsDetailsComponent } from './equipements-details/equipements-details.component';
 import { StorageComponent } from './storage/storage.component';
+import { Registration2Component } from './registration2/registration2.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'sign-in', component:SigninComponent},
-  {path:'sign-up', component:RegistrationPageComponent},
+  {path:'sign-up', component:Registration2Component},
   {path:'contract-farming', component:ContractFarmingComponent},
 
   {path:'services',component:EquipmentsComponent},
