@@ -7,16 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider
-} from 'angularx-social-login';
-
-
+import { GoogleLoginProvider} from 'angularx-social-login';
 import { MatSidenavModule} from '@angular/material/sidenav';
-
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -28,9 +21,8 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
-
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -43,6 +35,7 @@ import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
 import { TokenService } from './token.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,18 +45,16 @@ import { TokenService } from './token.service';
     SigninComponent,
     Navbar2Component,
     HomeComponent,
-
     ContractFarmingComponent,
-
-      EquipmentsComponent,
-      Navbar3Component,
-      EquipementsDetailsComponent,
-      Registration2Component,
-      StorageComponent,
-      StorageDetailsComponent,
-      Navbar4Component,
-
+    EquipmentsComponent,
+    Navbar3Component,
+    EquipementsDetailsComponent,
+    Registration2Component,
+    StorageComponent,
+    StorageDetailsComponent,
+    Navbar4Component,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -83,17 +74,16 @@ import { TokenService } from './token.service';
     MatSidenavModule,
     MatListModule,
     ToastrModule,
-    
     SocialLoginModule,
     ReactiveFormsModule
   ],
+
   providers: [
   UserService,{
     provide:HTTP_INTERCEPTORS,
     useClass: TokenService,
     multi:true
-  }],
-
+  },
     {
     provide: 'SocialAuthServiceConfig',
     useValue: {
@@ -109,6 +99,8 @@ import { TokenService } from './token.service';
     } as SocialAuthServiceConfig,
   }
 ],
+
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

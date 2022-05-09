@@ -14,16 +14,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
   user: User = new User("", "", "", "", "", "");
+  hide = true;
   socialUser!: SocialUser;
   isLoggedin?: boolean;
   loginForm!: FormGroup;
 
   constructor(private userService: UserService, private router: Router, private formbuilder: FormBuilder, private socialAuthservice: SocialAuthService) { }
-
-
-  
-        
-
 
     signIn(){
         this.userService.sign_In(this.user).subscribe(data=>{
@@ -49,26 +45,18 @@ export class SigninComponent implements OnInit {
       }
     });
   }
+
   loginInWithGoogle(): void {
     this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID);
-    //this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID)
-      // .then(result => {
-      //   console.log(result);
-      // }).catch(err => {
-      //   console.log(err);
-      // })
   }
 
   refreshToken(): void {
     this.socialAuthservice.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  hide = true;
-
   ngOnInit(): void {
     this.socialAuthservice.authState.subscribe(data=>{
       this. socialUser=data
     })
   }
-
 }
