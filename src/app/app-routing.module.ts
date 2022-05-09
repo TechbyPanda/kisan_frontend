@@ -16,8 +16,6 @@ const routes: Routes = [
   {path:'services',component:EquipmentsComponent},
   {path:'book-service', component:EquipementsDetailsComponent},
   {path:'storage',component:StorageComponent},
-
-  {path:'service',component:EquipmentsComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent}
 ];
 
