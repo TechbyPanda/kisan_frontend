@@ -19,12 +19,12 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { UserService } from './service/user.service';
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { Navbar3Component } from './navbar3/navbar3.component';
 import { EquipementsDetailsComponent } from './equipements-details/equipements-details.component';
@@ -32,7 +32,7 @@ import { Registration2Component } from './registration2/registration2.component'
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
-
+import { TokenService } from './token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,14 +70,15 @@ import { Navbar4Component } from './navbar4/navbar4.component';
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
-<<<<<<< HEAD
     MatSidenavModule,
     MatListModule,
-=======
     ToastrModule
->>>>>>> b05158c13e4a12f2cb704e91d727961880ce4106
   ],
-  providers: [],
+  providers: [UserService,{
+    provide:HTTP_INTERCEPTORS,
+    useClass: TokenService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
