@@ -20,19 +20,30 @@ export class SigninComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router, private formbuilder: FormBuilder, private socialAuthservice: SocialAuthService) { }
 
-  signIn() {
-    alert("Sign");
-    this.userService.sign_In(this.user).subscribe(data => {
-      alert("User signed in successfully");
-      alert(data.msg);
-      sessionStorage.setItem("token", data.msg);
-    }, err => {
-      console.log(err);
-      if (err instanceof HttpErrorResponse) {
-        if (err.status == 401) {
-          alert(err);
-        }
-        else if (err.status == 500) {
+
+  
+        
+
+
+    signIn(){
+        this.userService.sign_In(this.user).subscribe(data=>{
+          alert("User signed in successfully");
+
+          console.log(data)
+          alert(data.msg);
+            sessionStorage.setItem("token",data.token);
+
+          alert(data);
+            sessionStorage.setItem("token",data);
+
+        },err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status == 401){
+            alert(err);
+          }
+          else if(err.status == 500){
+
           alert(err);
         }
       }

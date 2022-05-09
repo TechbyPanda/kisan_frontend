@@ -48,14 +48,15 @@
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-.overlay button{
+button{
     padding:10px;
     border-radius: 10px;
     color:#72A603;
     background-color:#FEFFED;
+    font-size:20px;
 }
 
-.overlay button:hover{
+button:hover{
     box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
 }
 
@@ -73,4 +74,15 @@
 
 .storage:hover .overlay{
     clip-path: ellipse(610px 410px at 90% 5%);
+}
+
+.modal-header{
+    box-shadow:0px 5px 8px rgba(0,0,0,0.5);
+    background-color:#72A603;
+}
+
+.modal-header h5{
+    font-size:28px;
+    color:#FEFFED;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }

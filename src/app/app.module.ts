@@ -7,11 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
+
+
+import { MatSidenavModule} from '@angular/material/sidenav';
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
@@ -19,6 +23,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
@@ -27,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
-import { ToastrModule } from 'ngx-toastr';
 
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { Navbar3Component } from './navbar3/navbar3.component';
@@ -35,6 +39,7 @@ import { EquipementsDetailsComponent } from './equipements-details/equipements-d
 import { Registration2Component } from './registration2/registration2.component';
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
+import { Navbar4Component } from './navbar4/navbar4.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,7 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
       Registration2Component,
       StorageComponent,
       StorageDetailsComponent,
+      Navbar4Component,
 
   ],
   imports: [
@@ -72,9 +78,16 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
+
     ToastrModule,
     SocialLoginModule,
     ReactiveFormsModule
+
+
+    MatSidenavModule,
+    MatListModule,
+ 
+
   ],
   providers: [
     {

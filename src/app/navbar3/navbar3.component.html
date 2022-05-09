@@ -1,50 +1,57 @@
-<div class="header">
-    <div class="inner_header">
-        <div class="header_info mt-3">
-            <span class="p-2"><i class="fa-solid fa-envelope"></i> kisansakha@gmail.com</span>
-            <span class="p-2"><i class="fa-solid fa-location-dot"></i> Rajwada chouraha</span>
-            <span class="p-2"><i class="fa-solid fa-phone"></i> 7779089012</span>
-        </div>
-        <div class="header_icons mt-3">
-            <div class="header_search me-2">
-                <i class="fa-solid fa-magnifying-glass p-2"></i>
-            </div>
-            <div class="social_icons ps-2">
-                <i class="fa-brands fa-facebook-square p-2"></i>
-                <i class="fa-brands fa-twitter-square p-2"></i>
-                <i class="fa-brands fa-instagram-square p-2"></i>
-            </div>
-        </div>
-    </div>
+<div class="search_box">
     
 </div>
 
-<nav class="navbar navbar-expand-lg ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            </ul>
-            <div class="d-flex">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class=" fas fa-user" id="user" ></i>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">sign up</a></li>
-                        <li><a class="dropdown-item" href="#">sign in</a></li>
-                        </ul>
-                    </div>
+<header>
+    <div class="header_banner">
+        <div class="header">
+            <div class="header_info">
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> kisansakha@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Rajwada Chouraha</li>
+                    <li><i class="fa-solid fa-phone"></i> 7779089012</li>
+                </ul>
+            </div>
+            <div class="header_icon">
+                <ul>
+                    <li class="search"><i class="fa-solid fa-magnifying-glass"></i></li>
+                    <li><i class="fa-brands fa-facebook-square"></i></li>
+                    <li><i class="fa-brands fa-twitter-square"></i></li>
+                    <li><i class="fa-brands fa-instagram-square"></i></li>
+                </ul>
             </div>
         </div>
     </div>
-</nav>
+
+    <nav (scroll)="onScroll()" [class.fixed]="fixed">
+        <div class="left_nav">
+            
+                    <i class="fa-solid fa-bars ms-5 me-5" id="toggle_menu" (click)="toggleFun()"><a href=""></a></i>
+            
+                    <img routerLink="" src="../../assets/img/our3.png" width='70px' height="60px" alt="">
+                
+        </div>
+
+        <div class="right_nav " [class.show]="toggle">
+            <i class="fas fa-close" id="close_menu" (click)="toggleFun()"></i>
+            <ul>
+                <li><a routerLink="service">Services</a></li>
+                <li><a routerLink="contract-farming">Contract Farming</a></li>
+                <li><a routerLink="storage">Storage</a></li>
+                <li><a >About</a></li>
+                <li><a >Contact</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="dropdown" style="float:right;">
+            <i class=" fas fa-user dropbtn" id="user" ></i>
+            
+            <div class="dropdown-content">
+                <a routerLink="sign-up">Signup</a>
+                <a routerLink="sign-in">Signin</a>
+            </div>
+        </div> 
+    </nav>
+</header>
+
