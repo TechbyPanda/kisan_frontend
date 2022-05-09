@@ -13,7 +13,7 @@ export class EquipementsDetailsComponent implements OnInit {
   details:any;
   ngOnInit(): void {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
-   this.adminService. service_Details(this.id).subscribe(data=>{
+   this.adminService.service_Details(this.id).subscribe(data=>{
      alert(data);
      this.details = data;
    })

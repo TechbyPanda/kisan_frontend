@@ -17,11 +17,10 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
     signIn(){
-      alert("Sign");
         this.userService.sign_In(this.user).subscribe(data=>{
           alert("User signed in successfully");
-          alert(data.msg);
-            sessionStorage.setItem("token",data.msg);
+          alert(data);
+            sessionStorage.setItem("token",data);
         },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){
