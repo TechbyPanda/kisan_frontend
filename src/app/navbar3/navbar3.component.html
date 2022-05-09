@@ -28,23 +28,30 @@
             
                     <i class="fa-solid fa-bars ms-5 me-5" id="toggle_menu" (click)="toggleFun()"><a href=""></a></i>
             
-                    <img src="../../assets/img/our3.png" width='70px' height="60px" alt="">
+                    <img routerLink="" src="../../assets/img/our3.png" width='70px' height="60px" alt="">
                 
         </div>
 
         <div class="right_nav " [class.show]="toggle">
             <i class="fas fa-close" id="close_menu" (click)="toggleFun()"></i>
             <ul>
-                <li><a href="">Services</a></li>
-                <li><a href="">Contract Farming</a></li>
-                <li><a href="">Storage</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a routerLink="service">Services</a></li>
+                <li><a routerLink="contract-farming">Contract Farming</a></li>
+                <li><a routerLink="storage">Storage</a></li>
+                <li><a >About</a></li>
+                <li><a >Contact</a></li>
                 
             </ul>
         </div>
 
-        <i class=" fas fa-user" id="user" ></i>
+        <div class="dropdown" style="float:right;">
+            <i class=" fas fa-user dropbtn" id="user" ></i>
+            
+            <div class="dropdown-content">
+                <a routerLink="sign-up">Signup</a>
+                <a routerLink="sign-in">Signin</a>
+            </div>
+        </div> 
     </nav>
 </header>
 
