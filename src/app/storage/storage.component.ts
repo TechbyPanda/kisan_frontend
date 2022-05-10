@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ConnectableObservable } from 'rxjs';
 
 @Component({
   selector: 'app-storage',
@@ -8,7 +7,9 @@ import { ConnectableObservable } from 'rxjs';
 })
 export class StorageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+  }
   checks=[];
 
   ngOnInit(): void {
@@ -22,11 +23,6 @@ export class StorageComponent implements OnInit {
     apple:false,grap:false,orange:false,
   }]
 
-  getvalue(value:any){
-    console.log(this.items)
-    // console.log(value.childNodes[0].value);
-    console.log(value.target.childNodes[0].value);
-    console.log(value.target.childNodes[0].checked);
-  }
+  
 
 }

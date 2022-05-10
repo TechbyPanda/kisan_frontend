@@ -48,17 +48,7 @@
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-button{
-    padding:10px;
-    border-radius: 10px;
-    color:#72A603;
-    background-color:#FEFFED;
-    font-size:20px;
-}
 
-button:hover{
-    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
-}
 
 .overlay i{
     float: right;
@@ -79,6 +69,18 @@ button:hover{
 .modal-header{
     box-shadow:0px 5px 8px rgba(0,0,0,0.5);
     background-color:#72A603;
+}
+
+button{
+    padding:10px;
+    border-radius: 10px;
+    color:#72A603;
+    background-color:#FEFFED;
+    font-size:20px;
+}
+
+button:hover{
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
 }
 
 .modal-header h5{
@@ -104,7 +106,8 @@ mat-checkbox{
 .cards2{
     position: relative;
     height:350px;
-    margin:200px auto;
+    margin:50px 0px;
+    /* margin:200px auto; */
     background:#fff;
     box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7);
 }

@@ -37,6 +37,8 @@ import { Service2Component } from './service2/service2.component';
 
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
