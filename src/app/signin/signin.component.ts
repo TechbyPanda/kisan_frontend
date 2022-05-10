@@ -19,8 +19,14 @@ export class SigninComponent implements OnInit {
     signIn(){
         this.userService.sign_In(this.user).subscribe(data=>{
           alert("User signed in successfully");
+
+          console.log(data)
+          alert(data.msg);
+            sessionStorage.setItem("token",data.token);
+
           alert(data);
             sessionStorage.setItem("token",data);
+
         },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){

@@ -70,9 +70,14 @@ import { TokenService } from './token.service';
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
+
     MatSidenavModule,
     MatListModule,
-    ToastrModule
+    ToastrModule,
+
+    MatSidenavModule,
+    MatListModule,
+ 
   ],
   providers: [UserService,{
     provide:HTTP_INTERCEPTORS,
