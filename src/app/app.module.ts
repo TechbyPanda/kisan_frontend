@@ -38,6 +38,7 @@ import { Service2Component } from './service2/service2.component';
 
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
+import { AbouUsComponent } from './abou-us/abou-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { FooterComponent } from './footer/footer.component';
     StorageDetailsComponent,
     Navbar4Component,
     FooterComponent,
+    AbouUsComponent,
 
   ],
 
