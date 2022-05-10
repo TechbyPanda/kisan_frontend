@@ -86,3 +86,13 @@ button:hover{
     color:#FEFFED;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
+
+.items{
+    width:100%;
+    border:1px solid #72A603;
+    border-radius: 10px;
+}
+
+mat-checkbox{
+    margin:10px;
+}

@@ -31,6 +31,7 @@ import { Registration2Component } from './registration2/registration2.component'
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
+import { Service2Component } from './service2/service2.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { Navbar4Component } from './navbar4/navbar4.component';
       StorageComponent,
       StorageDetailsComponent,
       Navbar4Component,
+      Service2Component,
 
   ],
   imports: [
