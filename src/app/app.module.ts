@@ -34,6 +34,8 @@ import { Registration2Component } from './registration2/registration2.component'
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
+import { Service2Component } from './service2/service2.component';
+
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 @NgModule({
@@ -47,6 +49,16 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ContractFarmingComponent,
     EquipmentsComponent,
+
+      Navbar3Component,
+      EquipementsDetailsComponent,
+      Registration2Component,
+      StorageComponent,
+      StorageDetailsComponent,
+      Navbar4Component,
+      Service2Component,
+
+
     Navbar3Component,
     EquipementsDetailsComponent,
     Registration2Component,
@@ -54,6 +66,7 @@ import { FooterComponent } from './footer/footer.component';
     StorageDetailsComponent,
     Navbar4Component,
     FooterComponent,
+
   ],
 
   imports: [

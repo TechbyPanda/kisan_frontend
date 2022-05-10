@@ -1,3 +1,55 @@
+
+<!-- <div class="wrapper mt-5">
+    <div class="form_container">
+      
+        <div class="heading">
+            <h2>Login Form</h2>
+        </div>
+          <div class="form_wrap">
+            <div class="form_item">
+              <label>Email Address</label>
+              <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel"  class="form-control" type="email" required>
+              <span class="text-danger" *ngIf="email.errors?.['required']">Please enter your email address</span>
+              <span class="text-danger" *ngIf="email.errors?.['pattern']">Please enter valid email</span>
+            </div>
+        </div>
+        <div class="form_wrap">
+            <div class="form_item">
+              <label>Password</label>
+              <input  [(ngModel)]="user.password" #password="ngModel" class="form-control" type="password" required>
+              <span class="text-danger" *ngIf="password.errors?.['required']">Please enter your password</span>
+          </div>
+        </div>
+
+          <div class="btn sigin_btn">
+            <input (click)="signIn()" [disabled]="email.errors?.['required']" type="submit" value="Get Started">
+        </div>
+        
+    </div>
+  </div> -->
+
+
+<div class="form">
+  <div class="card login_card shadow-sm border-0">
+    <h1>Login Form</h1>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input [(ngModel)]="user.password" #password="ngModel" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon style="margin-right: 10px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button (click)="signIn()">Lognin</button>
+  </div>
+</div>
+
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-12">
@@ -26,3 +78,4 @@
   </div>
   <app-footer></app-footer>
   
+
