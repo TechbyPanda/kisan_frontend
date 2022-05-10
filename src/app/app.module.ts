@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider} from 'angularx-social-login';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
@@ -32,7 +34,12 @@ import { Registration2Component } from './registration2/registration2.component'
 import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
+import { Service2Component } from './service2/service2.component';
+
 import { TokenService } from './token.service';
+import { FooterComponent } from './footer/footer.component';
+import { AbouUsComponent } from './abou-us/abou-us.component';
+import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,18 +49,21 @@ import { TokenService } from './token.service';
     SigninComponent,
     Navbar2Component,
     HomeComponent,
-
     ContractFarmingComponent,
-
     EquipmentsComponent,
-      Navbar3Component,
-      EquipementsDetailsComponent,
-      Registration2Component,
-      StorageComponent,
-      StorageDetailsComponent,
-      Navbar4Component,
+    Service2Component,
+    Navbar3Component,
+    EquipementsDetailsComponent,
+    Registration2Component,
+    StorageComponent,
+    StorageDetailsComponent,
+    Navbar4Component,
+    FooterComponent,
+    AbouUsComponent,
+    ErrorhandlingComponent,
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -70,20 +80,35 @@ import { TokenService } from './token.service';
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
-
     MatSidenavModule,
     MatListModule,
     ToastrModule,
-
-    MatSidenavModule,
-    MatListModule,
  
   ],
-  providers: [UserService,{
+  
+
+  providers: [
+  UserService,{
     provide:HTTP_INTERCEPTORS,
     useClass: TokenService,
     multi:true
-  }],
+   },
+    {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'
+          )
+        },
+      ]
+    } as SocialAuthServiceConfig,
+  }
+],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
