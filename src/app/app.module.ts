@@ -51,16 +51,7 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
     HomeComponent,
     ContractFarmingComponent,
     EquipmentsComponent,
-
-      Navbar3Component,
-      EquipementsDetailsComponent,
-      Registration2Component,
-      StorageComponent,
-      StorageDetailsComponent,
-      Navbar4Component,
-      Service2Component,
-
-
+    Service2Component,
     Navbar3Component,
     EquipementsDetailsComponent,
     Registration2Component,
@@ -92,8 +83,9 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
     MatSidenavModule,
     MatListModule,
     ToastrModule,
-    SocialLoginModule,
+ 
   ],
+  
 
   providers: [
   UserService,{
