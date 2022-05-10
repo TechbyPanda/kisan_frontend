@@ -39,6 +39,7 @@ import { Service2Component } from './service2/service2.component';
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
+import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { AbouUsComponent } from './abou-us/abou-us.component';
     Navbar4Component,
     FooterComponent,
     AbouUsComponent,
+    ErrorhandlingComponent,
 
   ],
 
