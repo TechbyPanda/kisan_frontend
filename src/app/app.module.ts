@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider} from 'angularx-social-login';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
@@ -19,11 +21,12 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { SigninComponent } from './signin/signin.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { ContractFarmingComponent } from './contract-farming/contract-farming.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { UserService } from './service/user.service';
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { Navbar3Component } from './navbar3/navbar3.component';
 import { EquipementsDetailsComponent } from './equipements-details/equipements-details.component';
@@ -33,6 +36,8 @@ import { StorageDetailsComponent } from './storage-details/storage-details.compo
 import { Navbar4Component } from './navbar4/navbar4.component';
 import { Service2Component } from './service2/service2.component';
 
+import { TokenService } from './token.service';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,10 +47,9 @@ import { Service2Component } from './service2/service2.component';
     SigninComponent,
     Navbar2Component,
     HomeComponent,
-
     ContractFarmingComponent,
-
     EquipmentsComponent,
+
       Navbar3Component,
       EquipementsDetailsComponent,
       Registration2Component,
@@ -54,7 +58,17 @@ import { Service2Component } from './service2/service2.component';
       Navbar4Component,
       Service2Component,
 
+
+    Navbar3Component,
+    EquipementsDetailsComponent,
+    Registration2Component,
+    StorageComponent,
+    StorageDetailsComponent,
+    Navbar4Component,
+    FooterComponent,
+
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -71,12 +85,34 @@ import { Service2Component } from './service2/service2.component';
     MatButtonModule,
     MatNativeDateModule,
     MatInputModule,
-
     MatSidenavModule,
     MatListModule,
- 
+    ToastrModule,
+    SocialLoginModule,
   ],
-  providers: [],
+
+  providers: [
+  UserService,{
+    provide:HTTP_INTERCEPTORS,
+    useClass: TokenService,
+    multi:true
+   },
+    {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'
+          )
+        },
+      ]
+    } as SocialAuthServiceConfig,
+  }
+],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

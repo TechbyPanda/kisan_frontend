@@ -9,7 +9,7 @@ export class TokenService implements HttpInterceptor{
   intercept(request:HttpRequest<any>,next:HttpHandler){
     let tokenizedRequest = request.clone({
       setHeaders:{
-        Authorization:'' + localStorage.getItem('token')
+        Authorization:'' + sessionStorage.getItem('token')
       }
     })
     return next.handle(tokenizedRequest);
