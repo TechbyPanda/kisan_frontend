@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+
 import { User } from 'src/app/model/user';
 import { Router} from '@angular/router'
 import { HttpErrorResponse } from '@angular/common/http';
 import {UserService} from '../service/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../token.service';
+
+
 @Component({
   selector: 'app-registration2',
   templateUrl: './registration2.component.html',
@@ -10,7 +15,8 @@ import {UserService} from '../service/user.service';
 })
 export class Registration2Component implements OnInit {
 
-  constructor(private userService: UserService,private router : Router) { }
+
+  constructor(private userService: UserService,private router : Router,private toster :ToastrService) { }
 
   ngOnInit(): void {
   }

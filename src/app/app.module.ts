@@ -34,7 +34,7 @@ import { StorageComponent } from './storage/storage.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { Navbar4Component } from './navbar4/navbar4.component';
 import { Service2Component } from './service2/service2.component';
-
+import { ToastrModule } from 'ngx-toastr';
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
@@ -59,7 +59,7 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
     Navbar4Component,
     FooterComponent,
     AbouUsComponent,
-    ErrorhandlingComponent
+    ErrorhandlingComponent,
   ],
 
   imports: [
@@ -81,6 +81,7 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
     MatSidenavModule,
     MatListModule,
     SocialLoginModule,
+    ToastrModule.forRoot()
   ],
   
 
