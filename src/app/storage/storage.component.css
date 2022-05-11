@@ -205,8 +205,17 @@ mat-checkbox{
     
 }
 
+.weight{
+    display: inline-block;
+}
+
 .weight input{
     margin:20px;
+    width: 100px;
     border:none;
     border-bottom:1px solid #72A603;
+}
+
+.weight input:focus{
+    border:none;
 }
