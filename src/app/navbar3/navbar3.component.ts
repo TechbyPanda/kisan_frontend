@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-navbar3',
   templateUrl: './navbar3.component.html',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class Navbar3Component implements OnInit {
 
-  constructor(private userService:UserService,private router: Router) { }
+  constructor(private userService:UserService,private router: Router ,private notifyService:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,7 @@ export class Navbar3Component implements OnInit {
   }
   signOut(){
     if(confirm("Are you Sure ?")){
+      this.notifyService.success("Sing Out Successfully.. !!")
       sessionStorage.removeItem('token');
       this.router.navigate(['sign-in']);
     }
