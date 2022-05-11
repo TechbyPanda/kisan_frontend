@@ -6,6 +6,7 @@ import { UserService } from '../service/user.service';
 import { SocialUser } from "angularx-social-login";
 import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signin',
@@ -19,12 +20,14 @@ export class SigninComponent implements OnInit {
   isLoggedin?: boolean;
   loginForm!: FormGroup;
 
-  constructor(private userService: UserService, private router: Router, private socialAuthservice: SocialAuthService) { }
+  constructor(private userService: UserService, private router: Router, private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
 
     signIn(){
         this.userService.sign_In(this.user).subscribe(data=>{
-          alert("User signed in successfully");
+          // alert("User signed in successfully");
+          this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);
+            
 
           alert(data);
             sessionStorage.setItem("id",data.user._id); 
@@ -32,12 +35,12 @@ export class SigninComponent implements OnInit {
         },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){
-          if(err.status == 401){
-            alert(err);
+          if(err.status == 400){
+            this.notifyService.error("This is warning..!")
           }
           else if(err.status == 500){
-
-          alert(err);
+            this.notifyService.warning("Something is wrong..!")
+          // alert(err);
         }
       }
     });
@@ -45,6 +48,7 @@ export class SigninComponent implements OnInit {
   
   loginInWithGoogle(): void {
     this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.notifyService.success("Sing In Successfully.. !!")
   }
 
   refreshToken(): void {

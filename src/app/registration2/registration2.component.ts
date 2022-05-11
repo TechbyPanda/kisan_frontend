@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-registration2',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Registration2Component implements OnInit {
 
-  constructor() { }
+  constructor(private toster :ToastrService ) { }
 
   ngOnInit(): void {
   }
