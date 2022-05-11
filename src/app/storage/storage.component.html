@@ -10,17 +10,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="items">
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin" >Apple</mat-checkbox>
+                <div class="items" appItems>
+                    <mat-checkbox [(ngModel)]="fruit.selected" *ngFor="let fruit of fruits" (click)="isSelected()" class="example-margin" >{{fruit.name}}</mat-checkbox>
                 </div>
-                <div class="weight">
-
+                <div class="weight" *ngFor="let fruit of fruits">
+                    <label for="" *ngIf="fruit.selected">
+                        {{fruit.name}} : <input type="number" *ngIf="fruit.selected"> 
+                    </label>
                 </div>
             </div>
             <div class="modal-footer">
@@ -43,7 +39,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 p-2">
             <h1>Cold Storage</h1>
-            <button class="book_now">Book Now</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="book_now">Book Now</button>
             <button class="view_more">View More</button>
             <h3>Items : Apple, Orange, Mango, Grapes, Chiku</h3>
             <p class="description">Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis modi saepe quisquam nulla repellat officia necessitatibus, odit facilis veritatis recusandae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, deserunt?</p>
