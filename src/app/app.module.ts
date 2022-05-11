@@ -37,7 +37,8 @@ import { Service2Component } from './service2/service2.component';
 
 import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
-
+import { AbouUsComponent } from './abou-us/abou-us.component';
+import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 
 @NgModule({
   declarations: [
@@ -47,19 +48,9 @@ import { FooterComponent } from './footer/footer.component';
     RegistrationPageComponent,
     SigninComponent,
     Navbar2Component,
-    HomeComponent,
     ContractFarmingComponent,
     EquipmentsComponent,
-
-      Navbar3Component,
-      EquipementsDetailsComponent,
-      Registration2Component,
-      StorageComponent,
-      StorageDetailsComponent,
-      Navbar4Component,
-      Service2Component,
-
-
+    Service2Component,
     Navbar3Component,
     EquipementsDetailsComponent,
     Registration2Component,
@@ -67,7 +58,8 @@ import { FooterComponent } from './footer/footer.component';
     StorageDetailsComponent,
     Navbar4Component,
     FooterComponent,
-
+    AbouUsComponent,
+    ErrorhandlingComponent
   ],
 
   imports: [
@@ -89,7 +81,9 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatListModule,
     SocialLoginModule,
+    
   ],
+  
 
   providers: [
   UserService,{

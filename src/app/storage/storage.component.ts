@@ -19,10 +19,16 @@ export class StorageComponent implements OnInit {
     
   }
 
-  public items=[{
-    apple:false,grap:false,orange:false,
-  }]
+  fruits = [
+    {name:'apple',selected:false},
+    {name:'grape',selected:false},
+    {name:'orange',selected:false},
+    {name:'mango',selected:false},
+    {name:'strawberry',selected:false}
+  ]
 
-  
+  isSelected(){
+    console.log(this.fruits);
+  }
 
 }

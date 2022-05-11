@@ -194,3 +194,19 @@ mat-checkbox{
     padding:10px;
     border-radius:50%;
 }
+
+@media screen and (max-width: 768px){
+    .cards2{
+        height:650px;
+    }
+    .left2,.right2{
+        height:50%;
+    }
+    
+}
+
+.weight input{
+    margin:20px;
+    border:none;
+    border-bottom:1px solid #72A603;
+}
