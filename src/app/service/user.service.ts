@@ -24,4 +24,5 @@ export class UserService {
   public checkToken():boolean{
     return !!sessionStorage.getItem('token');
   }
+  
 }

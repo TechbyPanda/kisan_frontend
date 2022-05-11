@@ -18,50 +18,36 @@
             <div class="customer_details">
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your name</mat-label>
-                    <input matInput placeholder="Placeholder" value="Devika">
+                    <input #name matInput placeholder="Placeholder" value="{{user.name}}">
                     <mat-icon matSuffix><i class="fas fa-user"></i></mat-icon>
                 </mat-form-field>
-    
+       
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your email</mat-label>
-                    <input matInput placeholder="Placeholder" value="devika@gmail.com">
+                    <input #email matInput placeholder="Placeholder" value="{{user.email}}">
                     <mat-icon matSuffix><i class="fa-solid fa-envelope"></i></mat-icon>
                 </mat-form-field>
     
                 <mat-form-field appearance="legacy">
-                    <mat-label>Enter your moble no.</mat-label>
-                    <input matInput placeholder="Placeholder" value="9999900000">
+                    <mat-label>Enter your mobile no.</mat-label>
+                    <input #mobile  matInput placeholder="Placeholder" value="{{user.contact}}">
                     <mat-icon matSuffix><i class="fa-solid fa-phone"></i></mat-icon>
                 </mat-form-field>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your address</mat-label>
-                    <input matInput placeholder="Placeholder" value="Manik Bagh chouraha">
+                    <input #address matInput placeholder="Placeholder" value="{{user.address}}">
                     <mat-icon matSuffix><i class="fa-solid fa-location-dot"></i></mat-icon>
                 </mat-form-field>
-    
-    
-                <!-- <div class="items">
-                    <mat-checkbox class="example-margin"> Apple</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Mango</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Banana</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Watermelon</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Orange</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Guava</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Lemon</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Strawberry</mat-checkbox>
-                    <mat-checkbox class="example-margin"> Grapes</mat-checkbox>
-                </div> -->
-                
                 <mat-form-field class="datebox" appearance="fill">
                     <mat-label>Choose a date</mat-label>
                     <input matInput [matDatepicker]="picker">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker #picker ></mat-datepicker>
                 </mat-form-field>
 
-                <button >Book Service</button>
+                <button (click)="bookService(picker,name,email,mobile,address)">Book Service</button>
             </div>
         </div>
     </div>

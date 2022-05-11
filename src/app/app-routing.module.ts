@@ -10,6 +10,9 @@ import { StorageComponent } from './storage/storage.component';
 import { Registration2Component } from './registration2/registration2.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
+import {AuthGuard} from './auth.guard';
+
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'sign-in', component:SigninComponent},
@@ -19,7 +22,7 @@ const routes: Routes = [
   {path:'book-service', component:EquipementsDetailsComponent},
   {path:'storage',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
-  {path:'equipment-details/:id',component:EquipementsDetailsComponent},
+  {path:'equipment-details/:id',component:EquipementsDetailsComponent,canActivate:[AuthGuard]},
   {path:"**",component:ErrorhandlingComponent}
 ];
 
