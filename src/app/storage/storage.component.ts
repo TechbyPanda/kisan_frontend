@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../service/storage.service';
+
 
 @Component({
   selector: 'app-storage',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StorageComponent implements OnInit {
 
-  constructor() {
-    
+  constructor(public storageService: StorageService) {
+    this.storageService.getStorage()
+    .subscribe(data=>{
+      this.storage = data;
+      console.log(this.storage);
+    })
   }
   checks=[];
 
@@ -18,6 +24,8 @@ export class StorageComponent implements OnInit {
   onChange(){
     
   }
+
+  storage:any;
 
   fruits = [
     {name:'apple',selected:false},
