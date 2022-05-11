@@ -1,51 +1,32 @@
-<!-- <div class="container-fluid">
-    <div class="banner">
-        <div class="ball"></div>
-        <hr>
-        <h1>Services</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic odio beatae quam illum soluta saepe aperiam autem perspiciatis! Minima eligendi possimus ipsum eveniet dignissimos quibusdam doloribus quod nostrum, asperiores nobis.</p>
-    </div>
-</div>
 
-<div  class="services">
-    <div  *ngFor="let item of tools" class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="{{item.images}}" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>{{item.toolname}}</h1>
-                    <p>Price :{{item.charges}}</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : {{item.toolname}}</p>
-                <p>Charges : {{item.charges}}</p>
-                <p>Description : {{item.desc}}</p>
-                <button (click)="service_item(item._id)" class="btn">Book Now</button>
-            </div>
+    <div class="container-fluid" style="margin: 0;padding:0;">
+        <div class="banner">
+            <div class="ball"></div>
+            <hr>
+            <h1>Services</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic odio beatae quam illum soluta saepe aperiam autem perspiciatis! Minima eligendi possimus ipsum eveniet dignissimos quibusdam doloribus quod nostrum, asperiores nobis.</p>
         </div>
-    </div> -->
-    
+    </div>
 
-
-    <div class="container">
-        <div class="row cards2">
+    <div class="container" >
+        <div *ngFor="let item of tools"  class="row cards2">
             <div class="col-lg-6 col-md-6 col-sm-12 left2">
-                <img src="../../assets/img/cold_storage3.jpg" alt="" class="left2_img">
+                <img src="{{item.images}}" alt="" class="left2_img">
                 <div class="icons">
                     <i class="fa-solid fa-comment"></i>
                     <i class="fas fa-share-alt"></i>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 p-2">
+                <h1>Services</h1>
+                <button class="book_now" (click)="service_item(item._id)" >Book Now</button>
+            <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
                 <h1>Cold Storage</h1>
                 <button class="book_now">Book Now</button>
                 <button class="view_more">View More</button>
                 <h3>Items : Apple, Orange, Mango, Grapes, Chiku</h3>
-                <p class="description">Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis modi saepe quisquam nulla repellat officia necessitatibus, odit facilis veritatis recusandae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, deserunt?</p>
-                <h4>Price : 3000</h4>
+                <p class="description">Description : {{item.desc}}</p>
+                <h4>Price : {{item.charges}}</h4>
                 <div class="reviews">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

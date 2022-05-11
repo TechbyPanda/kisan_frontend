@@ -10,14 +10,35 @@ export class EquipementsDetailsComponent implements OnInit {
 
   constructor(private activatedRouter : ActivatedRoute,private adminService : AdminService) { }
   id:any;
+   contact:any;     
+  date:any;
+  email:any;
   details:any;
+  userId:any;
+  user:any;
   ngOnInit(): void {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
    this.adminService.service_Details(this.id).subscribe(data=>{
-     alert(data);
+     this.userId = sessionStorage.getItem('id')
+     this.adminService.user_details(this.userId).subscribe(result=>{
+        alert("result"+result);
+      this.user = result;
+     })
      this.details = data;
+     alert("details"+data);
    })
    
   }
+  bookService(picker:any,name:any,email:any,mobile:any,address:any){
+    console.log(picker._model.selection);
+    console.log(name.value);
+    console.log(email.value)
+    console.log(address.value)
+    console.log(mobile.value)
+     this.adminService.customer_details(this.id,name.value,email.value,mobile.value,address.value,picker._model.selection).
+     subscribe(result=>{
+       alert(result);
+     })
 
+  }
 }
