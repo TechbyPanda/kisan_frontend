@@ -48,8 +48,9 @@
             <i class=" fas fa-user dropbtn" id="user" ></i>
             
             <div class="dropdown-content">
-                <a routerLink="sign-up">Signup</a>
-                <a routerLink="sign-in">Signin</a>
+                <a *ngIf='!isLoggedIn()' routerLink="sign-up">Signup</a>
+                <a *ngIf='!isLoggedIn()' routerLink="sign-in">Signin</a>
+                <a *ngIf='isLoggedIn()' (click)='signOut()' routerLink="sign-in">Signout</a>
             </div>
         </div> 
     </nav>
