@@ -1,50 +1,6 @@
-/* *{
-    margin: 0;
-    padding:0;
-}
+/* 
 
-.banner{
-    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../../assets/img/drone.jpeg');
-    background-repeat:no-repeat;
-    background-size: cover;
-    background-position: center;
-    height:350px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:10px;
-}
 
-.banner h1{
-    font-size:28px;
-    font-weight:bold;
-    color:#FEFFED;
-}
-
-.banner p{
-    font-size:18px;
-    color:#FEFFED;
-    padding:10px;
-    text-align: center;
-}
-
-.banner .ball{
-    width:50px;
-    height:50px;
-    border-radius: 100%;
-    background:radial-gradient(circle at 50% 120%,  rgb(85, 138, 6), greenyellow 80%, greenyellow 100%);
-    animation: jump  .9s infinite ;
-}
-
-@keyframes jump{
-    0%{transform:tanslateY(0px);
-    box-shadow:0px 0px 0px greenyellow}
-    50%{transform:translateY(-50px);
-        box-shadow:0px 0px 20px greenyellow}
-    100%{transform:translateY(0px)}
-}
 
 .services{
     margin:5px;
@@ -150,7 +106,59 @@
     box-shadow:inset 0px 100px 0px 0px #486606ec;
 } */
 
+
+/* Responsive */
+
+
+
 /* my card  */
+
+*{
+    
+}
+
+.banner{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../../assets/img/drone.jpeg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:350px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+}
+
+.banner h1{
+    font-size:28px;
+    font-weight:bold;
+    color:#FEFFED;
+}
+
+.banner p{
+    font-size:18px;
+    color:#FEFFED;
+    padding:10px;
+    text-align: center;
+}
+
+.banner .ball{
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    background:radial-gradient(circle at 50% 120%,  rgb(85, 138, 6), greenyellow 80%, greenyellow 100%);
+    animation: jump  .9s infinite ;
+}
+
+@keyframes jump{
+    0%{transform:tanslateY(0px);
+    box-shadow:0px 0px 0px greenyellow}
+    50%{transform:translateY(-50px);
+        box-shadow:0px 0px 20px greenyellow}
+    100%{transform:translateY(0px)}
+}
 
 .left2{
     position:relative;
@@ -159,10 +167,12 @@
 .cards2{
     position: relative;
     height:350px;
-    margin:200px auto;
+    margin:100px auto;
     background:#fff;
     box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7);
 }
+
+
 
 .left2_img{
     position:absolute;
@@ -234,8 +244,9 @@
 
 .icons{
     position: absolute;
-    bottom: -7%;
-    left: 40%;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .icons i{
@@ -245,4 +256,14 @@
     color:green;
     padding:10px;
     border-radius:50%;
+}
+
+@media screen and (max-width: 768px){
+    .cards2{
+        height:650px;
+    }
+    .left2,.right2{
+        height:50%;
+    }
+    
 }
