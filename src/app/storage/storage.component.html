@@ -10,12 +10,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div class="description">
+                    Your items weight be calculated in kilo gram
+                </div>
                 <div class="items" appItems>
                     <mat-checkbox [(ngModel)]="fruit.selected" *ngFor="let fruit of fruits" (click)="isSelected()" class="example-margin" >{{fruit.name}}</mat-checkbox>
                 </div>
                 <div class="weight" *ngFor="let fruit of fruits">
                     <label for="" *ngIf="fruit.selected">
-                        {{fruit.name}} : <input type="number" *ngIf="fruit.selected"> 
+                        {{fruit.name}} : <input type="number" *ngIf="fruit.selected" width="fit-content"> 
                     </label>
                 </div>
             </div>
@@ -29,21 +32,20 @@
 
 
 <div class="container">
-    <div class="row cards2">
+    <div class="row cards2" *ngFor="let st of storage">
         <div class="col-lg-6 col-md-6 col-sm-12 left2">
-            <img src="../../assets/img/cold_storage3.jpg" alt="" class="left2_img">
+            <img [src]="st.images[0]" alt="" class="left2_img">
             <div class="icons">
                 <i class="fa-solid fa-comment"></i>
                 <i class="fas fa-share-alt"></i>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-            <h1>Cold Storage</h1>
+            <h1>{{st.storage_id.storageName}}</h1>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="book_now">Book Now</button>
             <button class="view_more">View More</button>
-            <h3>Items : Apple, Orange, Mango, Grapes, Chiku</h3>
+            <h3 ><span *ngFor="let items of st.items">{{items.name}} : {{items.charges}}</span></h3>
             <p class="description">Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis modi saepe quisquam nulla repellat officia necessitatibus, odit facilis veritatis recusandae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, deserunt?</p>
-            <h4>Price : 3000</h4>
             <div class="reviews">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>

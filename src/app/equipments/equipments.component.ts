@@ -12,7 +12,7 @@ export class EquipmentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
-      alert(data);
+    
       this.tools = data
 
 
