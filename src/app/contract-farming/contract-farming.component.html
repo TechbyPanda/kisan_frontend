@@ -13,7 +13,37 @@
             <div class="details">
                 <mat-form-field appearance="fill">
                     <mat-label>Enter your name</mat-label>
-                    <input [(ngModel)]="contractFarming.name" matInput>
+                    <input [(ngModel)]="contractFarming.name" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your mobile</mat-label>
+                    <input [(ngModel)]="contractFarming.mobile" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your address</mat-label>
+                    <input [(ngModel)]="contractFarming.address" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your farm area</mat-label>
+                    <input [(ngModel)]="contractFarming.area" type="text" matInput>
+                </mat-form-field>
+
+                <input type="file" class='images' name="image" (change)="selectImage($event)">
+                <br>
+                <br>
+
+                <mat-form-field appearance="fill" class="datebox">
+                    <mat-label>Enter a duration date</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input [(ngModel)]="contractFarming.start_date" matStartDate placeholder="Start date">
+                        <input [(ngModel)]="contractFarming.end_date" matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
@@ -21,35 +51,12 @@
                     <textarea [(ngModel)]="contractFarming.description" matInput></textarea>
                 </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your address</mat-label>
-                    <input [(ngModel)]="contractFarming.area" matInput>
-                </mat-form-field>
 
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your mobile</mat-label>
-                    <input [(ngModel)]="contractFarming.mobile" matInput>
-                </mat-form-field>
 
-                <mat-form-field appearance="fill" class="datebox">
-                    <mat-label>Enter a duration date</mat-label>
-                    <mat-date-range-input [rangePicker]="picker">
-                        <input matStartDate placeholder="Start date">
-                        <input matEndDate placeholder="End date">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker></mat-date-range-picker>
-                </mat-form-field>
+                <button (click)="save()">Send Request</button>
 
-                <input type="file" class='images'>
-
-                <button (click)="save()">Save</button>
-                
             </div>
         </div>
     </div>
 </div>
 <app-footer></app-footer>
-
-

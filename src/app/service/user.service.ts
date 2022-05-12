@@ -18,8 +18,8 @@ export class UserService {
   sign_In(user:User){
     return this.http.post<any>(this.signIn,user);
   }
-  contract_Farming(contractFarming:ContractFarming){
-    return this.http.post<any>(this.contractFarming,contractFarming);
+  contract_Farming(formData:FormData){
+    return this.http.post<any>(this.contractFarming,formData);
   }
   public checkToken():boolean{
     return !!sessionStorage.getItem('token');
