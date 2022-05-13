@@ -51,7 +51,7 @@
                 <a *ngIf='!isLoggedIn()' routerLink="sign-up">Signup</a>
                 <a *ngIf='!isLoggedIn()' routerLink="sign-in">Signin</a>
                 <a *ngIf='isLoggedIn()' (click)='signOut()' routerLink="sign-in">Signout</a>
-                <a *ngIf='isLoggedIn()' (click)='signOut()' routerLink="sign-in">History</a>
+                <a *ngIf='isLoggedIn()'  routerLink="history">History</a>
             </div>
         </div> 
     </nav>

@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-  service = 'http://localhost:3000/machinary/view';
-  service_details = 'http://localhost:3000/machinary/view/';
+  service = 'http://localhost:3000/service/view-services';
+  service_details = 'http://localhost:3000/service/view-services/';
   user = 'http://localhost:3000/user/view/';
-  customer = 'http://localhost:3000/machinary/book-machines/'
+   customer = 'http://localhost:3000/machinary/book-machines/'
   constructor(private http:HttpClient) { }
   service_Api(){
     return this.http.get<any>(this.service);

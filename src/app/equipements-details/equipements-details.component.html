@@ -6,50 +6,69 @@
             <p></p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6 description">
-            <img src="{{details.images}}" alt="">
-            <h1>Service : {{details.toolname}}</h1>
-            <p>Price : {{details.charges}}</p>
-            <p> Description : {{details.desc}}</p>
-        </div>
-        <div class=" col-md-6 service_form">
-
-            <div class="customer_details">
-                <mat-form-field appearance="legacy">
-                    <mat-label>Enter your name</mat-label>
-                    <input #name matInput placeholder="Placeholder" value="{{user.name}}">
-                    <mat-icon matSuffix><i class="fas fa-user"></i></mat-icon>
-                </mat-form-field>
-       
-                <mat-form-field appearance="legacy">
-                    <mat-label>Enter your email</mat-label>
-                    <input #email matInput placeholder="Placeholder" value="{{user.email}}">
-                    <mat-icon matSuffix><i class="fa-solid fa-envelope"></i></mat-icon>
-                </mat-form-field>
-    
-                <mat-form-field appearance="legacy">
-                    <mat-label>Enter your mobile no.</mat-label>
-                    <input #mobile  matInput placeholder="Placeholder" value="{{user.contact}}">
-                    <mat-icon matSuffix><i class="fa-solid fa-phone"></i></mat-icon>
-                </mat-form-field>
-
-                <mat-form-field appearance="legacy">
-                    <mat-label>Enter your address</mat-label>
-                    <input #address matInput placeholder="Placeholder" value="{{user.address}}">
-                    <mat-icon matSuffix><i class="fa-solid fa-location-dot"></i></mat-icon>
-                </mat-form-field>
-                <mat-form-field class="datebox" appearance="fill">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker ></mat-datepicker>
-                </mat-form-field>
-
-                <button (click)="bookService(picker,name,email,mobile,address)">Book Service</button>
-            </div>
-        </div>
     </div>
-</div>
-
+    <main class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+      
+    <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2020-06/01/full/1590987638-6809.png" alt="">
+    </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>Headphones</span>
+      <h1>Beats EP</h1>
+      <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+    </div>
+ 
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+ 
+      <!-- Product Color -->
+      <div class="product-color">
+        <span>Color</span>
+ 
+        <div class="color-choose">
+          <div>
+            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+            <label for="red"><span></span></label>
+          </div>
+          <div>
+            <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+            <label for="blue"><span></span></label>
+          </div>
+          <div>
+            <input data-image="black" type="radio" id="black" name="color" value="black">
+            <label for="black"><span></span></label>
+          </div>
+        </div>
+ 
+      </div>
+ 
+      <!-- Cable Configuration -->
+      <div class="cable-config">
+        <span>Cable configuration</span>
+ 
+        <div class="cable-choose">
+          <button>Straight</button>
+          <button>Coiled</button>
+          <button>Long-coiled</button>
+        </div>
+ 
+        <a href="#">How to configurate your headphones</a>
+      </div>
+    </div>
+ 
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>148$</span>
+      <a href="#" class="cart-btn">Add to cart</a>
+    </div>
+  </div>
+</main>
+    
