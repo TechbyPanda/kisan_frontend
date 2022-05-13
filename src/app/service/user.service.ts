@@ -9,7 +9,7 @@ export class UserService {
   sign_Up = 'http://localhost:3000/user/signup';
   signIn = 'http://localhost:3000/user/signin';
   
-  contractFarming = 'http://localhost:3000/user/contract-farming';
+  contractFarming = 'http://localhost:3000/contract/contract-farming';
   constructor(private http: HttpClient) { }
 
   User_Signup(user:User){

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ContractFarming } from 'src/app/model/contract-farming';
 import { UserService } from '../service/user.service';
 @Component({
@@ -7,8 +9,8 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./contract-farming.component.css']
 })
 export class ContractFarmingComponent implements OnInit {
- contractFarming: ContractFarming = new ContractFarming("","","","","","","","");
-  constructor(private userService: UserService) { }
+ contractFarming: ContractFarming = new ContractFarming("","","","","","","","","");
+  constructor(private userService: UserService,  private notifyService:ToastrService) { }
 
   selectImage(event:any){
     if(event.target.files.length>0){
@@ -20,6 +22,7 @@ export class ContractFarmingComponent implements OnInit {
   public save(){
     const formData = new FormData();
     formData.append("name",this.contractFarming.name);
+    formData.append("email",this.contractFarming.email);
     formData.append("mobile",this.contractFarming.mobile);
     formData.append("address",this.contractFarming.address);
     formData.append("area",this.contractFarming.area);
@@ -28,10 +31,12 @@ export class ContractFarmingComponent implements OnInit {
     formData.append("start_date",this.contractFarming.start_date);
     formData.append("end_date",this.contractFarming.end_date);
     this.userService.contract_Farming(formData).subscribe(data=>{
+      console.log(formData);
       if(data)
-      alert("application sent successfully");
+      this.notifyService.success("Request sent..!!")
       else
-      alert("Application has some errors");
+      this.notifyService.error("Request aborted..!!")
+     
     })
   }
 

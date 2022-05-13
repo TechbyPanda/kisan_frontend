@@ -17,6 +17,11 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
+                    <mat-label>Enter your email</mat-label>
+                    <input [(ngModel)]="contractFarming.email" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
                     <mat-label>Enter your mobile</mat-label>
                     <input [(ngModel)]="contractFarming.mobile" type="text" matInput>
                 </mat-form-field>
@@ -28,7 +33,7 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Enter your farm area</mat-label>
-                    <input [(ngModel)]="contractFarming.area" type="text" matInput>
+                    <input [(ngModel)]="contractFarming.area" type="text" placeholder="farm area in square feet" matInput>
                 </mat-form-field>
 
                 <input type="file" class='images' name="image" (change)="selectImage($event)">
