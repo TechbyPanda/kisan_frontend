@@ -7,10 +7,10 @@ import { ContractFarming } from '../model/contract-farming';
 })
 export class UserService {
 
-  sign_Up = 'http://localhost:3000/user/signup';
-  signIn = 'http://localhost:3000/user/signin';
+  // sign_Up = 'http://localhost:3000/user/signup';
+  // signIn = 'http://localhost:3000/user/signin';
   
-  contractFarming = 'http://localhost:3000/contract/contract-farming';
+  // contractFarming = 'http://localhost:3000/contract/contract-farming';
 
   sign_Up = 'http://localhost:3000/customer/signup';
   signIn = 'http://localhost:3000/customer/signin';
