@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { AdminService } from '../service/admin.service';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+import { ServiceDialogComponent } from '../service-dialog/service-dialog.component';
+
+
 declare let Razorpay:any
 @Component({
   selector: 'app-equipments',
@@ -9,27 +13,31 @@ declare let Razorpay:any
   styleUrls: ['./equipments.component.css']
 })
 export class EquipmentsComponent implements OnInit {
- tools:any;
-  constructor(private adminService : AdminService,private userService: UserService,private router:Router) { }
+  tools:any;
+  
+
+
+  constructor(public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
       this.tools = data
     })
   }
-   service_item(id:any){
+  service_item(id:any){
         this.router.navigate(['equipment-details',id]);
-   }
-   isLoggedIn():boolean{
+  }
+  isLoggedIn():boolean{
     return this.userService.checkToken();
   }
-   title = 'payment';
- onPay(amount:any){
+
+  title = 'payment';
+onPay(amount:any){
   if(this.isLoggedIn()){
-   this.userService.createOrder(amount).subscribe(data=>{
-     console.log(data);
-     alert(data);
-     var options = {
+  this.userService.createOrder(amount).subscribe(data=>{
+      console.log(data);
+      alert(data);
+      var options = {
       "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
       "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       "currency": "INR",
@@ -54,13 +62,19 @@ export class EquipmentsComponent implements OnInit {
   var rzp1 = new Razorpay(options);
 
     rzp1.open();
-   })
+    })
   }
   else{
     alert("First login required");
     this.router.navigate(['signIn']);
+    }
   }
- }
-
-
+  
+  opendialogue(){
+    this.dialog.open(ServiceDialogComponent,{
+      disableClose:false
+    });
+  }
 }
+
+

@@ -16,6 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SigninComponent } from './signin/signin.component';
@@ -44,6 +45,7 @@ import { ViewPageComponent } from './view-page/view-page.component';
 import { Homepage2Component } from './homepage2/homepage2.component';
 
 import { HistoryComponent } from './history/history.component';
+import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
 
 
 @NgModule({
@@ -71,6 +73,7 @@ import { HistoryComponent } from './history/history.component';
     Homepage2Component,
 
     HistoryComponent,
+      ServiceDialogComponent,
 
   ],
 
@@ -93,6 +96,7 @@ import { HistoryComponent } from './history/history.component';
     MatSidenavModule,
     MatListModule,
     SocialLoginModule,
+    MatDialogModule,
     ToastrModule.forRoot()
   ],
   

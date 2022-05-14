@@ -256,13 +256,10 @@ nav .nav_bar .logo a:before{
         padding:20px;
     }
 
-    .nav_links li a{
+    .nav_links .link_items a{
         display:block;
         margin-top: 20px;
         color:white;
     }
 
-    .dropdown-item{
-        color:black;
-    }
 }
