@@ -21,11 +21,11 @@
             
                 
             <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
-                <h1>{{item.toolname}}</h1>
-                <button class="book_now" (click)="service_item(item._id)" >Book Now</button>
-                <button class="view_more">View More</button>
-                <h3>Items : Apple, Orange, Mango, Grapes, Chiku</h3>
-                <p class="description">Description : {{item.desc}}</p>
+                <h1>{{item.name}}</h1>
+                <button class="book_now" data-bs-toggle="modal" data-bs-target="#exampleModal" >Book Now</button>
+                <button class="view_more" (click)="service_item(item._id)">View More</button>
+                
+                <p class="description">Description : {{item.description}}</p>
                 <h4>Price : {{item.charges}}</h4>
                 <div class="reviews">
                     <i class="fas fa-star"></i>
@@ -37,146 +37,56 @@
         
     </div>
 
-
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- <div class="container-fluid">
+                <div class="row">                 
+                    <!-- <div class="col-md-6 col-sm-12 "> --> 
+                        <div class="details">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Enter your address</mat-label>
+                                <input  matInput>
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill">
+                                <mat-label>Enter your mobile</mat-label>
+                                <input  matInput>
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill" class="datebox">
+                                <mat-label>Enter a duration date</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                    <input matStartDate placeholder="Start date">
+                                    <input matEndDate placeholder="End date">
+                                </mat-date-range-input>
+                                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+                            </mat-form-field>
+                        </div>
+                        
+            
+                        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" (click)="onPay(200)" class="btn btn-primary">Save changes</button>
+                              </div>
+                        </div>
+                    <!-- </div>
+                </div> -->
+            <!-- </div> -->
+            
+       
+        
+      </div>
+    </div>
+  </div>
     <app-footer></app-footer>
-    <!-- <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="flip-card card service_card border-0 shadow-sm">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <div class="img_card">
-                    <img src="https://inteng-storage.s3.amazonaws.com/images/NOVEMBER/11_Robots_Agriculture_Farming_Robotics12.jpg" alt="">
-                </div>
-                <div class="content_card p-2">
-                    <h1>Harvester</h1>
-                    <p>Price :1000</p>
-                </div>
-            </div>
-            <div class="flip-card-back">
-                <p>Service name : Reaper binding</p>
-                <p>Charges : 1000</p>
-                <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus voluptates adipisci asperiores quos vero. Placeat exercitationem fuga facilis consequuntur alias!</p>
-                <button  class="btn">Book Now</button>
-            </div>
-        </div>
-    </div>
-
-</div> -->

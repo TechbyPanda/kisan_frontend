@@ -10,6 +10,7 @@ import { StorageComponent } from './storage/storage.component';
 import { Registration2Component } from './registration2/registration2.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
+import { HistoryComponent} from './history/history.component';
 import {AuthGuard} from './auth.guard';
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'storage',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent,canActivate:[AuthGuard]},
+  {path:'history',component:HistoryComponent},
   {path:"**",component:ErrorhandlingComponent}
 ];
 
