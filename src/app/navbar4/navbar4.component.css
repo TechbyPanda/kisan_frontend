@@ -140,6 +140,22 @@ nav .nav_bar .logo a:before{
     pointer-events:auto;
 }
 
+
+.dropdown i{
+    font-size:17px;
+    font-weight: 400;
+    color:var(--pink);
+    padding:10px;
+    border-radius:50%;
+}
+
+.dropdown i:hover{
+    color:white;
+    background-color:var(--pink);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+
 .searchToggle.active i.search{
     opacity:0;
     pointer-events:none;
@@ -244,5 +260,9 @@ nav .nav_bar .logo a:before{
         display:block;
         margin-top: 20px;
         color:white;
+    }
+
+    .dropdown-item{
+        color:black;
     }
 }
