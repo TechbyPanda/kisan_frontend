@@ -1,22 +1,40 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <button mat-icon-button>
-            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
-        </button>
-        <h1>Angular Material</h1>
-    </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav #sidenav>
-        <mat-nav-list>
-            <a mat-list-item>Home</a>
-            <a mat-list-item>Home</a>
-            <a mat-list-item>Home</a>
-            <a mat-list-item>Home</a>
-            <a mat-list-item>Home</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="height:88vh;position:absolute;z-index:9999"></div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<nav>
+    <div class="nav_bar">
+        <i class="fa-solid fa-bars sidebarOpen" (click)="toggle2()" ></i>
+        <span class="logo"><a href="">Karma</a></span>
+
+        <div class="menu" [class.show]="close">
+            <div class="logo_toggle">
+                <span class="logo"><a href="" style="color:white">Karma</a></span>
+                <i class="fa-solid fa-x sidebar" (click)="toggle2()"></i>
+            </div>
+
+            <ul class="nav_links">
+                <li><a href="">CONTRACT FARMING</a></li>
+                <li><a href="">SERVICE</a></li>
+                <li><a href="">STORAGE</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div class="darkLight_searchbox">
+            <div class="dark-light">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun sun"></i>
+            </div>
+
+            <div class="searchbox">
+                <div class="searchToggle" [class.active]="appear" (click)="toggle()">
+                    <i class="fa-solid fa-x cancel"></i>
+                    <i class="fa-solid fa-magnifying-glass search"></i>
+                </div>
+                    <div class="search_field" [class.active]="appear" (click)="toggle()">
+                        <input type="text" placeholder="Search..." autocomplete="off">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</nav>

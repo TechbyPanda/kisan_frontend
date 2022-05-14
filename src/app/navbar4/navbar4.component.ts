@@ -12,4 +12,14 @@ export class Navbar4Component implements OnInit {
   ngOnInit(): void {
   }
 
+  appear=false;
+  close=false;
+  
+  toggle(){
+    this.appear=!this.appear;
+  }
+
+  toggle2(){
+    this.close=!this.close;
+  }
 }
