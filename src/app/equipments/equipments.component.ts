@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../service/admin.service';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+import { Service } from '../model/service';
 declare let Razorpay:any
 @Component({
   selector: 'app-equipments',
@@ -10,6 +11,8 @@ declare let Razorpay:any
 })
 export class EquipmentsComponent implements OnInit {
  tools:any;
+ service: Service = new Service("", "", "", "", false, false,"","");
+
   constructor(private adminService : AdminService,private userService: UserService,private router:Router) { }
 
   ngOnInit(): void {
@@ -62,5 +65,8 @@ export class EquipmentsComponent implements OnInit {
   }
  }
 
+//save//
+ save(){
 
+ }
 }
