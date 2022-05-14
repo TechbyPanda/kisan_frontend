@@ -5,18 +5,34 @@
 
         <div class="menu" [class.show]="close">
             <div class="logo_toggle">
-                <span class="logo"><a href="" style="color:white">Karma</a></span>
+                <span class="logo"><a href="" routerLink="" style="color:white">Karma</a></span>
                 <i class="fa-solid fa-x sidebar" (click)="toggle2()"></i>
             </div>
 
             <ul class="nav_links">
-                <li><a href="">CONTRACT FARMING</a></li>
-                <li><a href="">SERVICE</a></li>
-                <li><a href="">STORAGE</a></li>
+                <li class="link_items"><a routerLink="contract-farming" href="">CONTRACT FARMING</a></li>
+                <li class="link_items"><a routerLink="services" href="">SERVICE</a></li>
+                <li class="link_items"><a routerLink="storage" href="">STORAGE</a></li>
                 <li><a href="">ABOUT</a></li>
                 <li><a href="">CONTACT</a></li>
+                <li>
+                    <div class="dropdown">
+                            <i class="fa-solid fa-user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-up">Signup</a></li>
+                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-in">Signin</a></li>
+                            <li><a *ngIf='isLoggedIn()'class="dropdown-item" (click)='signOut()' routerLink="sign-in">Signout</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item"  routerLink="history">History</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
+
+        
+                
+                
+                
 
         <div class="darkLight_searchbox">
             <div class="dark-light">
