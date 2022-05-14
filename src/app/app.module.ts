@@ -39,7 +39,12 @@ import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
+
+import { ViewPageComponent } from './view-page/view-page.component';
+import { Homepage2Component } from './homepage2/homepage2.component';
+
 import { HistoryComponent } from './history/history.component';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +66,12 @@ import { HistoryComponent } from './history/history.component';
     FooterComponent,
     AbouUsComponent,
     ErrorhandlingComponent,
+
+    ViewPageComponent,
+    Homepage2Component,
+
     HistoryComponent,
+
   ],
 
   imports: [

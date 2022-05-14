@@ -9,13 +9,7 @@ import { StorageService } from '../service/storage.service';
 })
 export class StorageComponent implements OnInit {
 
-  constructor(public storageService: StorageService) {
-    this.storageService.getStorage()
-    .subscribe(data=>{
-      this.storage = data;
-      console.log(this.storage);
-    })
-  }
+  constructor(public storageService: StorageService) {}
   checks=[];
 
   ngOnInit(): void {
@@ -27,7 +21,14 @@ export class StorageComponent implements OnInit {
 
   storage:any;
 
+  items:any=[]
+
   fruits = [
+    {name:'apple',selected:false},
+    {name:'grape',selected:false},
+    {name:'orange',selected:false},
+    {name:'mango',selected:false},
+    {name:'strawberry',selected:false},
     {name:'apple',selected:false},
     {name:'grape',selected:false},
     {name:'orange',selected:false},
@@ -35,8 +36,18 @@ export class StorageComponent implements OnInit {
     {name:'strawberry',selected:false}
   ]
 
-  isSelected(){
-    console.log(this.fruits);
+  wiehgt(name:any,w:any){
+    var temp:any={
+      name:name,
+      weight:w
+    }
+    this.items.push(temp);
+  }
+
+  isSelected(name:any,weight:any){
+    console.log(name);
+    console.log(weight);
+    console.log(this.items);
   }
 
 }
