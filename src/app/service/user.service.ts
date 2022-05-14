@@ -6,10 +6,17 @@ import { ContractFarming } from '../model/contract-farming';
   providedIn: 'root'
 })
 export class UserService {
+
+  sign_Up = 'http://localhost:3000/user/signup';
+  signIn = 'http://localhost:3000/user/signin';
+  
+  contractFarming = 'http://localhost:3000/contract/contract-farming';
+
   sign_Up = 'http://localhost:3000/customer/signup';
   signIn = 'http://localhost:3000/customer/signin';
   orderApi = 'http://localhost:3000/order/pay';
   contractFarming = 'http://localhost:3000/user/contract-farming';
+
   constructor(private http: HttpClient) { }
 
   User_Signup(user:User){
@@ -18,8 +25,8 @@ export class UserService {
   sign_In(user:User){
     return this.http.post<any>(this.signIn,user);
   }
-  contract_Farming(contractFarming:ContractFarming){
-    return this.http.post<any>(this.contractFarming,contractFarming);
+  contract_Farming(formData:FormData){
+    return this.http.post<any>(this.contractFarming,formData);
   }
   public checkToken():boolean{
     return !!sessionStorage.getItem('token');
