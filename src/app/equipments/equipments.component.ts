@@ -3,8 +3,11 @@ import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { AdminService } from '../service/admin.service';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+
 import { ServiceDialogComponent } from '../service-dialog/service-dialog.component';
 
+
+import { Service } from '../model/service';
 
 declare let Razorpay:any
 @Component({
@@ -13,11 +16,18 @@ declare let Razorpay:any
   styleUrls: ['./equipments.component.css']
 })
 export class EquipmentsComponent implements OnInit {
+
   tools:any;
   
 
 
   constructor(public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
+
+ tools:any;
+ service: Service = new Service("", "", "", "", false, false,"","");
+
+  constructor(private adminService : AdminService,private userService: UserService,private router:Router) { }
+
 
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
@@ -77,4 +87,10 @@ onPay(amount:any){
   }
 }
 
+//save//
+ save(){
+
+
+ }
+}
 

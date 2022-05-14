@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'book-service', component:EquipementsDetailsComponent},
   {path:'storage',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
-  {path:'equipment-details/:id',component:EquipementsDetailsComponent,canActivate:[AuthGuard]},
+  {path:'equipment-details/:id',component:EquipementsDetailsComponent},
   {path:'history',component:HistoryComponent},
   {path:"**",component:ErrorhandlingComponent}
 ];
