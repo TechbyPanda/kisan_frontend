@@ -1,5 +1,14 @@
 export class ContractFarming {
-    constructor(public name:string, public mobile:string, public description:string,public area:string,public duration:string ){}
+    constructor(
+        public name:any,
+         public mobile:any,
+         public email:any,
+         public image:any,
+          public description:any,
+          public area:any,
+          public address:any,
+          public start_date:any,
+          public end_date:any ){}
 
 }
 

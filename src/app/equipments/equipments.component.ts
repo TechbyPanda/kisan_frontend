@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../service/admin.service';
+import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+declare let Razorpay:any
 @Component({
   selector: 'app-equipments',
   templateUrl: './equipments.component.html',
@@ -8,20 +10,57 @@ import { Router } from '@angular/router';
 })
 export class EquipmentsComponent implements OnInit {
  tools:any;
-  constructor(private adminService : AdminService,private router:Router) { }
+  constructor(private adminService : AdminService,private userService: UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
-    
       this.tools = data
-
-
     })
   }
    service_item(id:any){
-     console.log("call");
-     alert("data");
         this.router.navigate(['equipment-details',id]);
    }
+   isLoggedIn():boolean{
+    return this.userService.checkToken();
+  }
+   title = 'payment';
+ onPay(amount:any){
+  if(this.isLoggedIn()){
+   this.userService.createOrder(amount).subscribe(data=>{
+     console.log(data);
+     alert(data);
+     var options = {
+      "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
+      "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "Acme Corp",
+      "description": "Test Transaction",
+      "image": "https://example.com/your_logo",
+      "order_id": data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "http://localhost:3000/order/payment-status",
+      "prefill": {
+          "name": "Devika Kushwah",
+          "email": "devikakushwah29@gmail.com",
+          "contact": "8770784399"
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+          "color": "#3399cc"
+      }
+  };
+  alert("dear"+options);
+  var rzp1 = new Razorpay(options);
+
+    rzp1.open();
+   })
+  }
+  else{
+    alert("First login required");
+    this.router.navigate(['signIn']);
+  }
+ }
+
 
 }
