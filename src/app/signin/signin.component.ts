@@ -24,14 +24,13 @@ export class SigninComponent implements OnInit {
 
     signIn(){
         this.userService.sign_In(this.user).subscribe(data=>{
-          // alert("User signed in successfully");
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);
             
 
           alert(data);
             sessionStorage.setItem("id",data.user._id); 
-            this.router.navigate(['sign-in']);
+            this.router.navigate(['']);
         },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){
@@ -49,6 +48,7 @@ export class SigninComponent implements OnInit {
   loginInWithGoogle(): void {
     this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.notifyService.success("Sing In Successfully.. !!")
+    this.router.navigate(['']);
   }
 
   refreshToken(): void {
