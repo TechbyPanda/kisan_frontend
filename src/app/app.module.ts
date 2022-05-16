@@ -49,6 +49,8 @@ import { ServiceDialogComponent } from './service-dialog/service-dialog.componen
 import { ConfirmComponent } from './confirm/confirm.component';
 
 import { StorageFormComponent } from './storage-form/storage-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MyStorageComponent } from './my-storage/my-storage.component';
 
 
 
@@ -82,6 +84,7 @@ import { StorageFormComponent } from './storage-form/storage-form.component';
 
       ConfirmComponent,
         StorageFormComponent,
+        MyStorageComponent,
 
 
   ],

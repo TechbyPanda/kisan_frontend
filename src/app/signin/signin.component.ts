@@ -28,7 +28,8 @@ export class SigninComponent implements OnInit {
             sessionStorage.setItem("token",data.token);
             
 
-          alert(data);
+            console.log(data);
+            console.log("hellow admin" + this.socialUser);
             sessionStorage.setItem("id",data.user._id); 
             this.router.navigate(['']);
         },err=>{

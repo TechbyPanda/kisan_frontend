@@ -14,6 +14,7 @@ export class StorageComponent implements OnInit {
     this.storageService.getStorage().subscribe(data => {
       this.storage=data;
       console.log(this.storage)
+      console.log(this.storage.id)
     })
   }
   checks=[];
@@ -28,27 +29,33 @@ export class StorageComponent implements OnInit {
   storage:any;
 
   items:any=[]
-  single_items:any;
+  single_items:any='';
+  total:any=0 ;
+  mobile:any;
+  duration:any = '7';
+  // fruits = [
+  //   {name:'apple',selected:false},
+  //   {name:'grape',selected:false},
+  //   {name:'orange',selected:false},
+  //   {name:'mango',selected:false},
+  //   {name:'strawberry',selected:false},
+  //   {name:'apple',selected:false},
+  //   {name:'grape',selected:false},
+  //   {name:'orange',selected:false},
+  //   {name:'mango',selected:false},
+  //   {name:'strawberry',selected:false}
+  // ]
 
-  fruits = [
-    {name:'apple',selected:false},
-    {name:'grape',selected:false},
-    {name:'orange',selected:false},
-    {name:'mango',selected:false},
-    {name:'strawberry',selected:false},
-    {name:'apple',selected:false},
-    {name:'grape',selected:false},
-    {name:'orange',selected:false},
-    {name:'mango',selected:false},
-    {name:'strawberry',selected:false}
-  ]
-
-  wiehgt(name:any,w:any){
+  wiehgt(name:any,w:any,charges:any,kg:any){
     var temp:any={
       name:name,
-      weight:w
+      weight:w,
+      amount:charges,
+      kg:kg
     }
     this.items.push(temp);
+    console.log(this.items);
+    this.calculate();
   }
 
   isSelected(name:any,weight:any){
@@ -65,6 +72,30 @@ export class StorageComponent implements OnInit {
 
   setdata(items:any){
     this.single_items=items;
+    console.log(items);
+  }
+
+  calculate(){
+    var calc:number;
+    var total=0;
+    for(let items of this.items){
+      console.log(items);
+      var temp = parseInt(items.weight) /parseInt(items.kg);
+      console.log(temp)
+      calc = temp*1 * items.amount;
+      console.log("amount" +calc);
+      this.total += calc*1;
+    }
+    console.log(this.total);
+  }
+
+  book(){
+    console.log(this.storage.id);
+    this.storageService.bookStorage(this.single_items._id,this.total,this.items,this.duration)
+    .subscribe(data =>{
+      alert("booked successfully");
+      console.log(data);
+    });
   }
 
 }

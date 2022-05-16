@@ -23,12 +23,6 @@ export class EquipmentsComponent implements OnInit {
 
   service: Service = new Service("", "", "", "", false, false,"","");
 
-
-
-
- 
- service: Service = new Service("", "", "", "", false, false,"","");
-
   tid:any;
   price:any;
 
@@ -38,8 +32,8 @@ export class EquipmentsComponent implements OnInit {
     })
   }
   setData(id:any,price:any){
-     this.tid = id;
-     this.price = price;
+      this.tid = id;
+      this.price = price;
   }
   service_item(id:any){
         this.router.navigate(['equipment-details',id]);
