@@ -61,26 +61,37 @@
 .cards2{
     position: relative;
     height:350px;
-    margin:100px auto;
+    margin:50px 0px;
+    /* margin:200px auto; */
     background:#fff;
-    box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7); */
 }
 
-
+.cards2:hover{
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+}
 
 .left2_img{
     position:absolute;
-    box-shadow: 8px 8px 50px 0px rgba(0,0,0,0.7);
+    box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.2);
     width:90%;
     height:90%;
     left:50%;
-    top:-30px;
+    /* top:-30px; */
+    top:5%;
     transform:translateX(-50%);
+    /* transform:translateY(-50%); */
 }
 
 .cards2 h1{
     font-size:28px;
     font-weight:bold;
+}
+
+.cards2:hover .left2_img{
+    top:-30px;
+    box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
 }
 
 .cards2 .book_now{
@@ -94,14 +105,14 @@
 }
 
 .cards2 .view_more{
-    background-color:white;
+    background-color:var(--orange);
     margin-right:10px;
     border:none;
     padding:10px;
     font-size:20px;
-    color: var(--pink);
+    color: white;
     border-radius:10px;
-    border:1px solid var(--pink);
+    border:1px solid var(--orange);
 }
 
 .cards2 .book_now:hover,
@@ -118,6 +129,7 @@
     width:100%;
     height:40px;
     text-overflow: ellipsis;
+    
     overflow:hidden;
 }
 
@@ -137,19 +149,21 @@
 }
 
 .icons{
-    position: absolute;
-    bottom: -5%;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 20px;
 }
 
 .icons i{
     margin-right:30px;
     font-size:28px;
     background-color:white;
-    color:green;
+    color:var(--pink);
     padding:10px;
     border-radius:50%;
+}
+
+.icons i:hover{
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5)
 }
 
 @media screen and (max-width: 768px){

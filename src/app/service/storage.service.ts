@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class StorageService {
 
-  takeapi = "http://localhost:3000/substore/view";
+  takeapi = "http://localhost:3000/storage/view-storage";
 
   constructor(private http:HttpClient) { }
 

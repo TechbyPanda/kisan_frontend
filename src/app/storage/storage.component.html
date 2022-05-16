@@ -2,7 +2,7 @@
     <h1>Storage</h1>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio necessitatibus, asperiores impedit ipsam rem repellat sit cum culpa voluptatum dolore?</p>
 </div>
-<div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -28,31 +28,57 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="container">
-    <div class="row cards2">
+    <div class="row cards2" *ngFor="let st of storage">
         <div class="col-lg-6 col-md-6 col-sm-12 left2">
-            <img src="../../assets/img/c2 (2).jpg" alt="" class="left2_img">
-            <div class="icons">
-                <i class="fa-solid fa-comment"></i>
-                <i class="fas fa-share-alt"></i>
-            </div>
+            <img src="{{st.image}}" alt="" class="left2_img">
+            
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 p-2">
-            <h1>Cold Storage</h1>
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="book_now">Book Now</button>
+            <h1>{{st.storageId.name}}</h1>
+            <button  class="book_now" (click)="setdata(items)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Book Now</button>
             <button class="view_more">View More</button>
-            <h3 ><span>Apple : 100rs/50kg, Chiku : 100rs/50kg, Mango : 100rs/50kg</span></h3>
-            <p class="description">Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis modi saepe quisquam nulla repellat officia necessitatibus, odit facilis veritatis recusandae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, deserunt?</p>
+            <h3 ><span *ngFor="let item of st.items">{{item.name}} : {{item.charges}} </span></h3>
+            <p class="description">Description : {{st.storage_description}}</p>
             <div class="reviews">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
+            <div class="icons">
+                <i class="fa-solid fa-comment"></i>
+                <i class="fas fa-share-alt"></i>
+            </div>
         </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <div class="description">
+                Your items weight be calculated in kilo gram
+            </div>
+            <div class="items" appItems>
+                <mat-checkbox [(ngModel)]="fruit.selected" #name *ngFor="let fruit of single_items"    class="example-margin" >{{fruit.name}}</mat-checkbox>
+            </div>
+            <div class="weight" *ngFor="let fruit of single_items">
+                <label for="" *ngIf="fruit.selected">
+                    {{fruit.name}} : <input type="number" #weight *ngIf="fruit.selected" (change)="wiehgt(fruit.name,weight.value)" width="fit-content"> 
+                </label>
+            </div>
+        </div>
+
+        <input type="date">
+
     </div>
 </div>
 

@@ -22,6 +22,7 @@ export class Registration2Component implements OnInit {
   }
   user:User= new User("","","","","","");
   hide=true;
+  hide2=true;
   public register(){
     alert("data");
     this.userService.User_Signup(this.user).subscribe(data=>{

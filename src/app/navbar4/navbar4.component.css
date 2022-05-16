@@ -120,7 +120,7 @@ nav .nav_bar .logo a:before{
 .dark-light i,
 .searchToggle i{
     position:absolute;
-    color:var(--orange);
+    color:var(--pink);
     font-size:22px;
     cursor:pointer;
 }

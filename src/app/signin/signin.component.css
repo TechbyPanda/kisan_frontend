@@ -4,29 +4,35 @@
     box-sizing: border-box;
     outline: none;
   }
+
+  ::ng-deep :root{
+    --orange:#f1b814;
+    --pink:#bd1e51;
+    --purple:#490b3d;
+  }
   
   body{
-    height: 100vh;
+    height: 90vh;
     background: #e1edf9;
   }
   
-  .wrapper{
-    max-width: 450px;
-    width: 100%;
+  /* .wrapper{
+    max-width: 300px;
+    width: 300px;
     margin: 30px auto 0;
     padding: 10px;
   }
   
   .wrapper .form_container{
-    border-top:5px solid #72A603;
+    border-top:5px solid var(--pink);
     background: #fff;
     padding: 30px;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
     border-radius: 3px;
-  }
-  .heading{
+  } */
+  /* .heading{
     text-align: center;
-    color:#72A603 ;
+    color:var(--pink) ;
     margin-bottom: 35px;
     padding: 10px;
   }
@@ -48,14 +54,14 @@
   .form_wrap.fullname .form_item,
   .form_wrap.select_box .form_item{
     width: 50%;
-  }
+  } */
 /*   
   .form_wrap.fullname .form_item:first-child,
   .form_wrap.select_box .form_item:first-child{
     margin-right: 4%;
   }
    */
-  .wrapper .form_container .form_item label{
+  /* .wrapper .form_container .form_item label{
     display: block;
     margin-bottom: 5px;
     font-size:20px;
@@ -90,7 +96,7 @@
   
   .sigin_btn:hover{
     box-shadow:2px 2px 12px rgba(0,0,0,0.5);
-  }
+  } */
 
 
 
@@ -106,7 +112,7 @@
   }
 
   .login_card{
-    max-width: 450px;
+    max-width: 350px;
     width: 100%;
     padding:10px;
   }
@@ -130,27 +136,32 @@
 
   .login_card h1{
     text-align:center;
-    color:#72A603;
+    color:var(--pink);
     font-size:28px;
     font-weight:bold;
     text-transform:uppercase;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   }
 
-  mat-form-field{
+  /* mat-form-field{
     font-size:20px;
-  }
-
-  .login_card button{
+  } */
+  .login_card .google,
+  .login_card .signin{
     padding:10px;
     border-radius:10px;
     border:none;
     font-size:24px;
-    width:fit-content;
-    background-color: #72A603;
-    color: #FEFFED;
+    margin:20px 0;
+    background-color: var(--pink);
+    color: white;
   }
 
-  .login_card button:hover{
+  .login_card .signin:hover{
     box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
   }
+
+  .separate{
+    display: inline-block;
+  }
+

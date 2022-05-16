@@ -23,10 +23,9 @@ export class EquipmentsComponent implements OnInit {
 
   constructor(public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
- tools:any;
- service: Service = new Service("", "", "", "", false, false,"","");
+  service: Service = new Service("", "", "", "", false, false,"","");
 
-  constructor(private adminService : AdminService,private userService: UserService,private router:Router) { }
+
 
 
   ngOnInit(): void {
@@ -87,10 +86,6 @@ onPay(amount:any){
   }
 }
 
-//save//
- save(){
 
 
- }
-}
 
