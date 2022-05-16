@@ -39,7 +39,6 @@ import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
-import {MatDialogModule} from '@angular/material/dialog';
 
 import { ViewPageComponent } from './view-page/view-page.component';
 import { Homepage2Component } from './homepage2/homepage2.component';
@@ -88,6 +87,7 @@ import { StorageFormComponent } from './storage-form/storage-form.component';
   ],
 
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
