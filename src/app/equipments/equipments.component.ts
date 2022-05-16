@@ -20,11 +20,18 @@ export class EquipmentsComponent implements OnInit {
 
   constructor(private dataService:ServicesService,public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
+
+  service: Service = new Service("", "", "", "", false, false,"","");
+
+
+
+
  
  service: Service = new Service("", "", "", "", false, false,"","");
 
   tid:any;
   price:any;
+
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
       this.tools = data
@@ -92,6 +99,7 @@ onPay(amount:any){
   //   };
 
 
+
   //   this.dialog.open(ServiceDialogComponent,dialogConfig);
   // }
 
@@ -117,4 +125,5 @@ onPay(amount:any){
     )
   }
 }
+
 

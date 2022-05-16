@@ -28,9 +28,16 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
+                <div class="icons">
+                    <i class="fa-solid fa-comment"></i>
+                    <i class="fas fa-share-alt"></i>
+                </div>
             </div>
     </div>
 
+
+
+    </div>
 
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -68,6 +75,57 @@
     <button class="book" (click)="save()">Book Service</button>
     <button class="cancel">Cancel</button>
     
-</div>
+        </div>
+
+
+
+
+
+    <!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="border:none">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Address</mat-label>
+                        <input matInput placeholder="Placeholder">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Mobile no</mat-label>
+                        <input matInput placeholder="Placeholder">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="datebox">
+                        <mat-label>Enter a duration date</mat-label>
+                        <mat-date-range-input [rangePicker]="picker">
+                            <input matStartDate placeholder="Start date">
+                            <input matEndDate placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+
+
+                </div>
+                <div class="modal-footer" style="border:none">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
       </div>
     </div>
+

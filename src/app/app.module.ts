@@ -16,7 +16,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { SigninComponent } from './signin/signin.component';
@@ -49,6 +48,7 @@ import { HistoryComponent } from './history/history.component';
 import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
 
 import { ConfirmComponent } from './confirm/confirm.component';
+import { StorageFormComponent } from './storage-form/storage-form.component';
 
 
 
@@ -81,12 +81,13 @@ import { ConfirmComponent } from './confirm/confirm.component';
       ServiceDialogComponent,
 
       ConfirmComponent,
+        StorageFormComponent,
 
 
   ],
 
   imports: [
-  
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../service/storage.service';
-
+import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
+import { StorageFormComponent } from '../storage-form/storage-form.component';
 
 @Component({
   selector: 'app-storage',
@@ -9,7 +10,12 @@ import { StorageService } from '../service/storage.service';
 })
 export class StorageComponent implements OnInit {
 
-  constructor(public storageService: StorageService) {}
+  constructor(public dialog:MatDialog,public storageService: StorageService) {
+    this.storageService.getStorage().subscribe(data => {
+      this.storage=data;
+      console.log(this.storage)
+    })
+  }
   checks=[];
 
   ngOnInit(): void {
@@ -22,6 +28,7 @@ export class StorageComponent implements OnInit {
   storage:any;
 
   items:any=[]
+  single_items:any;
 
   fruits = [
     {name:'apple',selected:false},
@@ -48,6 +55,16 @@ export class StorageComponent implements OnInit {
     console.log(name);
     console.log(weight);
     console.log(this.items);
+  }
+
+  open_dialog(){
+    this.dialog.open(StorageFormComponent,{
+      disableClose:false
+    });
+  }
+
+  setdata(items:any){
+    this.single_items=items;
   }
 
 }

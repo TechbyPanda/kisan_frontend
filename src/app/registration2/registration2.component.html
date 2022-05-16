@@ -9,22 +9,22 @@
         <div class="col-md-6 col-sm-12">
             <div class=" card login_card  border-0">
             
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="legacy">
                 <mat-label>Enter your name</mat-label>
                 <input [(ngModel)]="user.name" matInput>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="legacy">
                 <mat-label>Enter your phone no.</mat-label>
                 <input [(ngModel)]="user.contact" matInput>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="legacy">
                 <mat-label>Enter your email</mat-label>
                 <input [(ngModel)]="user.email" matInput>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="legacy">
                 <mat-label>Enter your occupation</mat-label>
                 <input [(ngModel)]="user.occupation" matInput>
             </mat-form-field>
@@ -35,30 +35,30 @@
         <div class="col-md-6 col-sm-12">
 
             <div class=" card login_card  border-0">
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="legacy">
                     <mat-label>Enter your address</mat-label>
                     <input [(ngModel)]="user.address" matInput>
                 </mat-form-field>
     
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="legacy">
                     <mat-label>Enter your password</mat-label>
                     <input [(ngModel)]="user.password" matInput [type]="hide ? 'password' : 'text'">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon style="margin-right: 10px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-icon style="margin-right: 10px;font-size:21px">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
     
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="legacy">
                     <mat-label>Confirm your password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon style="margin-right: 10px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-icon style="margin-right: 10px;font-size:21px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
     
                 <mat-checkbox class="example-margin">I agree with terms and conditions</mat-checkbox>
     
-                <button (click)="register()"  class="mt-5">Register</button>
+                <button (click)="register()"  class="mt-5 register">Register</button>
             </div>
             
         </div>
