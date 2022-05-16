@@ -1,3 +1,9 @@
+::ng-deep :root{
+    --orange:#f1b814;
+    --pink:#bd1e51;
+    --purple:#490b3d;
+}
+
 .banner{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/cold_storage3.jpg');
     width:100%;
@@ -21,60 +27,10 @@
     text-align: center;
 }
 
-/* .storage{
-    border-radius:10px;
-    margin:auto;
-    width:98%;
-    overflow:hidden;
-    position: relative;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
-}
-
-.storage img{
-    width:100%;
-    height:350px;
-}
-
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    color:#FEFFED;
-    background-color:#72A603;
-    clip-path: ellipse(38px 34px at 98% 5%);
-    transition:all 0.5s ease-in-out;
-    padding:10px;
-    font-size:20px;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-}
-
-
-
-.overlay i{
-    float: right;
-    font-size:24px;
-    color:#FEFFED;
-    opacity:1;
-    transition: all 0.5s linear;
-}
-
-.storage:hover i{
-    opacity:0;
-}
-
-.storage:hover .overlay{
-    clip-path: ellipse(610px 410px at 90% 5%);
-} */
-
-.modal-header{
-    box-shadow:0px 5px 8px rgba(0,0,0,0.5);
-    background-color:#72A603;
-}
-
 button{
     padding:10px;
     border-radius: 10px;
-    color:#72A603;
+    color:var(--pink);
     background-color:#FEFFED;
     font-size:20px;
 }
@@ -85,13 +41,13 @@ button:hover{
 
 .modal-header h5{
     font-size:28px;
-    color:#FEFFED;
+    color:white;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .items{
     width:100%;
-    border:1px solid #72A603;
+    border:1px solid var(--pink);
     border-radius: 10px;
 }
 
@@ -109,17 +65,24 @@ mat-checkbox{
     margin:50px 0px;
     /* margin:200px auto; */
     background:#fff;
-    box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 7px 7px 50px 0px rgba(0,0,0,0.7); */
+}
+
+.cards2:hover{
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.5);
 }
 
 .left2_img{
     position:absolute;
-    box-shadow: 8px 8px 50px 0px rgba(0,0,0,0.7);
+    box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.2);
     width:90%;
     height:90%;
     left:50%;
-    top:-30px;
+    /* top:-30px; */
+    top:5%;
     transform:translateX(-50%);
+    /* transform:translateY(-50%); */
 }
 
 .cards2 h1{
@@ -127,25 +90,30 @@ mat-checkbox{
     font-weight:bold;
 }
 
+.cards2:hover .left2_img{
+    top:-30px;
+    box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
+}
+
 .cards2 .book_now{
-    background-color: #72A603;
+    background-color: var(--pink);
     margin-right:10px;
     border:none;
     padding:10px;
     font-size:20px;
-    color:#FEFFED;
+    color:white;
     border-radius:10px;
 }
 
 .cards2 .view_more{
-    background-color:#FEFFED;
+    background-color:var(--orange);
     margin-right:10px;
     border:none;
     padding:10px;
     font-size:20px;
-    color: #72A603;
+    color: white;
     border-radius:10px;
-    border:1px solid #72A603;
+    border:1px solid var(--orange);
 }
 
 .cards2 .book_now:hover,
@@ -162,6 +130,7 @@ mat-checkbox{
     width:100%;
     height:40px;
     text-overflow: ellipsis;
+    
     overflow:hidden;
 }
 
@@ -173,7 +142,7 @@ mat-checkbox{
 .reviews{
     font-size: 20px;
     margin-top: 20px;
-    color: yellow;
+    color: var(--orange);
 }
 
 .reviews i{
@@ -181,18 +150,21 @@ mat-checkbox{
 }
 
 .icons{
-    position: absolute;
-    bottom: -7%;
-    left: 40%;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .icons i{
     margin-right:30px;
     font-size:28px;
     background-color:white;
-    color:green;
+    color:var(--pink);
     padding:10px;
     border-radius:50%;
+}
+
+.icons i:hover{
+    box-shadow:2px 2px 5px rgba(0,0,0,0.5)
 }
 
 @media screen and (max-width: 768px){
