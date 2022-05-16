@@ -39,9 +39,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 p-2">
             <h1>{{st.storageId.name}}</h1>
-            <button  class="book_now" (click)="setdata(items)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Book Now</button>
+            <button  class="book_now" (click)="setdata(st)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Book Now</button>
             <button class="view_more">View More</button>
-            <h3 ><span *ngFor="let item of st.items">{{item.name}} : {{item.charges}} </span></h3>
+            <h3 ><span *ngFor="let item of st.items">{{item.name}} </span></h3>
             <p class="description">Description : {{st.storage_description}}</p>
             <div class="reviews">
                 <i class="fas fa-star"></i>
@@ -67,21 +67,30 @@
             <div class="description">
                 Your items weight be calculated in kilo gram
             </div>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Enter your Mobile no.</mat-label>
+                <input [(ngModel)]="mobile" matInput>
+            </mat-form-field>
+
+            <h4>Total Amout: {{total}}</h4>
             <div class="items" appItems>
-                <mat-checkbox [(ngModel)]="fruit.selected" #name *ngFor="let fruit of single_items"    class="example-margin" >{{fruit.name}}</mat-checkbox>
+                <mat-checkbox [(ngModel)]="fruit.selected" #name *ngFor="let fruit of single_items.items"    class="example-margin" >{{fruit.name}}</mat-checkbox>
             </div>
-            <div class="weight" *ngFor="let fruit of single_items">
+            <div class="weight" *ngFor="let fruit of single_items.items">
                 <label for="" *ngIf="fruit.selected">
-                    {{fruit.name}} : <input type="number" #weight *ngIf="fruit.selected" (change)="wiehgt(fruit.name,weight.value)" width="fit-content"> 
+                    {{fruit.name}} : <input type="number" #weight *ngIf="fruit.selected" (change)="wiehgt(fruit.name,weight.value,fruit.charges,fruit.weight)" width="fit-content"> 
                 </label>
             </div>
         </div>
 
         <input type="date">
 
+        <button (click)="book()" mat-raised-button>Book Now</button>
+
     </div>
 </div>
 
-<app-footer></app-footer>
+
 
 

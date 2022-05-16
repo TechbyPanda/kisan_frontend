@@ -31,7 +31,7 @@ button{
     padding:10px;
     border-radius: 10px;
     color:var(--pink);
-    background-color:#FEFFED;
+    background-color:white;
     font-size:20px;
 }
 
@@ -182,12 +182,8 @@ mat-checkbox{
 }
 
 .weight input{
-    margin:20px;
-    width: 100px;
-    border:none;
-    border-bottom:1px solid #72A603;
+    margin:10px;
+    border:1px solid var(--purple);
 }
 
-.weight input:focus{
-    border:none;
-}
+
