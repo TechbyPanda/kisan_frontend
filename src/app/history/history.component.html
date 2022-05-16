@@ -1,1 +1,33 @@
-<p>history works!</p>
+
+
+ <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sno.</th>
+        <th scope="col">Tool Name</th>
+        
+        <th scope="col">Image</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Total</th>
+        <th scope="col">Charges</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Address</th>  
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of historyData index as i">
+        <!-- <th scope="row">1</th> -->
+            <td>{{i}}</td>
+            <!-- <tr><img src="{{items.tool_id.images}}" width="50px" height="50px"> -->
+             <td>Name:{{item.orderList[i].tool_id.name}}</td>
+             <td><img src="{{item.orderList[i].tool_id.images}}" width="50px" height="50px"></td>
+            <td>{{item.orderList[i].BookingDate}}</td>
+            <td>{{item.total}}</td>
+            <td>{{item.orderList[i].tool_id.charges}}</td>
+            <td>{{item.mobile}}</td>
+        <td>{{item.address}}</td>
+        
+      </tr>
+    <hr>
+    </tbody>
+  </table>
