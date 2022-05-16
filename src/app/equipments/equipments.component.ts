@@ -83,7 +83,7 @@ onPay(amount:any){
   }
   else{
     alert("First login required");
-    this.router.navigate(['signIn']);
+    this.router.navigate(['sign-in']);
     }
   }
   

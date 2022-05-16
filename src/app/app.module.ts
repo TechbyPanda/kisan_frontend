@@ -39,7 +39,6 @@ import { TokenService } from './token.service';
 import { FooterComponent } from './footer/footer.component';
 import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
-
 import { ViewPageComponent } from './view-page/view-page.component';
 import { Homepage2Component } from './homepage2/homepage2.component';
 
@@ -48,6 +47,7 @@ import { HistoryComponent } from './history/history.component';
 import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
 
 import { ConfirmComponent } from './confirm/confirm.component';
+
 import { StorageFormComponent } from './storage-form/storage-form.component';
 
 
@@ -107,6 +107,7 @@ import { StorageFormComponent } from './storage-form/storage-form.component';
     MatListModule,
     SocialLoginModule,
     MatDialogModule,
+    NgxPaginationModule,
     ToastrModule.forRoot()
   ],
   
