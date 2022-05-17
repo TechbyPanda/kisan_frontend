@@ -41,7 +41,7 @@ import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 import { ViewPageComponent } from './view-page/view-page.component';
 import { Homepage2Component } from './homepage2/homepage2.component';
-
+import {MatTableModule} from '@angular/material/table';
 import { HistoryComponent } from './history/history.component';
 
 import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
@@ -53,6 +53,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MyStorageComponent } from './my-storage/my-storage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ScratchComponent } from './scratch/scratch.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -114,10 +115,11 @@ import { ScratchComponent } from './scratch/scratch.component';
     MatListModule,
     SocialLoginModule,
     MatDialogModule,
+    MatTableModule,
+    CarouselModule ,
     ToastrModule.forRoot()
   ],
   
-
   providers: [
   UserService,{
     provide:HTTP_INTERCEPTORS,

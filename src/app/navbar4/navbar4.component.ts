@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ConfirmComponent } from '../confirm/confirm.component';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -25,15 +26,7 @@ export class Navbar4Component implements OnInit {
     this.appear=!this.appear;
   }
   openDialog(): void {
-    const dialogRef = this.dialog.open(Navbar4Component, {
-      width: '250px',
-      // data: {name: this.name, animal: this.animal},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
-    });
+    this.dialog.open(ConfirmComponent);
   }
 
 

@@ -17,8 +17,8 @@
                 
             <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
                 <h1>{{item.name}}</h1>
-                <button class="book_now" (click)="setData(item._id,item.charges)"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >Book Now</button>
-                <button class="view_more" (click)="service_item(item._id)">View More</button>
+                <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges)"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >Book Now</button>
+                <button mat-raised-button class="view_more" (click)="service_item(item._id)">View More</button>
                 
                 <p class="description">Description : {{item.description}}</p>
                 <h4>Price : {{item.charges}}</h4>
@@ -40,7 +40,7 @@
     </div>
 
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
         <h3 class="offcanvas-title" id="offcanvasRightLabel">Book service</h3>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

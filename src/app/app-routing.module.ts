@@ -13,6 +13,7 @@ import { ErrorhandlingComponent } from './errorhandling/errorhandling.component'
 import { HistoryComponent} from './history/history.component';
 import {AuthGuard} from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { MyStorageComponent } from './my-storage/my-storage.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,9 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},
   {path:'history',component:HistoryComponent},
-  {path:"**",component:ErrorhandlingComponent}
+  {path:"mystorage",component:MyStorageComponent},
+  {path:"**",component:ErrorhandlingComponent},
+ 
 ];
 
 @NgModule({
