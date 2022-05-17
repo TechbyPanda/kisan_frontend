@@ -54,6 +54,30 @@
     100%{transform:translateY(0px)}
 } */
 
+button{
+    padding:5px;
+    border-radius: 10px;
+    color:var(--pink);
+    background-color:white;
+    font-size:20px;
+}
+
+/* .modal-header h5{
+    font-size:28px;
+    color:white;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+} */
+
+.items{
+    width:100%;
+    border:1px solid var(--pink);
+    border-radius: 10px;
+}
+
+mat-checkbox{
+    margin:10px;
+}
+
 .left2{
     position:relative;
 }
@@ -98,7 +122,7 @@
     background-color: var(--pink);
     margin-right:10px;
     border:none;
-    padding:10px;
+    padding:5px;
     font-size:20px;
     color:white;
     border-radius:10px;
@@ -108,16 +132,11 @@
     background-color:var(--orange);
     margin-right:10px;
     border:none;
-    padding:10px;
+    padding:5px;
     font-size:20px;
     color: white;
     border-radius:10px;
     border:1px solid var(--orange);
-}
-
-.cards2 .book_now:hover,
-.cards2 .view_more:hover{
-    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
 }
 
 .cards2 h3{
@@ -174,4 +193,17 @@
         height:50%;
     }
     
+}
+
+.weight{
+    display: inline-block;
+}
+
+.weight input{
+    margin:10px;
+    border:1px solid var(--purple);
+}
+
+button:hover{
+    box-shadow: 5px 5px 2px -4px rgba(0, 0, 0, 0.2),5px 4px 5px 0px rgba(0, 0, 0, 0.14),5px 3px 5px 5px rgba(0, 0, 0, 0.12);
 }

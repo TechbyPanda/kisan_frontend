@@ -41,7 +41,7 @@ import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 import { ViewPageComponent } from './view-page/view-page.component';
 import { Homepage2Component } from './homepage2/homepage2.component';
-
+import {MatTableModule} from '@angular/material/table';
 import { HistoryComponent } from './history/history.component';
 
 import { ServiceDialogComponent } from './service-dialog/service-dialog.component';
@@ -51,6 +51,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { StorageFormComponent } from './storage-form/storage-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyStorageComponent } from './my-storage/my-storage.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -110,11 +111,11 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
     MatListModule,
     SocialLoginModule,
     MatDialogModule,
-    NgxPaginationModule,
+    MatTableModule,
+    CarouselModule ,
     ToastrModule.forRoot()
   ],
   
-
   providers: [
   UserService,{
     provide:HTTP_INTERCEPTORS,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from '../service/storage.service'
 
 @Component({
   selector: 'app-my-storage',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyStorageComponent implements OnInit {
 
-  constructor() { }
+  products:any='';
+
+  constructor(private storage: StorageService) {
+    this.storage.getBookedStorage()
+    .subscribe(data=>{
+      this.products = data;
+      console.log(data);
+    })
+  }
 
   ngOnInit(): void {
   }
+
 
 }
