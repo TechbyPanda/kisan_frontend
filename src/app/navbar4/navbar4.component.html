@@ -13,8 +13,6 @@
                 <li class="link_items"><a routerLink="contract-farming" href="">CONTRACT FARMING</a></li>
                 <li class="link_items"><a routerLink="services" href="">SERVICE</a></li>
                 <li class="link_items"><a routerLink="storage" href="">STORAGE</a></li>
-                <li class="link_items"><a href="">ABOUT</a></li>
-                <li class="link_items"><a href="">CONTACT</a></li>
                 <li>
                     <div class="dropdown">
                             <i class="fa-solid fa-user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
@@ -22,7 +20,7 @@
                             <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-up">Signup</a></li>
                             <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-in">Signin</a></li>
                             <li><a *ngIf='isLoggedIn()'class="dropdown-item" (click)="openDialog()" >Signout</a></li>
-                            <li><a *ngIf='isLoggedIn()'class="dropdown-item">My Storage</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">My Storage</a></li>
                             <!-- <button *ngIf='isLoggedIn()'class="dropdown-item" mat-button >SignOut</button> -->
                             <li><a *ngIf='isLoggedIn()'class="dropdown-item">Your Profile</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item"  routerLink="history">History</a></li>
