@@ -51,6 +51,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { StorageFormComponent } from './storage-form/storage-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyStorageComponent } from './my-storage/my-storage.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ScratchComponent } from './scratch/scratch.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
@@ -86,6 +88,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
       ConfirmComponent,
         StorageFormComponent,
         MyStorageComponent,
+        ProfileComponent,
+        ScratchComponent,
 
 
   ],

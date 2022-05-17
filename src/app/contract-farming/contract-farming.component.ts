@@ -18,6 +18,7 @@ export class ContractFarmingComponent implements OnInit {
       console.log(this.contractFarming.image);
     }
   }
+  
 
   public save(){
     const formData = new FormData();
