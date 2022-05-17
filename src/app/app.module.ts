@@ -51,6 +51,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { StorageFormComponent } from './storage-form/storage-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyStorageComponent } from './my-storage/my-storage.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ScratchComponent } from './scratch/scratch.component';
 
 
 
@@ -85,6 +87,8 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
       ConfirmComponent,
         StorageFormComponent,
         MyStorageComponent,
+        ProfileComponent,
+        ScratchComponent,
 
 
   ],
@@ -110,7 +114,6 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
     MatListModule,
     SocialLoginModule,
     MatDialogModule,
-    NgxPaginationModule,
     ToastrModule.forRoot()
   ],
   

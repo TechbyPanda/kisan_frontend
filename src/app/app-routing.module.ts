@@ -12,10 +12,12 @@ import { AbouUsComponent } from './abou-us/abou-us.component';
 import { ErrorhandlingComponent } from './errorhandling/errorhandling.component';
 import { HistoryComponent} from './history/history.component';
 import {AuthGuard} from './auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'sign-in', component:SigninComponent},
   {path:'sign-up', component:Registration2Component},
   {path:'contract-farming', component:ContractFarmingComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path:'book-service', component:EquipementsDetailsComponent},
   {path:'storage',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},
   {path:'history',component:HistoryComponent},
   {path:"**",component:ErrorhandlingComponent}

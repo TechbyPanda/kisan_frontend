@@ -1,0 +1,40 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="body">
+<div class="card">
+    <div class="imgBx">
+        <img #image src="../../assets/img/download.png">
+    </div>
+    <div class="content">
+        <div class="details">
+      
+         <h2>{{user.name}}<br><span>{{user.occupation}}</span></h2>
+         <div class="data">
+            <!-- <h3><br><span>Email</span></h3> -->
+
+            <input type="text" #email name="email" class="form-control" placeholder="" value="{{user.email}}"><br>
+            <!-- <br><h3>Address:<br><span></span></h3> -->
+
+            
+            
+         </div>
+         <div class="deata">
+            <input type="text" #address name="address" class="form-control" placeholder="" value="{{user.address}}" ><i class="bi bi-pen"></i>
+         </div>
+         <!-- <div class="deta">
+            <input type="text" class="form-control" placeholder="" value="{{user.mobile}}">
+         </div> -->
+         <div class="actionBtn">
+             <button (click)="save(email,address)">Save</button>
+         </div>
+        </div>
+    </div>
+</div>
+</div>
