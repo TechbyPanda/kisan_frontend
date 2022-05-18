@@ -10,7 +10,8 @@
 
 <div class="container">
 
-    <div *ngFor="let item of tools" class="row cards2">
+    <div *ngFor="let item of tools | paginate:{itemsPerPage:8,currentPage:page,totalItems:totalLength}"
+        class="row cards2">
         <div class="col-lg-6 col-md-6 col-sm-12 left2">
             <img src="{{item.images}}" alt="" class="left2_img">
         </div>
@@ -38,10 +39,8 @@
         </div>
     </div>
 
-
-
 </div>
-
+<pagination-controls class="my-pagination" (pageChange)="page=$event"></pagination-controls>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
@@ -66,10 +65,10 @@
             <div class="input form-group">
                 <select [(ngModel)]="days">
                     <option>Selected</option>
-                    <option >week</option>
+                    <option>week</option>
                     <option>days</option>
                     <option>month</option>
-                   </select>
+                </select>
             </div>
             <div class="input">
                 <input type="number" min="1" value="1" #number (change)="getData($event)">

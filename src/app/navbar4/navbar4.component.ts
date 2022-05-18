@@ -18,7 +18,7 @@ export class Navbar4Component implements OnInit {
 
   ngOnInit(): void {
   }
-
+  data?:any;
   appear=false;
   close=false;
   
@@ -28,7 +28,13 @@ export class Navbar4Component implements OnInit {
   openDialog(): void {
     this.dialog.open(ConfirmComponent);
   }
-
+  dataCalled(){
+    if(this.data)
+    this.router.navigate(['search']);
+    else{
+      this.router.navigate(['']);
+    }
+  }
 
   toggle2(){
     this.close=!this.close;

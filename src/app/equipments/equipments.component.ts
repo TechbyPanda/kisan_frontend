@@ -15,7 +15,9 @@ declare let Razorpay:any
 export class EquipmentsComponent implements OnInit {
 
   tools:any;
-  
+  paginate:any;
+  totalLength?:number;
+  page:number = 1;
 
 
   constructor(private dataService:ServicesService,public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
@@ -36,6 +38,7 @@ export class EquipmentsComponent implements OnInit {
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
       this.tools = data
+      this.totalLength =data.length;
     })
   }
   setData(id:any,price:any,name:any){

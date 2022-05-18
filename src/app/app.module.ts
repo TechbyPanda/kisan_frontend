@@ -54,11 +54,15 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ScratchComponent } from './scratch/scratch.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchComponent } from './search/search.component';
 
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
   declarations: [
+    FilterPipe,
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -90,6 +94,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
         MyStorageComponent,
         ProfileComponent,
         ScratchComponent,
+        SearchComponent,
         
 
 
@@ -106,6 +111,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MatCardModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatCheckboxModule,

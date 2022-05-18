@@ -50,6 +50,8 @@ export class SigninComponent implements OnInit {
   loginInWithGoogle(): void {
     this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.notifyService.success("Sing In Successfully.. !!");
+    console.log(this.socialUser);
+    // this.userService.User_google(user,email,provider)
     this.router.navigate(['']);
   }
 

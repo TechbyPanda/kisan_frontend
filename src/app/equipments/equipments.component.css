@@ -54,6 +54,14 @@
     font-weight: bold;
     } */
     
+.my-pagination /deep/ .ngx-pagination .current{
+    background:blue;
+}
+.my-pagination{
+    text-align : center;
+    justify-content:center;
+    position:relative;
+}
     .input {
     position: relative;
     margin: 30px;

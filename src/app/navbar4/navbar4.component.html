@@ -47,7 +47,7 @@
                     <i class="fa-solid fa-magnifying-glass search"></i>
                 </div>
                     <div class="search_field" [class.active]="appear">
-                        <input type="text" placeholder="Search..." autocomplete="off">
+                        <input  (keyup)="dataCalled()" [(ngModel)]="data" type="text" placeholder="Search..." autocomplete="off">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
