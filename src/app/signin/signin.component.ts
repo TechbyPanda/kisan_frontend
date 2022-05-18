@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);
             
-
+            console.log()
             console.log(data);
             console.log("hellow admin" + this.socialUser);
             sessionStorage.setItem("id",data.user._id); 

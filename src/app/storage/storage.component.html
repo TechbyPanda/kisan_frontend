@@ -67,6 +67,52 @@
             <div class="description">
                 Your items weight be calculated in kilo gram
             </div>
+            <p>Please select the item first to enter the items details</p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Enter your Mobile no.</mat-label>
+                <input [(ngModel)]="mobile" matInput>
+            </mat-form-field>
+
+            <div class="items" *ngFor="let item of single_items.items; index as i">
+                <mat-checkbox [(ngModel)]="item.selected" #name class="example-margin" >{{item.name}}</mat-checkbox>
+                
+                <input type="date" disabled="{{!item.selected}}" matInput>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter the weight</mat-label>
+                    <input #weight (keyup)="weightValid(weight.value)" disabled="{{!item.selected}}" matInput>
+                </mat-form-field>
+                
+                <div class="duration">
+                    <mat-radio-group disabled="{{!item.selected}}" aria-label="Select an option">
+                        <mat-radio-button #duration value="1">1 week</mat-radio-button>
+                        <mat-radio-button value="2">2 week</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <button class="ok" (click)="itemsData(item,weight.value,duration.value)">ok</button>
+
+            </div>
+            
+        </div>
+
+        
+
+        <button class="book" disabled="duration.value" (click)="book()" mat-raised-button>Book Now</button>
+
+    </div>
+</div>
+
+<!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Welcome in {{single_items.name}}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <div class="description">
+                Your items weight be calculated in kilo gram
+            </div>
 
             <mat-form-field appearance="legacy">
                 <mat-label>Enter your Mobile no.</mat-label>
@@ -89,8 +135,6 @@
         <button (click)="book()" mat-raised-button>Book Now</button>
 
     </div>
-</div>
-
-
+</div> -->
 
 

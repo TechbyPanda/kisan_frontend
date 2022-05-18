@@ -46,6 +46,7 @@ export class StorageComponent implements OnInit {
   //   {name:'strawberry',selected:false}
   // ]
 
+
   wiehgt(name:any,w:any,charges:any,kg:any){
     var temp:any={
       name:name,
@@ -96,6 +97,18 @@ export class StorageComponent implements OnInit {
       alert("booked successfully");
       console.log(data);
     });
+  }
+
+  itemsData(item:any,weight: any,duration:any){
+    this.items.push(item,weight);
+    console.log(this.items);
+  }
+
+  weightValid(weight:any):any{
+    if(weight <= 100){
+      weight.value = 100;
+      return false;
+    }
   }
 
 }
