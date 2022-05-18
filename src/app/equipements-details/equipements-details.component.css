@@ -47,6 +47,7 @@ body::before{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left:100px;
 }
 
 .product-img{
@@ -120,7 +121,7 @@ body::before{
 
 .info{
     font-size: 15px;
-    line-height: 30px;
+    line-height: 25px;
     margin: 50px 0;
 }
 
@@ -168,9 +169,10 @@ body::before{
         transform: translateX(-50%) skewX(-5deg);
     }
     .product{
+        
         flex-direction: column;
         width: 90%;
-        margin: 5vh 0;
+        margin: 5vh 9vh;
     }
     .product-img{
         width: 100%;
