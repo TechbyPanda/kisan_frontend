@@ -7,7 +7,7 @@
         </div>
     </div>
 </div> -->
-<div class="body">
+<!-- <div class="body">
 <div class="card">
     <div class="imgBx">
         <img #image src="../../assets/img/download.png">
@@ -17,24 +17,123 @@
       
          <h2>{{user.name}}<br><span>{{user.occupation}}</span></h2>
          <div class="data">
-            <!-- <h3><br><span>Email</span></h3> -->
 
             <input type="text" #email name="email" class="form-control" placeholder="" value="{{user.email}}"><br>
-            <!-- <br><h3>Address:<br><span></span></h3> -->
-
-            
+        
             
          </div>
          <div class="deata">
             <input type="text" #address name="address" class="form-control" placeholder="" value="{{user.address}}" ><i class="bi bi-pen"></i>
          </div>
-         <!-- <div class="deta">
-            <input type="text" class="form-control" placeholder="" value="{{user.mobile}}">
-         </div> -->
          <div class="actionBtn">
              <button (click)="save(email,address)">Save</button>
          </div>
         </div>
     </div>
 </div>
-</div>
+</div> -->
+<!-- <div class="form-group">
+    <label>Password</label>
+    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.password.errors.required">Password is required</div>
+      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+      <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+      <div *ngIf="f.confirmPassword.errors.mustMatch">Password and confirm not match</div>
+    </div>
+  </div>
+
+<div class="container mt-5">
+    < class="row">
+        < class="col-lg-4 pb-5">
+            <!-- Account Sidebar-->
+            <!-- <div class="author-card pb-3">
+                <div class="author-card-cover" style="background-image: url(https://bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg);">
+                    <a class="btn btn-style-1 btn-white btn-sm" href="#" data-toggle="tooltip" title="" data-original-title=""></a></div>
+                <div class="author-card-profile">
+                    <div class="author-card-avatar"><img src="../../assets/img/download.png" alt="Daniel Adams">
+                    </div>
+                    <div class="author-card-details">
+                        <h5 class="author-card-name text-lg">{{user.name}}</h5><span class="author-card-position">{{user.occupation}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wizard">
+                <nav class="list-group list-group-flush">
+                    <a class="list-group-item" href="#">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div><i class="fe-icon-shopping-bag mr-1 text-muted"></i>
+                                <div class="d-inline-block font-weight-medium text-uppercase">Orders List</div>
+                            </div><span class="badge badge-secondary">6</span>
+                        </div>
+                    </a><a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>Profile Settings</a><a class="list-group-item" href="#"><i class="fe-icon-map-pin text-muted"></i>Addresses</a>
+                    <a class="list-group-item" href="https://www.bootdey.com/snippets/view/bs4-wishlist-profile-page" target="__blank"> -->
+                        <!-- <div class="d-flex justify-content-between align-items-center">
+                            <div><i class="fe-icon-heart mr-1 text-muted"></i>
+                                <div class="d-inline-block font-weight-medium text-uppercase">My Wishlist</div>
+                            </div><span class="badge badge-secondary">3</span>
+                        </div> -->
+                    <!-- </a>
+                   
+                </nav>
+            </div>
+        </div> -->
+        <!-- Profile Settings-->
+        <div class="col-lg-8 pb-5">
+            <form class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-fn">First Name</label>
+                        <input class="form-control" type="text" id="account-fn" value="{{user.name}}" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-ln">Occupation</label>
+                        <input class="form-control" type="text" id="account-ln" value="{{user.occupation}}" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-email">E-mail Address</label>
+                        <input class="form-control" type="email" id="account-email" value="{{user.email}}" disabled="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-phone">Phone Number</label>
+                        <input class="form-control" type="text" id="account-phone" value="{{user.mobile}}" required="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-pass">New Password</label>
+                        <input class="form-control" type="password" id="account-pass">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-confirm-pass">Confirm Password</label>
+                        <input class="form-control" type="password" id="account-confirm-pass">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr class="mt-2 mb-3">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="custom-control custom-checkbox d-block">
+                            <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
+                            <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
+                        </div>
+                        <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+
