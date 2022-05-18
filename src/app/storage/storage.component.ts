@@ -56,7 +56,7 @@ export class StorageComponent implements OnInit {
     }
     this.items.push(temp);
     console.log(this.items);
-    this.calculate();
+    // this.calculate();
   }
 
   isSelected(name:any,weight:any){
@@ -76,38 +76,58 @@ export class StorageComponent implements OnInit {
     console.log(items);
   }
 
-  calculate(){
+  calculate(day:any){
     var calc:number;
-    var total=0;
+    
     for(let items of this.items){
       console.log(items);
       var temp = parseInt(items.weight) /parseInt(items.kg);
       console.log(temp)
       calc = temp*1 * items.amount;
       console.log("amount" +calc);
-      this.total += calc*1;
+      this.total += calc*1*day;
     }
     console.log(this.total);
   }
 
   book(){
     console.log(this.storage.id);
-    this.storageService.bookStorage(this.single_items._id,this.total,this.items,this.duration)
+    this.storageService.bookStorage(this.single_items._id,this.total,this.items,this.mobile)
     .subscribe(data =>{
       alert("booked successfully");
       console.log(data);
     });
   }
 
-  itemsData(item:any,weight: any,duration:any){
-    this.items.push(item,weight);
-    console.log(this.items);
+  itemsData(item:any,bookingDate:any,endDate:any,weight:any){
+    var temp = {
+      name:item.name,
+      amount:item.charges,
+      bookingDate:bookingDate,
+      endDate:endDate,
+      weight:weight,
+      kg:item.weight
+    }
+    this.items.push(temp);
+    var date1 = new Date(bookingDate);
+    var date2 = new Date(endDate);
+    var minusDate = date1.getTime() - date2.getTime();
+    var totalDays = minusDate / (1000 * 3600 * 24);
+    if(totalDays < 0) {
+      totalDays *= -1;
+    }
+    alert(totalDays);
+    this.calculate(totalDays);
   }
 
-  weightValid(weight:any):any{
-    if(weight <= 100){
-      weight.value = 100;
-      return false;
+
+  public checkWeight(event:any, itemName:any){
+    let button = document.getElementById('btn'+itemName) as HTMLButtonElement | null;
+    if(event.target.value*1 > 100){
+        if(button!=null)
+        button.disabled = false;
+    }else if(button!=null){
+        button.disabled = true;
     }
   }
 

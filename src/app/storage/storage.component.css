@@ -196,7 +196,7 @@ button:hover{
 .book{
     display:block;
     float:right;
-    margin:10px;
+    margin-top:10px;
 }
 
 .mat-radio-button ~ .mat-radio-button {
@@ -209,10 +209,20 @@ button:hover{
     width:fit-content;
 }
 
+.total{
+    border-bottom:1px solid var(--purple);
+}
+
+.tot{
+    color:var(--orange);
+    font-weight:bold;
+}
+
 .ok{
     padding:10px;
     color:var(--pink);
     border:1px solid var(--pink);
     border-radius:50%;
     float:right;
+    margin-top:45px;
 }
