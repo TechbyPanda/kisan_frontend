@@ -18,9 +18,9 @@ export class StorageService {
     return this.http.get(this.takeapi)
   }
 
-  bookStorage(sid:any,total:any,items:any,duration:any):Observable<any>{
+  bookStorage(sid:any,total:any,items:any,mobile:any):Observable<any>{
     var uid = sessionStorage.getItem('id');
-    return this.http.post(this.customerStorage+''+uid+'/'+sid,{items,total,duration})
+    return this.http.post(this.customerStorage+''+uid+'/'+sid,{items,total,mobile})
   }
   getBookedStorage():Observable<any>{
     return this.http.get(this.userStorage+''+sessionStorage.getItem('id'));

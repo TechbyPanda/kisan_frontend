@@ -23,6 +23,7 @@ export class SigninComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
 
     signIn(){
+      alert("called");
         this.userService.sign_In(this.user).subscribe(data=>{
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);

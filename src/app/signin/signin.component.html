@@ -3,7 +3,9 @@
     <h1>Login Form</h1>
     <mat-form-field appearance="legacy">
       <mat-label>Enter your email</mat-label>
-      <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput>
+      <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput required>
+      <mat-hint *ngIf="!email.invalid && (email.dirty || email.touched) && email.errors?.['pattern']" class="danger">adada</mat-hint>
+      <mat-hint *ngIf="email.errors?.['pattern']" class="danger">Enter valid email address</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="legacy">
@@ -14,7 +16,7 @@
       </button>
     </mat-form-field>
     <button (click)="signIn()" class="signin">Login</button>
-    
+    <!-- disabled="email.errors?.['pattern']" -->
     <button type="button" (click)="loginInWithGoogle()" style="background:var(--orange)" class="google">Login with Google</button>
     
   </div>

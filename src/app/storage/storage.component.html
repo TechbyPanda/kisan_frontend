@@ -68,37 +68,37 @@
                 Your items weight be calculated in kilo gram
             </div>
             <p>Please select the item first to enter the items details</p>
+            <h3 class="total">Total : <span class="tot">{{total |currency:"INR"}}</span></h3>
             <mat-form-field appearance="legacy">
                 <mat-label>Enter your Mobile no.</mat-label>
                 <input [(ngModel)]="mobile" matInput>
             </mat-form-field>
 
             <div class="items" *ngFor="let item of single_items.items; index as i">
-                <mat-checkbox [(ngModel)]="item.selected" #name class="example-margin" >{{item.name}}</mat-checkbox>
+                <mat-checkbox id="{{'chk'+item.name}}" [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
                 
-                <input type="date" disabled="{{!item.selected}}" matInput>
+                <div class="duration">
+                    <label for="">
+                        Starting Date <input type="date" #bookingDate disabled="{{!item.selected}}" matInput>
+                    </label>
+                    <label for="" style="float: right">
+                        End Date <input type="date" #endDate disabled="{{!item.selected}}" matInput>
+                    </label>
+                </div>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter the weight</mat-label>
-                    <input #weight (keyup)="weightValid(weight.value)" disabled="{{!item.selected}}" matInput>
+                    <input  (keyup)="checkWeight($event,item.name)" #weight disabled="{{!item.selected}}" matInput>
                 </mat-form-field>
                 
-                <div class="duration">
-                    <mat-radio-group disabled="{{!item.selected}}" aria-label="Select an option">
-                        <mat-radio-button #duration value="1">1 week</mat-radio-button>
-                        <mat-radio-button value="2">2 week</mat-radio-button>
-                    </mat-radio-group>
-                </div>
 
-                <button class="ok" (click)="itemsData(item,weight.value,duration.value)">ok</button>
+                <button [disabled]="true" id="{{'btn'+item.name}}"class="ok" (click)="itemsData(item,bookingDate.value,endDate.value,weight.value)">ok</button>
 
             </div>
             
         </div>
 
-        
-
-        <button class="book" disabled="duration.value" (click)="book()" mat-raised-button>Book Now</button>
+        <button class="book" (click)="book()" mat-raised-button>Book Now</button>
 
     </div>
 </div>
