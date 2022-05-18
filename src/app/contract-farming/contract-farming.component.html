@@ -1,15 +1,80 @@
-<div class="container-fluid banner">
-    <h1>Contract Farming</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet hic, ipsam beatae quisquam rem sunt quae quia! Sapiente, debitis.</p>
+<div class="container details_card">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 class="text-center">Terms and conditions</h1>
+            <ul>
+                <li>
+                    You should be the owner of the land.
+                </li>
+                <li>
+                    land should not barren.
+                </li>
+                <li>
+                    After contract you cannot take land before time period.
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="details">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your name</mat-label>
+                    <input [(ngModel)]="contractFarming.name" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your email</mat-label>
+                    <input [(ngModel)]="contractFarming.email" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your mobile</mat-label>
+                    <input [(ngModel)]="contractFarming.mobile" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your address</mat-label>
+                    <input [(ngModel)]="contractFarming.address" type="text" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your farm area</mat-label>
+                    <input [(ngModel)]="contractFarming.area" type="text" placeholder="farm area in square feet" matInput>
+                </mat-form-field>
+
+                <input type="file" class='images' name="image" (change)="selectImage($event)">
+                <br>
+                <br>
+
+                <mat-form-field appearance="legacy" class="datebox">
+                    <mat-label>Enter a duration date</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input [(ngModel)]="contractFarming.start_date" matStartDate placeholder="Start date">
+                        <input [(ngModel)]="contractFarming.end_date" matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter your description here</mat-label>
+                    <textarea [(ngModel)]="contractFarming.description" matInput></textarea>
+                </mat-form-field>
+
+
+
+                <button mat-raised-button (click)="save()">Send Request</button>
+
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 col-sm-12 description">
-            <h1>Terms and Condition</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt quaerat laborum pariatur repudiandae ipsum dignissimos praesentium blanditiis velit ab omnis?</p>
-        </div>
-        <div class="col-md-6 col-sm-12 ">
+
+
+
+
+<!-- <div class="col-md-6 col-sm-12 ">
             <div class="details">
                 <mat-form-field appearance="fill">
                     <mat-label>Enter your name</mat-label>
@@ -61,7 +126,4 @@
                 <button (click)="save()">Send Request</button>
 
             </div>
-        </div>
-    </div>
-</div>
-
+        </div> -->
