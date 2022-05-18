@@ -14,10 +14,12 @@ import { HistoryComponent} from './history/history.component';
 import {AuthGuard} from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { MyStorageComponent } from './my-storage/my-storage.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path:'search',component:SearchComponent},
   {path:'profile',component:ProfileComponent},
   {path:'sign-in', component:SigninComponent},
   {path:'sign-up', component:Registration2Component},

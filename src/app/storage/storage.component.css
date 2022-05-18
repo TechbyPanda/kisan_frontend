@@ -4,6 +4,14 @@
     --purple:#490b3d;
 }
 
+.my-pagination /deep/ .ngx-pagination .current{
+    background:blue;
+}
+.my-pagination{
+    text-align : center;
+    justify-content:center;
+    position:relative;
+}
 .banner{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/cold_storage3.jpg');
     width:100%;

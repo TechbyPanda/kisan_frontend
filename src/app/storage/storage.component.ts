@@ -9,10 +9,13 @@ import { StorageFormComponent } from '../storage-form/storage-form.component';
   styleUrls: ['./storage.component.css']
 })
 export class StorageComponent implements OnInit {
+totalLength?:number;
+page:number =1;
 
   constructor(public dialog:MatDialog,public storageService: StorageService) {
     this.storageService.getStorage().subscribe(data => {
       this.storage=data;
+      this.totalLength = data.length;
       console.log(this.storage)
       console.log(this.storage.id)
     })
