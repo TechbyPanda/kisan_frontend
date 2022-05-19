@@ -1,23 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,NavigationEnd, ActivatedRoute ,NavigationStart, Event as NavigationEvent} from '@angular/router';
 import { UserService } from '../service/user.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ConfirmComponent } from '../confirm/confirm.component';
+import {Location} from '@angular/common';
 
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+
 @Component({
   selector: 'app-navbar4',
   templateUrl: './navbar4.component.html',
   styleUrls: ['./navbar4.component.css']
 })
 export class Navbar4Component implements OnInit {
-
-  constructor(private userService: UserService,private router: Router,public dialog: MatDialog) { }
+  event$:any;
+  constructor(private _location: Location,private userService: UserService,private router: Router,public dialog: MatDialog,private ac : ActivatedRoute) {
+    
+  }
 
   ngOnInit(): void {
   }
+
+  // this.event$
+  //     =this.router.events
+  //         .subscribe(
+  //           (event: NavigationEvent) => {
+  //             if(event instanceof NavigationStart) {
+  //               console.log(event.url);
+  //             }
+  //           });
+
+  url:any;
   data?:any;
   appear=false;
   close=false;
@@ -29,10 +41,13 @@ export class Navbar4Component implements OnInit {
     this.dialog.open(ConfirmComponent);
   }
   dataCalled(){
+    
     if(this.data)
-    this.router.navigate(['search']);
+    {
+      this.router.navigate(['search']);
+    }
     else{
-      this.router.navigate(['']);
+      this.router.navigate([''+this._location.back()]);
     }
   }
 
