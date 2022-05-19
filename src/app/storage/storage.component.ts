@@ -4,6 +4,7 @@ import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { StorageFormComponent } from '../storage-form/storage-form.component';
 import { Router} from '@angular/router';
 import { UserService } from '../service/user.service';
+import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
 declare let Razorpay:any
 @Component({
   selector: 'app-storage',
@@ -20,6 +21,7 @@ price?:any;
       this.storage=data;
       this.totalLength = data.length;
       console.log(this.storage)
+      
       console.log(this.storage.id)
     })
   }
@@ -63,11 +65,11 @@ price?:any;
   isLoggedIn(){
     return this.userService.checkToken();
   }
-  open_dialog(){
-    this.dialog.open(StorageFormComponent,{
-      disableClose:false
-    });
-  }
+  // open_dialog(){
+  //   this.dialog.open(StorageFormComponent,{
+  //     disableClose:false
+  //   });
+  // }
 
   setdata(items:any){
     this.single_items=items;
@@ -142,6 +144,9 @@ price?:any;
         this.router.navigate(['sign-in']);
     }
    
+  }
+  openDialog(id:any): void {
+    this.dialog.open(StorageCommentComponent,{data:id});
   }
   
   title = 'payment';
