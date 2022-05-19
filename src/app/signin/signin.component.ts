@@ -37,7 +37,7 @@ export class SigninComponent implements OnInit {
         console.log(err);
         if(err instanceof HttpErrorResponse){
           if(err.status == 400){
-            this.notifyService.error("This is warning..!")
+            this.notifyService.error("User not found")
           }
           else if(err.status == 500){
             this.notifyService.warning("Something is wrong..!")
@@ -49,7 +49,9 @@ export class SigninComponent implements OnInit {
   
   loginInWithGoogle(): void {
     this.socialAuthservice.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.notifyService.success("Sing In Successfully.. !!")
+    this.notifyService.success("Sing In Successfully.. !!");
+    console.log(this.socialUser);
+    // this.userService.User_google(user,email,provider)
     this.router.navigate(['']);
   }
 

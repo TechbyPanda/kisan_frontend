@@ -24,11 +24,9 @@ export class Registration2Component implements OnInit {
   hide=true;
   hide2=true;
   public register(){
-    alert("data");
+    
     this.userService.User_Signup(this.user).subscribe(data=>{
-      alert(data.msg);
-      alert(data);
-      if(!data)
+      console.log(data);
       alert("data not found");
       this.router.navigate(['']);
     },err=>{

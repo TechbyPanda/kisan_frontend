@@ -20,11 +20,8 @@ export class EquipementsDetailsComponent implements OnInit {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
    this.adminService.service_Details(this.id).subscribe(data=>{
      this.userId = sessionStorage.getItem('id')
-     this.adminService.user_details(this.userId).subscribe(result=>{
-        alert("result"+result);
-      this.user = result;
-     })
      this.details = data;
+     console.log(this.details);
      alert("details"+data);
    })
    

@@ -15,7 +15,9 @@ declare let Razorpay:any
 export class EquipmentsComponent implements OnInit {
 
   tools:any;
-  
+  paginate:any;
+  totalLength?:number;
+  page:number = 1;
 
 
   constructor(private dataService:ServicesService,public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
@@ -23,34 +25,41 @@ export class EquipmentsComponent implements OnInit {
 
   service: Service = new Service("", "", "", "", false, false,"","");
 
+  num:any;
+  
+  orderList:any;
+  days:any;
+  date:any;
+  total:any;
+ id:any= sessionStorage.getItem("id");
   tid:any;
   price:any;
-
+  name:any;
   ngOnInit(): void {
     this.adminService.service_Api().subscribe(data=>{
       this.tools = data
+      this.totalLength =data.length;
     })
   }
-  setData(id:any,price:any){
+  setData(id:any,price:any,name:any){
       this.tid = id;
       this.price = price;
+      this.name = name;
   }
   service_item(id:any){
         this.router.navigate(['equipment-details',id]);
   }
-  isLoggedIn():boolean{
-    return this.userService.checkToken();
-  }
+  
  
   title = 'payment';
 onPay(amount:any){
   if(this.isLoggedIn()){
   this.userService.createOrder(amount).subscribe(data=>{
       console.log(data);
-    
+       alert(data.id);
       var options = {
       "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
-      "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "amount": amount*10, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       "currency": "INR",
       "name": "Acme Corp",
       "description": "Test Transaction",
@@ -72,7 +81,20 @@ onPay(amount:any){
   alert("dear"+options);
   var rzp1 = new Razorpay(options);
 
-    rzp1.open();
+    if(rzp1.open()){
+      this.orderList = [{bookingDate:this.date,tool_id:this.tid}];
+      this.service.userId = this.id;
+      this.service.payment = true;
+      this.service.total = this.price;
+     this.service.orderList = this.orderList;
+     this.dataService.serviceOrder(this.service).subscribe(data =>{
+       alert(data);
+       
+     })
+    }
+    else{
+        alert("unpayment");
+    }
     })
   }
   else{
@@ -81,42 +103,26 @@ onPay(amount:any){
     }
   }
   
-  // opendialogue(id:any){
-  //   const dialogConfig = new MatDialogConfig();
-
-  //   dialogConfig.disableClose = false;
-  //   dialogConfig.autoFocus = true;
-
-  //   dialogConfig.data = {
-  //       id: id,
-  //       title: 'Angular For Beginners'
-  //   };
-
-
-
-  //   this.dialog.open(ServiceDialogComponent,dialogConfig);
-  // }
-
-
-//save/
-  date:any;
   
-   
+  getData(event:any){
+    
+    this.price = (this.price*1) * (event.target.value)*1;
   
-   orderList:any;
-  id:any= sessionStorage.getItem("id");
+    
+  }
+  isLoggedIn(){
+    return this.userService.checkToken();
+  }
   save(){
-    this.onPay(this.tid);
-    this.orderList = [{bookingDate:this.date,tool_id:this.tid}];
-     this.service.userId = this.id;
-     this.service.payment = true;
-     this.service.total = this.tid;
-    this.service.orderList = this.orderList;
-    this.dataService.serviceOrder(this.service).subscribe(data =>{
-      alert(data);
+    if(this.isLoggedIn()){
       
+      this.onPay(this.price);
+     
     }
-    )
+    else{
+        this.router.navigate(['sign-in']);
+    }
+   
   }
 }
 

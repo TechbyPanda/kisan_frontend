@@ -22,7 +22,7 @@
                             <li><a *ngIf='isLoggedIn()'class="dropdown-item" (click)="openDialog()" >Signout</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">My Storage</a></li>
                             <!-- <button *ngIf='isLoggedIn()'class="dropdown-item" mat-button >SignOut</button> -->
-                            <li><a *ngIf='isLoggedIn()'class="dropdown-item">Your Profile</a></li>
+                            <li><a *ngIf='isLoggedIn()'class="dropdown-item" routerLink="profile">Your Profile</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item"  routerLink="history">History</a></li>
                         </ul>
                     </div>
@@ -47,7 +47,7 @@
                     <i class="fa-solid fa-magnifying-glass search"></i>
                 </div>
                     <div class="search_field" [class.active]="appear">
-                        <input type="text" placeholder="Search..." autocomplete="off">
+                        <input  (keyup)="dataCalled()" [(ngModel)]="data" type="text" placeholder="Search..." autocomplete="off">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>

@@ -1,74 +1,24 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 banner">
-            <h1>Kisan Sakha</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa repellendus molestiae tenetur quaerat fuga, accusamus dolorum deleniti labore exercitationem veritatis.</p>
-            <p></p>
-        </div>
-    </div>
-    </div>
-    <main class="container">
- 
-  <!-- Left Column / Headphones Image -->
-  <div class="left-column">
-      
-    <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2020-06/01/full/1590987638-6809.png" alt="">
-    </div>
- 
- 
-  <!-- Right Column -->
-  <div class="right-column">
- 
-    <!-- Product Description -->
-    <div class="product-description">
-      <span>Headphones</span>
-      <h1>Beats EP</h1>
-      <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
-    </div>
- 
-    <!-- Product Configuration -->
-    <div class="product-configuration">
- 
-      <!-- Product Color -->
-      <div class="product-color">
-        <span>Color</span>
- 
-        <div class="color-choose">
-          <div>
-            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-            <label for="red"><span></span></label>
-          </div>
-          <div>
-            <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-            <label for="blue"><span></span></label>
-          </div>
-          <div>
-            <input data-image="black" type="radio" id="black" name="color" value="black">
-            <label for="black"><span></span></label>
-          </div>
-        </div>
- 
-      </div>
- 
-      <!-- Cable Configuration -->
-      <div class="cable-config">
-        <span>Cable configuration</span>
- 
-        <div class="cable-choose">
-          <button>Straight</button>
-          <button>Coiled</button>
-          <button>Long-coiled</button>
-        </div>
- 
-        <a href="#">How to configurate your headphones</a>
-      </div>
-    </div>
- 
-    <!-- Product Pricing -->
-    <div class="product-price">
-      <span>148$</span>
-      <a href="#" class="cart-btn">Add to cart</a>
-    </div>
+<div class="product">
+  <div class="product-img">
+      <img src="{{details.images}}" alt="">
+      <!-- <span class="tag">new</span> -->
   </div>
-</main>
-    
+  <div class="product-listing">
+      <div class="content">
+          <h1 class="name">{{details.name}}</h1>
+          <p class="info">{{details.description}}</p>
+          <p class="price">{{details.charges}}</p>
+          <p class="price">{{details.travellingcharges}}</p>
+          <div class="btn-and-rating-box">
+              <div class="rating">
+                  <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                  <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                  <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                  <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                  <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true" alt="">
+              </div>
+              <button class="btn">buy now</button>
+          </div>
+      </div>
+  </div>
+</div>
