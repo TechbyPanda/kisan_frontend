@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../service/storage.service';
 import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { StorageFormComponent } from '../storage-form/storage-form.component';
-
+import { Router} from '@angular/router';
+import { UserService } from '../service/user.service';
+declare let Razorpay:any
 @Component({
   selector: 'app-storage',
   templateUrl: './storage.component.html',
@@ -11,8 +13,9 @@ import { StorageFormComponent } from '../storage-form/storage-form.component';
 export class StorageComponent implements OnInit {
 totalLength?:number;
 page:number =1;
+price?:any;
 
-  constructor(public dialog:MatDialog,public storageService: StorageService) {
+  constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService) {
     this.storageService.getStorage().subscribe(data => {
       this.storage=data;
       this.totalLength = data.length;
@@ -36,18 +39,8 @@ page:number =1;
   total:any=0 ;
   mobile:any;
   duration:any = '7';
-  // fruits = [
-  //   {name:'apple',selected:false},
-  //   {name:'grape',selected:false},
-  //   {name:'orange',selected:false},
-  //   {name:'mango',selected:false},
-  //   {name:'strawberry',selected:false},
-  //   {name:'apple',selected:false},
-  //   {name:'grape',selected:false},
-  //   {name:'orange',selected:false},
-  //   {name:'mango',selected:false},
-  //   {name:'strawberry',selected:false}
-  // ]
+  id:any;
+
 
 
   wiehgt(name:any,w:any,charges:any,kg:any){
@@ -67,7 +60,9 @@ page:number =1;
     console.log(weight);
     console.log(this.items);
   }
-
+  isLoggedIn(){
+    return this.userService.checkToken();
+  }
   open_dialog(){
     this.dialog.open(StorageFormComponent,{
       disableClose:false
@@ -76,7 +71,7 @@ page:number =1;
 
   setdata(items:any){
     this.single_items=items;
-    console.log(items);
+    console.log(items._id);
   }
 
   calculate(day:any){
@@ -123,7 +118,7 @@ page:number =1;
     this.calculate(totalDays);
   }
 
-
+  
   public checkWeight(event:any, itemName:any){
     let button = document.getElementById('btn'+itemName) as HTMLButtonElement | null;
     if(event.target.value*1 > 100){
@@ -133,5 +128,58 @@ page:number =1;
         button.disabled = true;
     }
   }
+  save(){
+     if(this.isLoggedIn()){
 
+      console.log(this.items);
+      this.onPay(this.total);
+      this.storageService.bookStorage(this.single_items._id,this.total,this.items,this.mobile).subscribe(data=>{
+        alert("result++++"+data);
+        console.log(data);
+      })
+    }
+    else{
+        this.router.navigate(['sign-in']);
+    }
+   
+  }
+  
+  title = 'payment';
+onPay(amount:any){
+  var amt = parseInt(amount);
+  if(this.isLoggedIn()){
+  this.userService.createOrder(amount).subscribe(data=>{
+      console.log(data);
+       alert(data.id);
+      var options = {
+      "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
+      "amount": amt*10, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "currency": "INR",
+      "name": "Acme Corp",
+      "description": "Test Transaction",
+      "image": "https://example.com/your_logo",
+      "order_id": data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "http://localhost:3000/order/payment-status",
+      "prefill": {
+          "name": "Devika Kushwah",
+          "email": "devikakushwah29@gmail.com",
+          "contact": "8770784399"
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+          "color": "#3399cc"
+      }
+  };
+  console.log(options);
+  alert("dear++++"+options);
+  var rzp1 = new Razorpay(options);
+
+    rzp1.open()
+      
+    })
+  }
 }
+
+  }

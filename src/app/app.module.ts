@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider} from 'angularx-social-login';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
@@ -56,6 +55,10 @@ import { ScratchComponent } from './scratch/scratch.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchComponent } from './search/search.component';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 import { FilterPipe } from './filter.pipe';
 
@@ -135,7 +138,8 @@ import { FilterPipe } from './filter.pipe';
     useClass: TokenService,
     multi:true
    },
-    {
+
+  {
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
@@ -143,10 +147,17 @@ import { FilterPipe } from './filter.pipe';
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider(
-            '624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'
+            '547163577773-7iqaf7gelrihr2a4kftjpilevu7mv3jq.apps.googleusercontent.com'
           )
         },
-      ]
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('clientId')
+        }
+      ],
+      onError: (err) => {
+        console.error(err);
+      }
     } as SocialAuthServiceConfig,
   }
 ],

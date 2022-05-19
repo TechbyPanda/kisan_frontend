@@ -17,14 +17,18 @@ export class UserService {
   orderApi = 'http://localhost:3000/order/pay';
   edit_profile = 'http://localhost:3000/customer/edit-profile/'
   //contractFarming = 'http://localhost:4000/user/contract-farming';
-  googleApi = "http://;localhost:3000/googleRouter/googleSignin";
+  googleApi = "http://localhost:3000/customer/googleSignin";
+  signin= "https://sociallogin1.herokuapp.com/user/googleSignin"
+  // signin = "http://localhost:3000/googleLogin/googleSignin"
   constructor(private http: HttpClient) { }
-  User_google(user:any,email:any,provider:any){
+  User_google(user:any,email:any){
     return this.http.post<any>(this.googleApi,{
-      user:user,
-      email:email,
-      provider:provider,
+      name:user,
+      email:email
     });
+  }
+  logIn(email:string,name:string,provider:string){
+    return this.http.post<any>(this.signin,{email:email,name:name,provider:provider});
   }
   User_editProfile(id:any,email:any,address:any){
     return this.http.post<any>(this.edit_profile+id,{
