@@ -36,7 +36,7 @@ export class SigninComponent implements OnInit {
       this.userService.User_google(this.name,this.email).subscribe(data=>{
         this.notifyService.success("Sing In Successfully..!!")
         sessionStorage.setItem("token",data.token);
-        
+        sessionStorage.setItem("name",data.user.name)
         console.log()
         console.log(data);
         console.log("hellow admin" + this.socialUser);
@@ -62,7 +62,7 @@ export class SigninComponent implements OnInit {
         this.userService.sign_In(this.user).subscribe(data=>{
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);
-            
+             sessionStorage.setItem("name",data.user.name)
             console.log()
             console.log(data);
             console.log("hellow admin" + this.socialUser);

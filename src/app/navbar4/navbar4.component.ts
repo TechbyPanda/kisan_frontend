@@ -61,6 +61,8 @@ export class Navbar4Component implements OnInit {
   signOut(){
     if(confirm("Are you Sure ?")){
       sessionStorage.removeItem('token');
+      sessionStorage.removeItem('id');
+      sessionStorage.removeItem('name');
       this.router.navigate(['sign-in']);
     }
   }
