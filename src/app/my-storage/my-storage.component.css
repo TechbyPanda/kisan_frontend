@@ -5,3 +5,8 @@ table {
 tr:hover{
     box-shadow:2px 2px 5px rgba(0,0,0,0.5);
 }
+
+.user{
+    text-align: center;
+    margin:20px auto;
+}

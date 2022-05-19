@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../service/storage.service'
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { StDetailsComponent } from '../st-details/st-details.component';
 
 @Component({
   selector: 'app-my-storage',
@@ -10,7 +12,7 @@ export class MyStorageComponent implements OnInit {
 
   products:any='';
 
-  constructor(private storage: StorageService) {
+  constructor(private storage: StorageService,private dialog: MatDialog) {
     this.storage.getBookedStorage()
     .subscribe(data=>{
       this.products = data;
@@ -19,6 +21,10 @@ export class MyStorageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  openDialog(product:any){
+    this.dialog.open(StDetailsComponent,{data:product});
   }
 
 
