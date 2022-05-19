@@ -60,12 +60,13 @@ import {
   FacebookLoginProvider
 } from 'angularx-social-login';
 
-import { FilterPipe } from './filter.pipe';
+
+import { StDetailsComponent } from './st-details/st-details.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
   declarations: [
-    FilterPipe,
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -98,6 +99,8 @@ import { FilterPipe } from './filter.pipe';
         ProfileComponent,
         ScratchComponent,
         SearchComponent,
+        StDetailsComponent,
+        FilterPipe,
         
 
 
