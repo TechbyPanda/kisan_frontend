@@ -72,10 +72,14 @@ export class SigninComponent implements OnInit {
         console.log(err);
         if(err instanceof HttpErrorResponse){
           if(err.status == 400){
+
             this.notifyService.error("User does not exists..!")
           }
           if(err.status == 404){
             this.notifyService.error("Password does not match..!")
+
+            this.notifyService.error("User not found")
+
           }
           else if(err.status == 500){
             this.notifyService.warning("Something is wrong..!")
