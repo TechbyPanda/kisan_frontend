@@ -16,16 +16,17 @@ import { ServicesService } from '../service/services.service';
 })
 
 export class HistoryComponent implements OnInit {
-
+ ite:any = 0;
   constructor(private dataService:ServicesService) { }
   uid:any;
-  historyData?:any;
+  historyData:any;
   itemData:any;
   ngOnInit(): void {
     this.uid = sessionStorage.getItem("id")
     this.dataService.viewOrder(this.uid).subscribe(data => {
     this.historyData = data
-     
+     alert(data);
+     console.log(data);
     console.log(this.historyData);
     
     })
