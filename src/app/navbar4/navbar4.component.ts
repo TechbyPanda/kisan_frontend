@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { Router,NavigationEnd, ActivatedRoute ,NavigationStart, Event as NavigationEvent} from '@angular/router';
 import { UserService } from '../service/user.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -29,10 +29,16 @@ export class Navbar4Component implements OnInit {
   //             }
   //           });
 
+  @Output() send = new EventEmitter<any>();
+
   url:any;
   data?:any;
   appear=false;
   close=false;
+
+  message(){
+    this.send.emit(this.data);
+  }
   
   toggle(){
     this.appear=!this.appear;
@@ -41,10 +47,12 @@ export class Navbar4Component implements OnInit {
     this.dialog.open(ConfirmComponent);
   }
   dataCalled(){
-    
+    this.router.navigate(['/search',this.data])
+    this.send.emit(this.data);
+    console.log("navbar "+this.data)
     if(this.data)
     {
-      this.router.navigate(['search']);
+      this.router.navigate(['search',this.data]);
     }
     else{
       this.router.navigate([''+this._location.back()]);
