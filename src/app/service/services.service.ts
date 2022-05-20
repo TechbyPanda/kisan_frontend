@@ -16,4 +16,5 @@ export class ServicesService {
   viewOrder(uid:any){
     return this.http.get<any>(this.view_history+uid)
   }
+
 }
