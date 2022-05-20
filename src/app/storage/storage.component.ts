@@ -187,4 +187,8 @@ onPay(amount:any){
   }
 }
 
+trackByIndex(index: number, obj: any): any {
+  return index;
+}
+
   }

@@ -17,10 +17,12 @@ export class ServicesService {
   viewOrder(uid:any){
     return this.http.get<any>(this.view_history+uid)
   }
+
   reviewService(sid:any,id:any,comment:any){
     return this.http.post<any>(this.review+sid,{
       user:id,
       feedback:comment
     });
   }
+
 }
