@@ -24,7 +24,7 @@
                 <i class="fas fa-star"></i>
             </div>
             <div class="icons">
-                <i class="fa-solid fa-comment"></i>
+                <i (click)="openDialog(st._id)" class="fa-solid fa-comment"></i>
                 <i class="fas fa-share-alt"></i>
             </div>
         </div>
@@ -52,8 +52,8 @@
                 <mat-hint *ngIf="!mob.invalid && (mob.dirty || mob.touched) && mob.errors?.['pattern']" class="danger">Plz enter your correct number. </mat-hint>
             </mat-form-field>
 
-            <div class="items" *ngFor="let item of single_items.items; index as i">
-                <mat-checkbox id="{{'chk'+item.name}}" [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
+            <div class="items" *ngFor="let item of single_items.items;let index = index;trackBy:trackByIndex;">
+                <mat-checkbox id="{{'chk'+item.name}}" [(ngModel)]="single_items[index]" [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
                 
                 <div class="duration">
                     <label for="">
