@@ -104,7 +104,7 @@ price?:any;
       name:item.name,
       amount:item.charges,
       bookingDate:bookingDate,
-      endDate:endDate,
+      duration:endDate,
       weight:weight,
       kg:item.weight
     }
