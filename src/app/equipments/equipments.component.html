@@ -20,7 +20,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
             <h1>{{item.name}}</h1>
             <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Book
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Book
                 Now</button>
             <button mat-raised-button class="view_more" (click)="service_item(item._id)">View More</button>
 
@@ -33,7 +33,7 @@
                 <i class="fas fa-star"></i>
             </div>
             <div class="icons">
-                <i class="fa-solid fa-comment"></i>
+                <i (click)="openDialog(item._id)" class="fa-solid fa-comment"></i>
                 <i class="fas fa-share-alt"></i>
             </div>
         </div>
@@ -42,7 +42,69 @@
 </div>
 
 <pagination-controls class="my-pagination" (pageChange)="page=$event"></pagination-controls>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Welcome to {{username}}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="service">
+        <div>
+            <div class="description">
+                Equipment rent per day
+            </div>
+            <p>Please enter the details</p>
+            <h3 class="total">Name : <span class="tot">{{name}}</span></h3>
+            <h3 class="total">Total : <span class="tot">{{total |currency:"INR"}}</span></h3>
+            
+            <div class="items" >
+                <mat-form-field appearance="legacy" class="mt-3">
+                    <mat-label>Enter address</mat-label>
+                    <input [(ngModel)]="service.address" matInput placeholder="Placeholder">
+                    <mat-icon matSuffix></mat-icon>
+                
+                </mat-form-field>
+            
+                <mat-form-field appearance="legacy" class="mt-3">
+                    <mat-label>Enter mobile</mat-label>
+                    <input [(ngModel)]="service.mobile" matInput placeholder="Placeholder">
+                    <mat-icon matSuffix></mat-icon>
+                    
+                </mat-form-field>
+        
+                 <div class="duration">
+                    <label for="">
+                        Booking Date <input type="date" [(ngModel)]="bookingDate"  matInput>
+                    </label>
+                </div> 
+                    <!-- <label for="" style="float: right">
+                        End Date <input type="date" #endDate  matInput>
+                    </label>
+                -->
 
+                <!-- <mat-form-field appearance="legacy">
+                    <mat-label>Enter the weight</mat-label>
+                    <input  disabled="" matInput>
+                </mat-form-field>
+                 -->
+                 <mat-form-field appearance="legacy">
+                    <mat-label>Enter the weight</mat-label>
+                    <input  (keyup)="checkWeight($event)" #weight matInput>
+                </mat-form-field>
+                
+                 <mat-checkbox [(ngModel)]="selected" class="example-margin" ><a >Terms and Condition</a></mat-checkbox>
+               
+                <!-- <button  (click)="save()" class="ok">Book Now</button> -->
+
+            </div>
+             
+        </div>
+    </div>
+        <button class="book" (click)="save()" mat-raised-button>Book Now</button>
+    
+    </div>
+</div>
+<!-- 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <h3 class="offcanvas-title" id="offcanvasRightLabel">{{name}}</h3>
@@ -77,9 +139,15 @@
             </div>
             <div class="input">
                 <input type="date" name="date" id="date" required title="Please enter your Password here" />
+
+                
+            </div>
+            <div class="input form-group">
+
                 <label for="username">Booking Date</label>
             </div> -->
             <!-- <div class="input form-group">
+
                 <select [(ngModel)]="days">
                     <option>Selected</option>
                     <option>week</option>
@@ -95,7 +163,7 @@
             <!-- <button class="book" (click)="save()">Book Service</button>
             <button class="cancel">Cancel</button> -->
 
-
+<!-- 
     <div class="service_btn">
         <button class="book" (click)="save()">Book Service</button>
         <button class="cancel">Cancel</button>
@@ -108,4 +176,4 @@
         </div>
 
     
-</div>
+</div> --> -->
