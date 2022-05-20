@@ -1,10 +1,16 @@
+
+
 (function(){
 
-  'use strict';
-  
+  var Grid = function(width, height) {
 
-  var canvas = document.getElementById('scratch'),
-      context = canvas.getContext('2d');
+  
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
+  console.log(context); // CanvasRenderingContext2D { /* ... */ }
+  
+  // var canvas = document.getElementById('scratch'),
+  //     context = scratch.getContext('2d');
 
   // default value
   context.globalCompositeOperation = 'source-over';
@@ -85,7 +91,7 @@
   canvas.addEventListener('touchend', function(event) {
     isDrag = false;
   }, false);
-
+}
   //----------------------------------------------------------------------------
 
   function judgeVisible() {
