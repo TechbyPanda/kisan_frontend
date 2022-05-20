@@ -18,27 +18,35 @@
             <div class="details">
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your name</mat-label>
-                    <input [(ngModel)]="contractFarming.name" type="text" matInput>
+                    <input #name="ngModel" [(ngModel)]="contractFarming.name" type="text" required="true" matInput>
+                    <mat-hint *ngIf="name.errors?.['required']">Name is required.</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your email</mat-label>
-                    <input [(ngModel)]="contractFarming.email" type="text" matInput>
+                    <input #email="ngModel" [(ngModel)]="contractFarming.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" type="text" matInput required="true">
+                    <mat-hint *ngIf="!email.invalid && (email.dirty || email.touched) && email.errors?.['pattern']" class="danger">adada</mat-hint>
+                    <mat-hint *ngIf="email.errors?.['required']">Email is Required.</mat-hint>
+                    
                 </mat-form-field>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your mobile</mat-label>
-                    <input [(ngModel)]="contractFarming.mobile" type="text" matInput>
+                    <input #mob="ngModel" [(ngModel)]="contractFarming.mobile" pattern="^(\+[\d]{1,5}|0)?[7-9]\d{9}$" type="text" matInput required="true">
+                    <mat-hint *ngIf="!mob.invalid && (mob.dirty || mob.touched) && mob.errors?.['pattern']" class="danger">Plz enter your correct number. </mat-hint>
+                    <mat-hint *ngIf="mob.errors?.['required']">Number is required.</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your address</mat-label>
-                    <input [(ngModel)]="contractFarming.address" type="text" matInput>
+                    <input #add="ngModel" [(ngModel)]="contractFarming.address" type="text" matInput required="true">
+                    <mat-hint *ngIf="add.errors?.['required']">Address is required.</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter your farm area</mat-label>
-                    <input [(ngModel)]="contractFarming.area" type="text" placeholder="farm area in square feet" matInput>
+                    <input #area="ngModel" [(ngModel)]="contractFarming.area" type="text" placeholder="farm area in square feet" matInput required="true">
+                    <mat-hint *ngIf="area.errors?.['required']">Area is required.</mat-hint>
                 </mat-form-field>
 
                 <input type="file" class='images' name="image" (change)="selectImage($event)">
@@ -48,8 +56,9 @@
                 <mat-form-field appearance="legacy" class="datebox">
                     <mat-label>Enter a duration date</mat-label>
                     <mat-date-range-input [rangePicker]="picker">
-                        <input [(ngModel)]="contractFarming.start_date" matStartDate placeholder="Start date">
-                        <input [(ngModel)]="contractFarming.end_date" matEndDate placeholder="End date">
+                        <input #date="ngModel" [(ngModel)]="contractFarming.start_date" matStartDate placeholder="Start date" required="true">
+                        <input #date="ngModel" [(ngModel)]="contractFarming.end_date" matEndDate placeholder="End date" required="true">
+                        <mat-hint *ngIf="date.errors?.['required']">Dates are required.</mat-hint>
                     </mat-date-range-input>
                     <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -60,11 +69,7 @@
                     <mat-label>Enter your description here</mat-label>
                     <textarea [(ngModel)]="contractFarming.description" matInput></textarea>
                 </mat-form-field>
-
-
-
                 <button mat-raised-button (click)="save()">Send Request</button>
-
             </div>
         </div>
     </div>
@@ -74,56 +79,3 @@
 
 
 
-<!-- <div class="col-md-6 col-sm-12 ">
-            <div class="details">
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your name</mat-label>
-                    <input [(ngModel)]="contractFarming.name" type="text" matInput>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your email</mat-label>
-                    <input [(ngModel)]="contractFarming.email" type="text" matInput>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your mobile</mat-label>
-                    <input [(ngModel)]="contractFarming.mobile" type="text" matInput>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your address</mat-label>
-                    <input [(ngModel)]="contractFarming.address" type="text" matInput>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your farm area</mat-label>
-                    <input [(ngModel)]="contractFarming.area" type="text" placeholder="farm area in square feet" matInput>
-                </mat-form-field>
-
-                <input type="file" class='images' name="image" (change)="selectImage($event)">
-                <br>
-                <br>
-
-                <mat-form-field appearance="fill" class="datebox">
-                    <mat-label>Enter a duration date</mat-label>
-                    <mat-date-range-input [rangePicker]="picker">
-                        <input [(ngModel)]="contractFarming.start_date" matStartDate placeholder="Start date">
-                        <input [(ngModel)]="contractFarming.end_date" matEndDate placeholder="End date">
-                    </mat-date-range-input>
-                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker></mat-date-range-picker>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your description here</mat-label>
-                    <textarea [(ngModel)]="contractFarming.description" matInput></textarea>
-                </mat-form-field>
-
-
-
-                <button (click)="save()">Send Request</button>
-
-            </div>
-        </div> -->

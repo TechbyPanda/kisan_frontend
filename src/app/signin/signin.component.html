@@ -3,61 +3,19 @@
     <h1>Login Form</h1>
     <mat-form-field appearance="legacy">
       <mat-label>Enter your email</mat-label>
-      <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput required>
+      <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput required>  
       <mat-hint *ngIf="!email.invalid && (email.dirty || email.touched) && email.errors?.['pattern']" class="danger">adada</mat-hint>
       <mat-hint *ngIf="email.errors?.['pattern']" class="danger">Enter valid email address</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="legacy">
       <mat-label>Enter your password</mat-label>
-      <input [(ngModel)]="user.password" #password="ngModel" matInput [type]="hide ? 'password' : 'text'">
+      <input [(ngModel)]="user.password" #password="ngModel" required minlength="6" matInput [type]="hide ? 'password' : 'text'"> 
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon style="margin-right: 10px;font-size:21px">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
     <button (click)="signIn()" class="signin">Login</button>
-    <!-- disabled="email.errors?.['pattern']" -->
-    <button type="button" (click)="loginInWithGoogle()" style="background:var(--orange)" class="google">Login with Google</button>
-    
+    <button type="button" (click)="loginInWithGoogle()" style="background:var(--orange)" class="google">Login with Google</button>   
   </div>
 </div>
-<!-- 
-  <div class="container-fluid">
-    <div class="row mt-5">
-      <div class="col-12">
-        <div class="card login_card shadow-sm border-0">
-          <h1>Login Form</h1>
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your email</mat-label>
-            <input [(ngModel)]="user.email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" matInput>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
-            <input [(ngModel)]="user.password" #password="ngModel" matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon style="margin-right: 10px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-         <button style="margin-left: 150px;" (click)="signIn()">Lognin</button>
-          <p style="margin-left: 190px; font-weight: bold;">OR</p>
-          <hr>
-            
-        </div>
-      </div>
-    </div>
-  </div> -->
-<!--   
-
-  <div class="card text-center">
-    <img *ngIf="socialUser.photoUrl" src="{{socialUser.photoUrl}}" alt="" class="" width="50px" height="70px">
-    <div class="card-block">
-      <h4>{{socialUser.name}}</h4>
-      <h4>{{socialUser.email}}</h4>
-      <h4>Logged In With {{socialUser.provider}}</h4>
-      
-    </div>
-    
-    <button type="button" (click)="signOut()">Sign Out</button>
-    
-  </div>
-   -->
