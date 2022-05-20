@@ -67,8 +67,8 @@
                         <p>Items : <span *ngFor="let item of data.items">{{item.name}}, </span></p>
                         <p>Address : {{data.location}}</p>
                         <div class="button">
-                            <button mat-raised-button style="background-color:#f1b814;color:white;">View More</button>
-                            <button mat-raised-button style="background-color:#bd1e51;color:white;">Book Now</button>
+                            <button mat-raised-button  style="background-color:#f1b814;color:white;">View More</button>
+                            <button mat-raised-button (click)="setdata(data._id)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="background-color:#bd1e51;color:white;">Book Now</button>
                         </div>
                     </div>
                 </ng-template>  
@@ -84,7 +84,7 @@
 <div class="container">
     <div class="head">
         <h1 style="margin:10px">Ware House</h1>
-        <button mat-flat-button Style="color:#f1b814;">View More</button>
+        <button mat-flat-button Style="color:#f1b814;" routerLink="storage">View More</button>
     </div>
     <div class="row">
         <div class="col-12">
@@ -112,3 +112,57 @@
 
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/247268253?h=6d2fc0d729" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Welcome in {{single_items.name}}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <div class="description">
+                Your items weight be calculated in kilo gram
+            </div>
+            <p>Please select the item first to enter the items details</p>
+            <h3 class="total">Total : <span class="tot">{{total |currency:"INR"}}</span></h3>
+            <mat-form-field appearance="legacy">
+                <mat-label>Enter your Mobile no.</mat-label>
+                <input [(ngModel)]="mobile" matInput>
+            </mat-form-field>
+
+            <div class="items" *ngFor="let item of single_items.items;let index = index;trackBy:trackByIndex;">
+                <mat-checkbox id="{{'chk'+item.name}}" [(ngModel)]="single_items[index]" [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
+                
+                <div class="duration">
+                    <label for="">
+                        Starting Date <input type="date" #bookingDate disabled="{{!item.selected}}" matInput>
+                    </label>
+                    <label for="" style="float: right">
+                        End Date <input type="date" #endDate disabled="{{!item.selected}}" matInput>
+                    </label>
+                </div>
+
+                <mat-form-field appearance="legacy">
+                    <mat-label>Enter the weight</mat-label>
+                    <input  (keyup)="checkWeight($event,item.name)" #weight disabled="{{!item.selected}}" matInput>
+                </mat-form-field>
+                
+
+                <button [disabled]="true" id="{{'btn'+item.name}}"class="ok" (click)="itemsData(item,bookingDate.value,endDate.value,weight.value)">ok</button>
+
+            </div>
+            
+        </div>
+
+        <button class="book" (click)="save()" mat-raised-button>Book Now</button>
+
+    </div>
+</div>
