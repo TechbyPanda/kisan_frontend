@@ -47,7 +47,9 @@
             <h3 class="total">Total : <span class="tot">{{total |currency:"INR"}}</span></h3>
             <mat-form-field appearance="legacy">
                 <mat-label>Enter your Mobile no.</mat-label>
-                <input [(ngModel)]="mobile" matInput>
+                <input [(ngModel)]="mobile" #mob="ngModel" pattern="^(\+[\d]{1,5}|0)?[7-9]\d{9}$" required="true" matInput>
+                <mat-hint *ngIf="mob.errors?.['required']">Number is required.</mat-hint>
+                <mat-hint *ngIf="!mob.invalid && (mob.dirty || mob.touched) && mob.errors?.['pattern']" class="danger">Plz enter your correct number. </mat-hint>
             </mat-form-field>
 
             <div class="items" *ngFor="let item of single_items.items;let index = index;trackBy:trackByIndex;">
@@ -64,7 +66,7 @@
 
                 <mat-form-field appearance="legacy">
                     <mat-label>Enter the weight</mat-label>
-                    <input  (keyup)="checkWeight($event,item.name)" #weight disabled="{{!item.selected}}" matInput>
+                    <input (keyup)="checkWeight($event,item.name)" #weight disabled="{{!item.selected}}" required="true" matInput>
                 </mat-form-field>
                 
 
