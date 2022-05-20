@@ -65,6 +65,7 @@ import { StDetailsComponent } from './st-details/st-details.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
+import { HistoryDetailsComponent } from './history-details/history-details.component';
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import { StorageCommentComponent } from './storage-comment/storage-comment.compo
         FilterPipe,
         CommentComponent,
         StorageCommentComponent,
+        HistoryDetailsComponent,
         
 
 
