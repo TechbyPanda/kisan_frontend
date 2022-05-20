@@ -22,7 +22,6 @@ export class EquipementsDetailsComponent implements OnInit {
      this.userId = sessionStorage.getItem('id')
      this.details = data;
      console.log(this.details);
-     alert("details"+data);
    })
    
   }
@@ -34,7 +33,7 @@ export class EquipementsDetailsComponent implements OnInit {
     console.log(mobile.value)
      this.adminService.customer_details(this.id,name.value,email.value,mobile.value,address.value,picker._model.selection).
      subscribe(result=>{
-       alert(result);
+       console.log(result);
      })
 
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { AdminService } from '../service/admin.service';
 import { StorageService } from '../service/storage.service';
 @Component({
@@ -7,21 +7,27 @@ import { StorageService } from '../service/storage.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  products:any;
-  productStorage:any;
+  products:any[]=[];
+  storage:any[]=[];
   constructor(private adminService: AdminService,private storageService: StorageService) {
     this.adminService.service_Api().subscribe(data=>{
-      this.products = data;
-
+      this.final = data;
+      // for(let product of data){
+      //   this.final.push(product);
+      // }
     })
     this.storageService.getStorage().subscribe(result=>{
-      
-      this.productStorage = result;
-    })
-   }
-   public search:string="";
-   public searchStorages:string="";
-  ngOnInit(): void {
+      this.storage = result;
+      for(let storage of result){
+        this.final.push(storage)
+      }
+    });
   }
+
+    final:any[]=[];
+    @Input() public search:string="";
+    public searchStorages:string="";
+    ngOnInit(): void {
+    }
   
 }
