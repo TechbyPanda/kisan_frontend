@@ -8,6 +8,7 @@ import { ServicesService } from '../service/services.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ServiceDialogComponent } from '../service-dialog/service-dialog.component';
 import { ToastrService } from 'ngx-toastr';
+import { CommentComponent} from '../comment/comment.component';
 declare let Razorpay:any
 @Component({
   selector: 'app-equipments',
@@ -79,15 +80,18 @@ export class EquipmentsComponent implements OnInit {
   }
   
  
+  
   title = 'payment';
 onPay(amount:any){
+  var amt = parseInt(amount);
   if(this.isLoggedIn()){
   this.userService.createOrder(amount).subscribe(data=>{
       console.log(data);
        alert(data.id);
+       alert("first api called");
       var options = {
       "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
-      "amount": amount*10, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      "amount": amt*10, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       "currency": "INR",
       "name": "Acme Corp",
       "description": "Test Transaction",
@@ -106,23 +110,18 @@ onPay(amount:any){
           "color": "#3399cc"
       }
   };
-  alert("dear"+options);
+  console.log(options);
+  alert("dear++++"+options);
   var rzp1 = new Razorpay(options);
 
-    if(rzp1.open()){
-      alert("successfully payment")
-    }
-    else{
-        alert("unpayment");
-    }
+    rzp1.open()
+      
     })
   }
-  else{
-    alert("First login required");
-    this.router.navigate(['sign-in']);
-    }
+}
+  openDialog(id:any): void {
+    this.dialog.open(CommentComponent,{data:id});
   }
-  
   
   selected:any;
   save(){

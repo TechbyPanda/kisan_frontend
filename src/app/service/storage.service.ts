@@ -11,9 +11,14 @@ export class StorageService {
   customerStorage = "http://localhost:3000/booked-storage/add/";
   userStorage = "http://localhost:3000/booked-storage//view-booked/"
   storagebyId = "http://localhost:3000/storage/view-storage/"
-
+  review = "http://localhost:3000/storage/review/"
   constructor(private http:HttpClient) { }
-
+  reviewService(sid:any,id:any,comment:any){
+    return this.http.post<any>(this.review+sid,{
+      user:id,
+      feedback:comment
+    });
+  }
   getStorage():Observable<any>{
     return this.http.get(this.takeapi)
   }

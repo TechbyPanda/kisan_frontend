@@ -1,0 +1,19 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">{{search}}</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d of final |filter:search">
+            <th scope="row" >1</th>
+            <td>{{d.name}}</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+    </tbody>
+</table>
