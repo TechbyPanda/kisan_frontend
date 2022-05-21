@@ -36,6 +36,8 @@ export class Navbar4Component implements OnInit {
   appear=false;
   close=false;
   oldLocation:any;
+  cold='627d4516c47afab2189efbce';
+  ware='627d4527c47afab2189efbd0';
 
   message(){
     this.send.emit(this.data);
@@ -57,6 +59,14 @@ export class Navbar4Component implements OnInit {
     }
     else{
       this.router.navigate(['']);
+    }
+  }
+
+  storage(type:any){
+    if(type=='cold'){
+      this.router.navigate(['storage/'+this.ware])
+    }else{
+      this.router.navigate(['storage/'+this.cold])
     }
   }
 
