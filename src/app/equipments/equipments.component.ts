@@ -5,10 +5,13 @@ import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
 import { Service } from '../model/service';
 import { ServicesService } from '../service/services.service';
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { ServiceDialogComponent } from '../service-dialog/service-dialog.component';
 import { ToastrService } from 'ngx-toastr';
+import {TermsConditionComponent} from '../terms-condition/terms-condition.component';
 import { CommentComponent} from '../comment/comment.component';
+
 declare let Razorpay:any
 @Component({
   selector: 'app-equipments',
@@ -23,7 +26,7 @@ export class EquipmentsComponent implements OnInit {
   page:number = 1;
    mobile:any;
 
-  constructor(private dataService:ServicesService,private notifyService:ToastrService,public dialog: MatDialog,private adminService : AdminService,private userService: UserService,private router:Router) { }
+  constructor(private dataService:ServicesService,public dialog: MatDialog,private notifyService:ToastrService,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
 
   service: Service = new Service("", "", "", "", false, false,"","");
@@ -49,7 +52,6 @@ export class EquipmentsComponent implements OnInit {
   single_items:any='';
 
   duration:any;
-
 
 
 
@@ -119,6 +121,9 @@ onPay(amount:any){
     })
   }
 }
+  opentoDialog(){
+    this.dialog.open(TermsConditionComponent);
+  }
   openDialog(id:any): void {
     this.dialog.open(CommentComponent,{data:id});
   }

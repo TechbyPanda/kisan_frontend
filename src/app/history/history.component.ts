@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { ServicesService } from '../service/services.service';
+import { Router} from '@angular/router';
 import { HistoryDetailsComponent} from '../history-details/history-details.component';
 // export interface History {
 //   charges: string;
@@ -19,7 +20,7 @@ import { HistoryDetailsComponent} from '../history-details/history-details.compo
 
 export class HistoryComponent implements OnInit {
  ite:any = 0;
-  constructor(private dataService:ServicesService,public dialog: MatDialog) { }
+  constructor(private dataService:ServicesService,public dialog: MatDialog,public router:Router) { }
   uid:any;
   historyData:any;
   itemData:any;
@@ -34,10 +35,16 @@ export class HistoryComponent implements OnInit {
     })
   }
   openDialog(product:any){
+    console.log("product.."+product);
     this.dialog.open(HistoryDetailsComponent,{data:product});
   }
 
   cancelRequest(){
     alert("send request to admin")
   }
+  service_item(id:any){
+    this.router.navigate(['equipment-details',id]);
+}
+
+
 }

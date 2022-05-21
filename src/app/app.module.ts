@@ -66,6 +66,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
+import { TermsConditionComponent } from './terms-condition/terms-condition.component';
 
 
 @NgModule({
@@ -107,6 +108,7 @@ import { HistoryDetailsComponent } from './history-details/history-details.compo
         CommentComponent,
         StorageCommentComponent,
         HistoryDetailsComponent,
+        TermsConditionComponent,
         
 
 

@@ -30,11 +30,9 @@ export class UserService {
   logIn(email:string,name:string,provider:string){
     return this.http.post<any>(this.signin,{email:email,name:name,provider:provider});
   }
-  User_editProfile(id:any,email:any,address:any){
-    return this.http.post<any>(this.edit_profile+id,{
-      email:email,
-      address:address,
-    });
+  User_editProfile(user:User,id:any){
+
+    return this.http.post<any>(this.edit_profile+id,user);
   }
   User_profile(id:any){
     return this.http.get<any>(this.profile+id);

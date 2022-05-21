@@ -1,5 +1,36 @@
-<div class="banner">
-    <h1>Storage</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio necessitatibus, asperiores impedit ipsam rem repellat sit cum culpa voluptatum dolore?</p>
+<div class="wrap mt-1">
+    <div class="product">
+        <div class="product-img">
+            <img src="{{details[0].image}}" alt="">
+            
+        </div>
+        <div class="product-listing">
+            <div class="content">
+                <h1 class="name">{{details[0].name}}</h1>
+                <p class="info">{{details[0].storage_description}}</p>
+                
+                <p class="info1">Capacity:{{details[0].capacity}}</p>
+                <!-- <p class="info">Min D{{details[0].duration}}</p> -->
+                <p class="info1">Location:{{details[0].location}}</p>
+                <div *ngFor = "let item of details[0].items" class="item">
+                    <span class="ml-5">{{item.name}}</span>
+                <span>{{item.charges}}</span>
+                <span>{{item.description}}</span>
+                <span>{{item.temperature}}</span>
+                <span>{{item.weight}}</span>
+            </div>
+                <div class="btn-and-rating-box">
+                    <div class="rating">
+                        <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                        <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                        <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                        <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                        <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true" alt="">
+                    </div>
+                    <button class="btn">buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<app-footer></app-footer>

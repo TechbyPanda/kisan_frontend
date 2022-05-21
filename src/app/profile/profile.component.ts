@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
   submitted = false;
 
   user?:any;
-  // user1: User = new User("", "", "", "", "", "");
+  user1: User = new User("", "", "", "", "", "");
   constructor(private UserService: UserService) { }
   id:any=sessionStorage.getItem("id");
   ngOnInit(): void {
@@ -53,12 +53,12 @@ export class ProfileComponent implements OnInit {
       this.user = data;
     })
   }
- save(email:any,address:any){
-   console.log(email.value);
-   console.log(address);
-   this.UserService.User_editProfile(this.id,email,address).subscribe(data=>{
-     console.log(data);
-     alert("save");
-   })
- }
+  saved(){
+    
+    this.UserService.User_editProfile(this.user1,this.id).subscribe(data=>{
+      console.log(data);
+      alert("save");
+    })
+  }
+ 
 }

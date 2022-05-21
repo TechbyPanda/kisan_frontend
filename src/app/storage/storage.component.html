@@ -14,7 +14,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12 p-2">
             <h1>{{st.storageId.name}}</h1>
             <button mat-raised-button  class="book_now" (click)="setdata(st)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Book Now</button>
-            <button class="view_more" mat-raised-button>View More</button>
+            <button class="view_more" (click)="service_item(st._id)"  mat-raised-button>View More</button>
             <h3 ><span *ngFor="let item of st.items">{{item.name}} </span></h3>
             <p class="description">Description : {{st.storage_description}}</p>
             <div class="reviews">

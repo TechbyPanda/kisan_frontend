@@ -4,29 +4,52 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AdminService } from '../service/admin.service';
 import { StorageService } from '../service/storage.service';
 declare let Razorpay:any;
+import { ToastrService } from 'ngx-toastr';
+import { ServicesService } from '../service/services.service';
+import { HttpErrorResponse } from '@angular/common/http';
 import { UserService } from '../service/user.service';
 import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
 import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { StorageFormComponent } from '../storage-form/storage-form.component';
 import { Router} from '@angular/router';
+import { Service } from '../model/service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  service:any;
+  
   totalLength?:number;
   cold='627d4516c47afab2189efbce';
   ware='627d4527c47afab2189efbd0';
-
+   username:any;
   coldData:any;
   wareData:any;
 
-  constructor(private adminService: AdminService,private storageService:StorageService,public dialog:MatDialog,private router:Router,private userService:UserService) {
+  service: Service = new Service("", "", "", "", false, false,"","");
+  bookingDate:any;
+  
+  orderList:any=[];
+  total:any;
+  address:any;
+ id:any= sessionStorage.getItem("id");
+  tid:any;
+  price:any;
+  name:any;
+  tools:any;
+  constructor(
+    private dataService:ServicesService,public dialog: MatDialog,private notifyService:ToastrService,
+    private adminService: AdminService,private storageService:StorageService,private router:Router,
+    private userService:UserService) {
     this.adminService.service_Api().subscribe(data => {
       console.log(data);
-      this.service = data
+      this.serviced = data
+    })
+    this.username = sessionStorage.getItem("name");
+    this.adminService.service_Api().subscribe(data=>{
+      this.tools = data
+      this.totalLength =data.length;
     })
    
     this.storageService.getStorageById(this.ware).subscribe(data => {
@@ -120,10 +143,10 @@ export class HomeComponent implements OnInit {
 
   items:any=[]
   single_items:any='';
-  total:any=0 ;
+
   mobile:any;
   duration:any = '7';
-  id:any;
+  serviced:any;
 
 
 
@@ -152,12 +175,53 @@ export class HomeComponent implements OnInit {
   //     disableClose:false
   //   });
   // }
-
+  service_item(id:any){
+    alert(id);
+    console.log(id);
+    this.router.navigate(['storage-details',id]);
+  }
+  serviceItem(id:any){
+    alert(id);
+    console.log(id);
+    this.router.navigate(['equipment-details',id]);
+  }
   setdata(items:any){
     this.single_items=items;
     console.log(items._id);
   }
+  saved(){
+    alert("data");
+    if(this.isLoggedIn()){
+      this.onPay(this.total);
+      this.orderList = [{bookingDate:this.bookingDate,tool_id:this.tid}];
 
+      this.service.userId = this.id;
+      this.service.payment = true;
+      this.service.total = this.total;
+     this.service.orderList = this.orderList;
+     this.dataService.serviceOrder(this.service).subscribe(data =>{
+       alert(data);
+       console.log(data);
+       this.notifyService.success("Order Booked Successfully..!!")
+
+      },err=>{
+       console.log(err);
+       if(err instanceof HttpErrorResponse){
+         if(err.status == 400){
+           this.notifyService.error("user already exists...");
+         }
+         else if(err.status == 500){
+           this.notifyService.warning("Something is wrong..!")
+         // alert(err);
+       }
+     }
+     })
+  }
+    else{
+        this.router.navigate(['sign-in']);
+    }
+   
+  }
   calculate(day:any){
     var calc:number;
     
@@ -201,8 +265,14 @@ export class HomeComponent implements OnInit {
     alert(totalDays);
     this.calculate(totalDays);
   }
-
-  
+   selected:any;
+  public checkWeighted(event:any){
+    
+    if(event.target.value){
+      this.total = this.price  * event.target.value*1;
+      this.service.duration = event.target.value;
+    }
+  }
   public checkWeight(event:any, itemName:any){
     let button = document.getElementById('btn'+itemName) as HTMLButtonElement | null;
     if(event.target.value*1 > 100){
