@@ -11,6 +11,7 @@ import { ServiceDialogComponent } from '../service-dialog/service-dialog.compone
 import { ToastrService } from 'ngx-toastr';
 import {TermsConditionComponent} from '../terms-condition/terms-condition.component';
 import { CommentComponent} from '../comment/comment.component';
+import { NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 declare let Razorpay:any
 @Component({
@@ -26,7 +27,7 @@ export class EquipmentsComponent implements OnInit {
   page:number = 1;
    mobile:any;
 
-  constructor(private dataService:ServicesService,public dialog: MatDialog,private notifyService:ToastrService,private adminService : AdminService,private userService: UserService,private router:Router) { }
+  constructor(private offcanvasService: NgbOffcanvas,private dataService:ServicesService,public dialog: MatDialog,private notifyService:ToastrService,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
 
   service: Service = new Service("", "", "", "", false, false,"","");
@@ -50,9 +51,31 @@ export class EquipmentsComponent implements OnInit {
 
   items:any=[]
   single_items:any='';
-
+  closeResult='';
   duration:any;
 
+
+  open(content:any) {
+    if(sessionStorage.getItem('id')){
+      this.offcanvasService.open(content, {ariaLabelledBy: 'offcanvas-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }else{
+      this.router.navigate(['sign-in']);
+    }
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === OffcanvasDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on the backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
 
   isLoggedIn(){
@@ -130,8 +153,7 @@ onPay(amount:any){
   
   selected:any;
   save(){
-    alert("data");
-    if(this.isLoggedIn()){
+    
       this.onPay(this.total);
       this.orderList = [{bookingDate:this.bookingDate,tool_id:this.tid}];
 
@@ -156,11 +178,8 @@ onPay(amount:any){
        }
      }
      })
-  }
-    else{
-        this.router.navigate(['sign-in']);
-    }
-   
+  
+
   }
 }
 
