@@ -11,7 +11,7 @@
             <div class=" card login_card  border-0">     
             <mat-form-field appearance="legacy">
                 <mat-label>Enter your name</mat-label>
-                <input [(ngModel)]="user.name" #name="ngModel" matInput>
+                <input [(ngModel)]="user.name" #name="ngModel" matInput required="true">
                 <mat-hint *ngIf="name.errors?.['required']">Name is required.</mat-hint>
             </mat-form-field>
 

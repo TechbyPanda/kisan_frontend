@@ -256,7 +256,7 @@ nav .nav_bar .logo a:before{
         padding:20px;
     }
 
-    .nav_links .link_items a{
+    .nav_links .link_items .nav_a{
         display:block;
         margin-top: 20px;
         color:white;

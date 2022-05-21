@@ -15,6 +15,8 @@ export class StorageComponent implements OnInit {
 totalLength?:number;
 page:number =1;
 price?:any;
+cold='627d4516c47afab2189efbce';
+ware='627d4527c47afab2189efbd0';
 
   constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService) {
     this.storageService.getStorage().subscribe(data => {
@@ -103,7 +105,7 @@ price?:any;
     });
   }
 
-  itemsData(item:any,bookingDate:any,endDate:any,weight:any){
+  itemsData(item:any,bookingDate:any,endDate:any,weight:any,index:any){
     var temp = {
       name:item.name,
       amount:item.charges,
@@ -192,6 +194,7 @@ onPay(amount:any){
 }
 
 trackByIndex(index: number, obj: any): any {
+  console.log(obj);
   return index;
 }
 

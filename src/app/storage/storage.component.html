@@ -53,7 +53,7 @@
             </mat-form-field>
 
             <div class="items" *ngFor="let item of single_items.items;let index = index;trackBy:trackByIndex;">
-                <mat-checkbox id="{{'chk'+item.name}}" [(ngModel)]="single_items[index]" [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
+                <mat-checkbox id="{{'chk'+item.name}}"  [(ngModel)]="item.selected" class="example-margin" >{{item.name}}</mat-checkbox>
                 
                 <div class="duration">
                     <label for="">
@@ -70,7 +70,7 @@
                 </mat-form-field>
                 
 
-                <button [disabled]="true" id="{{'btn'+item.name}}"class="ok" (click)="itemsData(item,bookingDate.value,endDate.value,weight.value)">ok</button>
+                <button [disabled]="true" id="{{'btn'+item.name}}"class="ok" (click)="itemsData(item,bookingDate.value,endDate.value,weight.value,index)">ok</button>
 
             </div>
             

@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
       this.tools = data
       this.totalLength =data.length;
     })
-   
+  
     this.storageService.getStorageById(this.ware).subscribe(data => {
       this.wareData = data;
       console.log(this.wareData);
@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit {
       this.coldData = data;
       console.log(this.coldData);
     })
+
     this.storageService.getStorage().subscribe(data => {
       this.storage=data;
       this.totalLength = data.length;

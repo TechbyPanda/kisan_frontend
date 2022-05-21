@@ -13,7 +13,18 @@ export class SearchComponent implements OnInit {
   products:any[]=[];
   storage:any[]=[];
   constructor(private adminService: AdminService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
-    
+    this.activatedRouter.snapshot.paramMap.get('search')
+    console.log(this.activatedRouter.snapshot.paramMap.get('search'));
+
+    this.adminService.service_Api().subscribe(data=>{
+      this.final = data;
+      console.log(data);
+    })
+    this.storageService.getStorage().subscribe(result => {
+      console.log("storage")
+      console.log(result);
+    })
+    console.log(this.final)
 }
 
     final:any[]=[];
