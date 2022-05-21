@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../service/storage.service';
 import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { StorageFormComponent } from '../storage-form/storage-form.component';
-import { Router} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { UserService } from '../service/user.service';
 import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
 declare let Razorpay:any
@@ -15,17 +15,21 @@ export class StorageComponent implements OnInit {
 totalLength?:number;
 page:number =1;
 price?:any;
-cold='627d4516c47afab2189efbce';
-ware='627d4527c47afab2189efbd0';
 
-  constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService) {
-    this.storageService.getStorage().subscribe(data => {
-      this.storage=data;
-      this.totalLength = data.length;
-      console.log(this.storage)
-      
-      console.log(this.storage.id)
+
+  constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
+
+    this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
+      this.storage = data;
     })
+
+    // this.storageService.getStorage().subscribe(data => {
+    //   this.storage=data;
+    //   this.totalLength = data.length;
+    //   console.log(this.storage)
+      
+    //   console.log(this.storage.id)
+    // })
   }
   checks=[];
   service_item(id:any){
