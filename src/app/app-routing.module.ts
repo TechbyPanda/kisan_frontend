@@ -15,7 +15,7 @@ import {AuthGuard} from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { MyStorageComponent } from './my-storage/my-storage.component';
 import { SearchComponent } from './search/search.component';
-
+import { StorageDetailsComponent } from './storage-details/storage-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -31,6 +31,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},
   {path:'history',component:HistoryComponent},
+  {path:'storage-details/:id',component:StorageDetailsComponent},
   {path:"mystorage",component:MyStorageComponent},
   {path:"**",component:ErrorhandlingComponent},
  

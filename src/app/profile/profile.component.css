@@ -116,6 +116,14 @@ height:450px;
 } */
 
 
+.test{
+  /* border:1px solid #999; */
+  margin-top:200px;
+  box-shadow: 10px 10px 5px 12px #999;
+/* 
+  box-shadow:3px solid #999; */
+}
+
 
 
 

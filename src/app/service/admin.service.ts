@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class AdminService {
   service = 'http://localhost:3000/service/view-services';
   service_details = 'http://localhost:3000/service/view-services/';
+  storage_details = 'http://localhost:3000/storage/view/'
   user = 'http://localhost:3000/user/view/';
   customer = 'http://localhost:3000/machinary/book-machines/'
   constructor(private http:HttpClient) { }
@@ -16,6 +17,9 @@ export class AdminService {
     return this.http.get<any>(this.service_details+id);
   }
   
+  storage_Details(id:any){
+    return this.http.get<any>(this.storage_details+id);
+  }
   customer_details(id:any,name:any,email:any,mobile:any,address:any,date:any){
     return this.http.post<any>(this.customer+id,{
        user:sessionStorage.getItem('id'),
