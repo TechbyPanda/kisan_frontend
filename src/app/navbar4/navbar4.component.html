@@ -10,9 +10,14 @@
             </div>
 
             <ul class="nav_links">
-                <li class="link_items"><a routerLink="contract-farming" href="">CONTRACT FARMING</a></li>
-                <li class="link_items"><a routerLink="services" href="">SERVICE</a></li>
-                <li class="link_items"><a routerLink="storage" href="">STORAGE</a></li>
+                <li class="link_items"><a class="nav_a" routerLink="contract-farming" href="">CONTRACT FARMING</a></li>
+                <li class="link_items"><a class="nav_a" routerLink="services" href="">SERVICE</a></li>
+                <li class="link_items"><a class="nav_a" routerLink="storage" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href="">STORAGE</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Cold Storage</a></li>
+                        <li><a class="dropdown-item" href="#">Ware House</a></li>
+                    </ul>
+                </li>
                 <li>
                     <div class="dropdown">
                             <i class="fa-solid fa-user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>

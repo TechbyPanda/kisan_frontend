@@ -35,6 +35,7 @@ export class Navbar4Component implements OnInit {
   data?:any;
   appear=false;
   close=false;
+  oldLocation:any;
 
   message(){
     this.send.emit(this.data);
@@ -55,7 +56,7 @@ export class Navbar4Component implements OnInit {
       this.router.navigate(['search',this.data]);
     }
     else{
-      this.router.navigate([''+this._location.back()]);
+      this.router.navigate(['']);
     }
   }
 

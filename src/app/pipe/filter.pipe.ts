@@ -23,7 +23,7 @@ export class FilterPipe implements PipeTransform {
     for(let d of value){
       console.log(d);
       console.log("inside for loop");
-      let name = d.name;
+      let name = d.name.toLowerCase();
       if(name.startsWith(filterString)){
         console.log("value ; "+d);
         data.push(d);
