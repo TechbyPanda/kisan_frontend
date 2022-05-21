@@ -5,6 +5,7 @@ import { StorageFormComponent } from '../storage-form/storage-form.component';
 import { ActivatedRoute, Router} from '@angular/router';
 import { UserService } from '../service/user.service';
 import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
+import {NgbOffcanvas, OffcanvasDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 declare let Razorpay:any
 @Component({
   selector: 'app-storage',
@@ -17,7 +18,7 @@ page:number =1;
 price?:any;
 
 
-  constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
+  constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
 
     this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
       this.storage = data;
@@ -52,7 +53,29 @@ price?:any;
   mobile:any;
   duration:any = '7';
   id:any;
+  closeResult = '';
 
+  open(content:any) {
+    if(sessionStorage.getItem('id')){
+      this.offcanvasService.open(content, {ariaLabelledBy: 'offcanvas-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }else{
+      this.router.navigate(['sign-in']);
+    }
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === OffcanvasDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on the backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
 
   wiehgt(name:any,w:any,charges:any,kg:any){
