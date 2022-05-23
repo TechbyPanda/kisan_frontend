@@ -4,7 +4,7 @@ import { UserService } from '../service/user.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ConfirmComponent } from '../confirm/confirm.component';
 import {Location} from '@angular/common';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar4',
@@ -13,21 +13,18 @@ import {Location} from '@angular/common';
 })
 export class Navbar4Component implements OnInit {
   event$:any;
-  constructor(private _location: Location,private userService: UserService,private router: Router,public dialog: MatDialog,private ac : ActivatedRoute) {
+  constructor(private _location: Location,private userService: UserService,
+    private router: Router,public dialog: MatDialog,private ac : ActivatedRoute,public translate: TranslateService) {
+    translate.addLangs(['hi', 'en']);
+    translate.setDefaultLang('hi');
     
+  }
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 
   ngOnInit(): void {
   }
-
-  // this.event$
-  //     =this.router.events
-  //         .subscribe(
-  //           (event: NavigationEvent) => {
-  //             if(event instanceof NavigationStart) {
-  //               console.log(event.url);
-  //             }
-  //           });
 
   @Output() send = new EventEmitter<any>();
 
@@ -64,9 +61,9 @@ export class Navbar4Component implements OnInit {
 
   storage(type:any){
     if(type=='cold'){
-      this.router.navigate(['storage/'+this.ware])
-    }else{
       this.router.navigate(['storage/'+this.cold])
+    }else{
+      this.router.navigate(['storage/'+this.ware])
     }
   }
 

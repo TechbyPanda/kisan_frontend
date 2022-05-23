@@ -14,6 +14,7 @@ export class FavoriteComponent implements OnInit {
     this.userService.User_favorite_view(user_id).subscribe(data=>{
       alert(data);
       this.product = data
+      console.log(this.product);
     })
   }
 
