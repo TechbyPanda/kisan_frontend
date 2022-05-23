@@ -13,186 +13,75 @@
     --purple:#490b3d;
 }
 
-body{
+.wrap{
     width: 100%;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #966e4f;
-    font-family: 'roboto', sans-serif;
+    height:500px;
+    padding:10px;
 }
 
-body::before{
-    content: '';
-    position: absolute;
-    left: 0%;
-    transform: translateX(-50%) skewX(-15deg);
-    width: 20px;
-    height: 100%;
-    background: #966e4f;
-    border-left: 60px solid #eae3d2;
-    border-right: 30px solid #eae3d2;
-    opacity: 0;
-    animation: slide-in 2s 1.5s forwards 1;
-}
-
-@keyframes slide-in{
-    100%{
-        opacity: 1;
-        left: 50%;
-    }
-}
-
-.product{
-    position: relative;
-    width: 1000px;
-    min-width: 650px;
-    min-height: 500px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:auto;
-}
-
-.product-img{
-    width: 40%;
-    height: 700px;
-    background: #fff;
-    position: relative;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fade-in 1s forwards 1;
-}
-
-.product-img img{
+.wrap .box{
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    user-select: none;
+    display:flex;
+    border-radius:10px;
+    box-shadow: 1px 4px 41px rgba(0,0,0,0.1);
 }
 
-.tag{
-    position: absolute;
-    top: 20px;
-    left: -10px;
-    transform-origin: left;
-    opacity: 0;
-    transform: rotate(-90deg);
-    text-transform: capitalize;
-    color: #eae3d2;
-    padding: 5px 10px;
-    width: 100px;
-    font-size: 18px;
-    text-align: center;
-    background: #292929;
-    user-select: none;
-    animation: tag .5s 1s forwards 1;
+.wrap .box .box_img{
+    width:50%;
+    height:100%;
+    padding:10px;
 }
 
-@keyframes tag{
-    100%{
-        opacity: 1;
-        transform: rotate(-20deg);
+.wrap .box .box_img img{
+    width:100%;
+    height:100%;
+    border-radius:10px;
+}
+
+.box_content{
+    padding:10px;
+    width:50%;
+    height:100%;
+}
+
+.box_content h1{
+    font-size:40px;
+    margin-top:10px;
+}
+
+.box_content p{
+    font-size:18px;
+}
+
+.table tbody tr{
+
+}
+
+.book{
+    margin-top:30px;
+    float:right;
+    border:1px solid var(--pink);
+    color:var(--pink);
+}
+
+@media (max-width: 768px) {
+
+    .wrap{
+        height:800px;
     }
-}
 
-.product-listing{
-    box-shadow: 0px 5px 5px rgb(0 0 0 / 70%);
-    width: 60%;
-    min-height: 500px;
-    height: auto;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fade-in 1s forwards 1;
-}
-
-@keyframes fade-in{
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.name{
-    font-family: 'dosis';
-    font-size: 40px;
-    text-transform: capitalize;
-}
-
-.info{
-    font-size: 15px;
-    line-height: 25px;
-    margin: 50px 0;
-}
-
-.price{
-    font-size: 50px;
-    font-weight: 80;
-    margin-bottom: 20px;
-}
-
-.btn-and-rating-box{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.rating{
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rating img{
-    width: 20px;
-    height: 20px;
-    margin: 0 2px;
-}
-
-.btn{
-    background-color: white;
-    color: var(--pink);
-    border: 2px solid var(--pink);
-    text-transform: capitalize;
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.btn:hover{
-    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 1100px){
-    body::before{
-        transform: translateX(-50%) skewX(-5deg);
-    }
-    .product{
-        
+    .box{
         flex-direction: column;
+    }
+    .wrap .box .box_img{
+        width:100%;
+        height:50%;
+    }
+
+    .box_content{
         width: 100%;
-        margin: 5vh 12vh;
-    }
-    .product-img{
-        width: 100%;
-        height: 600px;
-    }
-    .product-listing{
-        width: 100%;
-        min-height: auto;
-    }
-    .name,.price{
-        font-size: 50px;
-    }
-    .info{
-        font: 16px;
     }
 }
+
+

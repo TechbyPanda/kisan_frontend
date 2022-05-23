@@ -19,6 +19,7 @@ export class FilterPipe implements PipeTransform {
     for(let i=0;i<value.length;i++){
       let productName:string = value[i].name;
       if(productName.startsWith(filterString)){
+        console.log(value[i].name);
         data.push(value[i]);
       }
     }

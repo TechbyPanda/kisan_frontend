@@ -26,25 +26,8 @@
 <script src="./wScratchpad.min.js"></script>
 </head>
 <body class="mat-typography">
-  <script type="text/javascript">
-    google.load("elements", "1", { packages: "transliteration" });
-    var control;
-    function onLoad() {         
-        var options = {
-            //Source Language
-            sourceLanguage: google.elements.transliteration.LanguageCode.ENGLISH,
-            // Destination language to Transliterate
-            destinationLanguage: [google.elements.transliteration.LanguageCode.HINDI],
-            shortcutKey: 'ctrl+g',
-            transliterationEnabled: true
-        };                     
-        control = new google.elements.transliteration.TransliterationControl(options);  
-        control.makeTransliteratable(['txtMessage']);   
-    }
-    google.setOnLoadCallback(onLoad);         
-</script>
-
 
   <app-root></app-root>
+  <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
   </body>
   </html>
