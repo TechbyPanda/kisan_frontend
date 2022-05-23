@@ -10,14 +10,14 @@
                 <p class="info">{{details[0].storage_description}}</p>
                 
                 <p class="info1">Capacity:{{details[0].capacity}}</p>
-                <!-- <p class="info">Min D{{details[0].duration}}</p> -->
+            
                 <p class="info1">Location:{{details[0].location}}</p>
                 <div *ngFor = "let item of details[0].items" class="item">
                     <span class="ml-5">{{item.name}}</span>
-                <span>{{item.charges}}</span>
-                <span>{{item.description}}</span>
-                <span>{{item.temperature}}</span>
-                <span>{{item.weight}}</span>
+                <span>Charges: {{item.charges}}</span>
+                <span>Description {{item.description}}</span>
+                <span>Temperature : {{item.temperature}}</span>
+                <span>Weight :  {{item.weight}}</span>
             </div>
                 <div class="btn-and-rating-box">
                     <div class="rating">
@@ -34,3 +34,49 @@
     </div>
     
 </div>
+<!-- 
+<div class="card-wrapper">
+    <div class="card">
+        <div class="product-imgs">
+            <div class="img-display">
+                <div class="img-showcase">
+                    <img src="{{details[0].image}}" alt="">
+                </div>
+            </div>
+            <!-- <div class="img-select">
+               <div class="img-item">
+                    <a href=""></a>
+               </div>
+            </div> -->
+        <!-- </div>
+         <div class="product-content">
+             <h2 class="product-title">
+                 NIce shoes
+             </h2>
+             <a href="#" class="product-link">Visit link</a>
+             <div class="product-rating">
+                <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+             </div>
+             <div class="product-price">
+                 <p class="last-price">
+                     Old price:<span>2.57</span>
+                 </p>
+                 <p class="new-price">
+                    New price:<span>2.57</span>
+                </p>
+             </div>
+               <div class="product-details">
+                   <h2>about this item</h2>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, minus!</p>
+                    <ul>
+                        <li color:><span>Black</span></li>
+                        <li>Available:</li>
+                        <li>Location</li>
+                    </ul>
+                </div>
+                <div class="purchase-info">
+                    <input type="number"
+                </div>
+         </div>
+    </div>
+</div> --> -->

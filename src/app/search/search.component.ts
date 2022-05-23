@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { AdminService } from '../service/admin.service';
+import { UserService } from '../service/user.service';
 import { StorageService } from '../service/storage.service';
 
 @Component({
@@ -12,19 +12,19 @@ export class SearchComponent implements OnInit {
   
   products:any[]=[];
   storage:any[]=[];
-  constructor(private adminService: AdminService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
+  constructor(private userService: UserService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
     this.activatedRouter.snapshot.paramMap.get('search')
     console.log(this.activatedRouter.snapshot.paramMap.get('search'));
 
-    this.adminService.service_Api().subscribe(data=>{
-      this.final = data;
+    this.userService.User_search().subscribe(data=>{
+      this.products = data;
       console.log(data);
     })
-    this.storageService.getStorage().subscribe(result => {
-      console.log("storage")
-      console.log(result);
-    })
-    console.log(this.final)
+    // this.storageService.getStorage().subscribe(result => {
+    //   console.log("storage")
+    //   console.log(result);
+    // })
+    
 }
 
     final:any[]=[];
@@ -33,12 +33,14 @@ export class SearchComponent implements OnInit {
 
     ngOnInit(): void {
 
-      this.router.events.subscribe(event=>{
-        if(event instanceof NavigationEnd){
-          this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
-        }
-      })
+      // this.router.events.subscribe(event=>{
+      //   this.search =""+ this.activatedRouter.snapshot.paramMap.get('search');
+      //   if(event instanceof NavigationEnd){
+      //     this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
+      //   }
+      //  })
       
-    }
+      }
   
 }
+

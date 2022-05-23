@@ -17,7 +17,7 @@
 
             <mat-form-field appearance="legacy">
                 <mat-label>Enter your phone no.</mat-label>
-                <input [(ngModel)]="user.contact" pattern="^(\+[\d]{1,5}|0)?[7-9]\d{9}$" #mob="ngModel" matInput required="true">
+                <input [(ngModel)]="user.mobile" pattern="^(\+[\d]{1,5}|0)?[7-9]\d{9}$" #mob="ngModel" matInput required="true">
                 <mat-hint *ngIf="!email.invalid && (mob.dirty || mob.touched) && mob.errors?.['pattern']" class="danger">Plz enter your correct number. </mat-hint>
                 <mat-hint *ngIf="mob.errors?.['required']">Number is required.</mat-hint>
             </mat-form-field>
