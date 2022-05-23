@@ -22,7 +22,7 @@ export class StorageDetailsComponent implements OnInit {
      this.userId = sessionStorage.getItem('id')
      this.details = data;
      console.log("details"+this.details);
-     alert(this.details);
+     
    })
    
   }

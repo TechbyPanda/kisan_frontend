@@ -5,11 +5,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 // import custom validator  class
 import { CustomValidators } from '../providers/CustomValidation';
 import { User } from 'src/app/model/user';
+
+var name = <HTMLInputElement>document.getElementById('account-fn');
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
   success = '';
   registerForm = new FormGroup(
@@ -53,12 +57,15 @@ export class ProfileComponent implements OnInit {
       alert(data);
       console.log(data);
       this.user = data;
+      (<HTMLInputElement>document.getElementById('account-fn'))!.value=data.name;
       this.email = data.email;
-       this.address = data.address;
+      this.address = data.address;
       this.mobile = data.mobile;
-    
+      
     })
   }
+
+  
   saved(){
     
     this.UserService.User_editProfile(this.user1,this.id).subscribe(data=>{
