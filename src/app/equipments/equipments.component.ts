@@ -144,6 +144,13 @@ onPay(amount:any){
     })
   }
 }
+  favorite(tool_id:any){
+    const user_id = sessionStorage.getItem("id");
+    this.userService.User_favorite(tool_id,user_id).subscribe(data=>{
+      alert(data);
+      alert("data saved");
+    })
+  }
   opentoDialog(){
     this.dialog.open(TermsConditionComponent);
   }

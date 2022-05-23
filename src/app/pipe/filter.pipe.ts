@@ -14,21 +14,16 @@ export class FilterPipe implements PipeTransform {
     }
     console.log(value);
     const data:any[]=[];
-    // console.log(data.length)
-    // console.log(value)
     
-    // console.log(value.length)
-    // console.log(filterString)
 
-    for(let d of value){
-      console.log(d);
-      console.log("inside for loop");
-      let name = d.name.toLowerCase();
-      if(name.startsWith(filterString)){
-        console.log("value ; "+d);
-        data.push(d);
+    for(let i=0;i<value.length;i++){
+      let productName:string = value[i].name;
+      if(productName.startsWith(filterString)){
+        data.push(value[i]);
       }
     }
+    
+
 
     console.log(data);
     return data;

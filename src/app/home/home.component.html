@@ -18,8 +18,21 @@
 
 <!-- banner ends -->
 
+
 <div class="container product_container">
     <h1>We assure you of our best service at all times vs assuring you of our best services always.We are here To help you. </h1>
+
+<!-- <div class="box">
+    <div class="box_img">
+        <img src="../../assets/img/card_img1.jpeg" alt="">
+    </div>
+    <h3>Reaper binder Machine</h3>
+    <h2>600 <span>/sqft</span></h2>
+    <a href="">Rent Now</a>
+</div> -->
+
+<div class="container product_container m-auto">
+
     <div class="row p-3">
         <div class="head">
             <h1 style="margin:10px">Services</h1>
@@ -29,7 +42,7 @@
 
             <owl-carousel-o [options]="customOptions">
 
-                <ng-template carouselSlide *ngFor="let services of serviced">
+                <!-- <ng-template carouselSlide *ngFor="let services of serviced">
                     <div class="service_card">
                         <div class="img_part">
                             <img src="{{services.images}}" alt="">
@@ -43,7 +56,18 @@
                             <p>Price : {{services.charges}}</p>
                         </div>
                     </div>
-                </ng-template>  
+                </ng-template>  -->
+                
+                <ng-template carouselSlide *ngFor="let services of serviced">
+                    <div class="box">
+                        <div class="box_img">
+                            <img src="{{services.images}}" alt="">
+                        </div>
+                        <h3>{{services.name}}</h3>
+                        <h2>{{services.charges}} <span>/sqft</span></h2>
+                        <button mat-raised-button data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" style="background-color:#bd1e51;color:white;display:block;width:100%;">Book Now</button>
+                    </div>
+                </ng-template>
                 
             </owl-carousel-o>
 
@@ -53,10 +77,14 @@
 
 <!-- cold storage starts -->
 
+
 <div class="container">
     <h1>storage, the means of holding and protecting commodities for later use.
 
         Foodstuffs were probably the first goods to be stored, being put aside during months of harvest for use in winter. To preserve it from rotting, food was treated in a variety of ways—e.g., dried, smoked, pickled, or sealed in water- and air-tight containers and placed in cool, dark cellars for storage. We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition.</h1>
+
+<div class="container m-auto">
+
     <div class="head">
         <h1 style="margin:10px">Cold Storage</h1>
         <button mat-flat-button Style="color:#f1b814;" routerLink="storage">View More</button>
@@ -85,7 +113,7 @@
 
 <!-- cold storage end -->
 
-<div class="container">
+<div class="container m-auto">
     <div class="head">
         <h1 style="margin:10px">Ware House</h1>
         <button mat-flat-button Style="color:#f1b814;" routerLink="storage">View More</button>

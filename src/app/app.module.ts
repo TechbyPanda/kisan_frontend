@@ -67,7 +67,11 @@ import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
+
+import { FavoriteComponent } from './favorite/favorite.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -110,6 +114,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         StorageCommentComponent,
         HistoryDetailsComponent,
         TermsConditionComponent,
+        FavoriteComponent,
         
 
 
