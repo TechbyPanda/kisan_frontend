@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'contract-farming', component:ContractFarmingComponent},
   {path:'services',component:EquipmentsComponent},
   {path:'book-service', component:EquipementsDetailsComponent},
-  {path:'storage',component:StorageComponent},
+  {path:'storage/:id',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},

@@ -1,21 +1,21 @@
 <nav>
     <div class="nav_bar">
         <i class="fa-solid fa-bars sidebarOpen" (click)="toggle2()" ></i>
-        <span class="logo"><a href="">Karma</a></span>
+        <span class="logo"><a href="">Krishi junction</a></span>
 
         <div class="menu" [class.show]="close">
             <div class="logo_toggle">
-                <span class="logo"><a href="" routerLink="" style="color:white">Karma</a></span>
+                <span class="logo"><a href="" routerLink="" style="color:white">Krishi junction</a></span>
                 <i class="fa-solid fa-x sidebar" (click)="toggle2()"></i>
             </div>
 
             <ul class="nav_links">
                 <li class="link_items"><a class="nav_a" routerLink="contract-farming" href="">CONTRACT FARMING</a></li>
                 <li class="link_items"><a class="nav_a" routerLink="services" href="">SERVICE</a></li>
-                <li class="link_items"><a class="nav_a" routerLink="storage" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href="">STORAGE</a>
+                <li class="link_items"><a class="nav_a"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" href="">STORAGE</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Cold Storage</a></li>
-                        <li><a class="dropdown-item" href="#">Ware House</a></li>
+                        <li><a class="dropdown-item" style="cursor: pointer" (click)="storage(cold)" >Cold Storage</a></li>
+                        <li><a class="dropdown-item" style="cursor: pointer" (click)="storage(ware)" >Ware House</a></li>
                     </ul>
                 </li>
                 <li>

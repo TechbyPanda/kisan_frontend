@@ -47,6 +47,14 @@ button:disabled{
     opacity:0.5;
 }
 
+.fruit{
+    padding:5px;
+    border-bottom: 1px solid var(--pink);
+}
+
+.fruit span+span{
+    margin:10px;
+}
 
 .items{
     width:100%;

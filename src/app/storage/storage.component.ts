@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../service/storage.service';
 import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { StorageFormComponent } from '../storage-form/storage-form.component';
-import { Router} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { UserService } from '../service/user.service';
 import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
+import {NgbOffcanvas, OffcanvasDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 declare let Razorpay:any
 @Component({
   selector: 'app-storage',
@@ -15,17 +16,21 @@ export class StorageComponent implements OnInit {
 totalLength?:number;
 page:number =1;
 price?:any;
-cold='627d4516c47afab2189efbce';
-ware='627d4527c47afab2189efbd0';
 
-  constructor(public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService) {
-    this.storageService.getStorage().subscribe(data => {
-      this.storage=data;
-      this.totalLength = data.length;
-      console.log(this.storage)
-      
-      console.log(this.storage.id)
+
+  constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
+
+    this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
+      this.storage = data;
     })
+
+    // this.storageService.getStorage().subscribe(data => {
+    //   this.storage=data;
+    //   this.totalLength = data.length;
+    //   console.log(this.storage)
+      
+    //   console.log(this.storage.id)
+    // })
   }
   checks=[];
   service_item(id:any){
@@ -48,7 +53,29 @@ ware='627d4527c47afab2189efbd0';
   mobile:any;
   duration:any = '7';
   id:any;
+  closeResult = '';
 
+  open(content:any) {
+    if(sessionStorage.getItem('id')){
+      this.offcanvasService.open(content, {ariaLabelledBy: 'offcanvas-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }else{
+      this.router.navigate(['sign-in']);
+    }
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === OffcanvasDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on the backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
 
   wiehgt(name:any,w:any,charges:any,kg:any){
