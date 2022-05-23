@@ -27,8 +27,8 @@ export class Registration2Component implements OnInit {
     
     this.userService.User_Signup(this.user).subscribe(data=>{
       console.log(data);
-      alert("data not found");
-      this.router.navigate(['']);
+    
+      this.router.navigate(['signin']);
     },err=>{
       console.log(err);
       if(err instanceof HttpErrorResponse){

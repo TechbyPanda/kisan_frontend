@@ -41,8 +41,10 @@ export class ProfileComponent implements OnInit {
     this.success = JSON.stringify(this.registerForm.value);
   }
   submitted = false;
-
+  email:any;
+  mobile:any;
   user?:any;
+  address?:any;
   user1: User = new User("", "", "", "", "", "");
   constructor(private UserService: UserService) { }
   id:any=sessionStorage.getItem("id");
@@ -51,6 +53,10 @@ export class ProfileComponent implements OnInit {
       alert(data);
       console.log(data);
       this.user = data;
+      this.email = data.email;
+       this.address = data.address;
+      this.mobile = data.mobile;
+    
     })
   }
   saved(){
