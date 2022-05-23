@@ -67,6 +67,7 @@ import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 @NgModule({
@@ -109,6 +110,7 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
         StorageCommentComponent,
         HistoryDetailsComponent,
         TermsConditionComponent,
+        FavoriteComponent,
         
 
 

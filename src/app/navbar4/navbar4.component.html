@@ -27,8 +27,9 @@
                             <li><a *ngIf='isLoggedIn()'class="dropdown-item" (click)="openDialog()" >Signout</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">My Storage</a></li>
                             <!-- <button *ngIf='isLoggedIn()'class="dropdown-item" mat-button >SignOut</button> -->
+                            <li><a *ngIf='isLoggedIn()'class="dropdown-item" routerLink="favorite">Your Favorite</a></li>
                             <li><a *ngIf='isLoggedIn()'class="dropdown-item" routerLink="profile">Your Profile</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item"  routerLink="history">History</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item"  routerLink="history">Your Service</a></li>
                         </ul>
                     </div>
                 </li>

@@ -16,7 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MyStorageComponent } from './my-storage/my-storage.component';
 import { SearchComponent } from './search/search.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
-
+import { FavoriteComponent} from './favorite/favorite.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'search/:search',component:SearchComponent},
@@ -31,6 +31,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},
   {path:'history',component:HistoryComponent},
+  {path:'favorite',component:FavoriteComponent},
   {path:'storage-details/:id',component:StorageDetailsComponent},
   {path:"mystorage",component:MyStorageComponent},
   {path:"**",component:ErrorhandlingComponent},

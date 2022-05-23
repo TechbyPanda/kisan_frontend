@@ -2,35 +2,36 @@
         <div class="container">
             <div class="row">
         <div class="col-lg-12  test pb-5">
-            <form class="row">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="account-fn">First Name</label>
-                        <input [(ngModel)]="user.name" class="form-control" type="text" id="account-fn" placeholder="{{user.name}}" required="">
+                        <input [(ngModel)]="user1.name" class="form-control" type="text" name="" id="account-fn" placeholder="{{user.name}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="account-ln">Occupation</label>
-                        <input [(ngModel)]="user.occupation" class="form-control" type="text" id="account-ln" value="{{user.occupation}}" required="">
+                        <input [(ngModel)]="user1.occupation" class="form-control" type="text" id="account-ln" placeholder="{{user.occupation}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="account-email">E-mail </label>
-                        <input [(ngModel)]="user.email" name="email" class="form-control" type="email" id="account-email" value="{{user.email}}" disabled="">
+                    
+                        <input [(ngModel)]="user1.email" name="email" class="form-control" type="email" placeholder="{{email}}" disabled="">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="account-phone">Phone Number</label>
-                        <input [(ngModel)]="user.contact" class="form-control" type="text" id="account-phone" value="{{user.contact}}" required="">
+                        <input [(ngModel)]="user1.mobile" class="form-control" type="text" placeholder="{{mobile}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="account-address">Address</label>
-                        <input [(ngModel)]="user.address" class="form-control" type="text" id="account-address" value="{{user.address}}" required="">
+                        <input [(ngModel)]="user1.address" class="form-control" type="text" value="{{address}}">
                     </div>
                 </div>
                 <div class="col-12">
@@ -40,7 +41,7 @@
                         <button class="btn btn-style-1 btn-primary" (click)="saved()"  type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>    
 </div>
