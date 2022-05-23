@@ -61,9 +61,9 @@ export class Navbar4Component implements OnInit {
 
   storage(type:any){
     if(type=='cold'){
-      this.router.navigate(['storage/'+this.ware])
-    }else{
       this.router.navigate(['storage/'+this.cold])
+    }else{
+      this.router.navigate(['storage/'+this.ware])
     }
   }
 
