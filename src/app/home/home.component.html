@@ -20,6 +20,7 @@
 
 
 <div class="container product_container">
+
     <h1>We assure you of our best service at all times vs assuring you of our best services always.We are here To help you. </h1>
 
     <!-- <div class="box">
@@ -66,7 +67,13 @@
                             <h3>{{services.name}}</h3>
                             <h2>{{services.charges}} <span>/sqft</span></h2>
                             <button mat-raised-button data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" style="background-color:#bd1e51;color:white;display:block;width:100%;">Book Now</button>
-                        </div>
+
+<!--             <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let services of serviced">
+                    <div class="box">
+                        <div class="box_img">
+                            <img src="{{services.images}}" alt="">
+                        </div> -->
                     </ng-template>
 
                 </owl-carousel-o>
@@ -84,6 +91,9 @@
             of change in their natural condition.</h1>
 
         <div class="container m-auto">
+<!-- <div class="container">
+    <h1>Store Foodstuf for time period untill you required . We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition.</h1>
+ -->
 
             <div class="head">
                 <h1 style="margin:10px">Cold Storage</h1>
@@ -143,6 +153,7 @@
 
 
 
+
         <!-- <iframe title="vimeo-player" src="https://player.vimeo.com/video/247268253?h=6d2fc0d729" width="640" height="360" frameborder="0" allowfullscreen></iframe> -->
 
 
@@ -153,12 +164,12 @@
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Welcome in {{single_items.name}}</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <div class="description">
+                Your items weight be calculated in kilo gram
             </div>
-            <div class="offcanvas-body">
-                <div>
-                    <div class="description">
-                        Your items weight be calculated in kilo gram
-                    </div>
                     <p>Please select the item first to enter the items details</p>
                     <h3 class="total">Total : <span class="tot">{{total |currency:"INR"}}</span></h3>
                     <mat-form-field appearance="legacy">
