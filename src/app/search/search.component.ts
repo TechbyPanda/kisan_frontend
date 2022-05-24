@@ -22,7 +22,8 @@ export class SearchComponent implements OnInit {
       console.log(this.activatedRouter.snapshot.paramMap.get('search'));
   
       this.userService.User_product(this.text).subscribe(data=>{
-        
+        console.log(data.storages);
+        console.log(data.services);
         this.storages = data.storage;
         this.services = data.service;
       })
