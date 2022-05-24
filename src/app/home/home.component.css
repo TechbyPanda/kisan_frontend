@@ -241,14 +241,6 @@ button:hover {
     float: right;
     margin-top: 45px;
 }
-
-
-/* *{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-} */
-
 ::ng-deep :root {
     --orange: #f1b814;
     --pink: #bd1e51;
