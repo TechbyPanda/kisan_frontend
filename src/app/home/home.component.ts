@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   totalLength?:number;
   cold='627d4516c47afab2189efbce';
   ware='627d4527c47afab2189efbd0';
-   username:any;
+  username:any;
   coldData:any;
   wareData:any;
 
