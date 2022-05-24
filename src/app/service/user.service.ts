@@ -18,6 +18,7 @@ export class UserService {
   orderApi = 'http://localhost:3000/order/pay';
   edit_profile = 'http://localhost:3000/customer/edit-profile/';
   view_favorite = 'http://localhost:3000/fav/view/';
+  search_product = "http://localhost:3000/customer/search-product";
   //contractFarming = 'http://localhost:4000/user/contract-farming';
   googleApi = "http://localhost:3000/customer/googleSignin";
   signin= "https://sociallogin1.herokuapp.com/user/googleSignin"
@@ -30,6 +31,11 @@ export class UserService {
     return this.http.post<any>(this.favorite,{
       tool_id:tool_id,
       user_id:user_id
+    });
+  }
+  User_product(text:any){
+    return this.http.post<any>(this.search_product,{
+      text:text
     });
   }
   User_search(){

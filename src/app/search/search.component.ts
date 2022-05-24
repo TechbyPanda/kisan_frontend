@@ -10,36 +10,33 @@ import { StorageService } from '../service/storage.service';
 })
 export class SearchComponent implements OnInit {
   
-  products:any[]=[];
-  storage:any[]=[];
+  services:any;
+  storages:any;
+  text:any;
+  
   constructor(private userService: UserService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
-    this.activatedRouter.snapshot.paramMap.get('search')
-    console.log(this.activatedRouter.snapshot.paramMap.get('search'));
+   this.text=  this.activatedRouter.snapshot.paramMap.get('search')
+   router.events.subscribe(event=>{
+    if(event instanceof NavigationEnd){
+      this.text = this.activatedRouter.snapshot.paramMap.get('search')
+      console.log(this.activatedRouter.snapshot.paramMap.get('search'));
+  
+      this.userService.User_product(this.text).subscribe(data=>{
+        
+        this.storages = data.storage;
+        this.services = data.service;
+      })
+    }
+  })
 
-    this.userService.User_search().subscribe(data=>{
-      this.products = data;
-      console.log(data);
-    })
-    // this.storageService.getStorage().subscribe(result => {
-    //   console.log("storage")
-    //   console.log(result);
-    // })
+
+
     
 }
 
-    final:any[]=[];
-    public search:string="";
-    public searchStorages:string="";
 
     ngOnInit(): void {
 
-      this.router.events.subscribe(event=>{
-        this.search =""+ this.activatedRouter.snapshot.paramMap.get('search');
-        if(event instanceof NavigationEnd){
-          this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
-        }
-      })
-      
       }
   
 }
