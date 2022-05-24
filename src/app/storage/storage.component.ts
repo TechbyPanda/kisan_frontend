@@ -23,14 +23,6 @@ price?:any;
     this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
       this.storage = data;
     })
-
-    // this.storageService.getStorage().subscribe(data => {
-    //   this.storage=data;
-    //   this.totalLength = data.length;
-    //   console.log(this.storage)
-      
-    //   console.log(this.storage.id)
-    // })
   }
   checks=[];
   service_item(id:any){

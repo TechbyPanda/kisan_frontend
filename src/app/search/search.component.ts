@@ -26,9 +26,9 @@ export class SearchComponent implements OnInit {
         console.log(data.services);
         this.storages = data.storage;
         this.services = data.service;
-      })
+      });
     }
-  })
+  });
 
 
 

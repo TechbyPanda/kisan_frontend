@@ -17,8 +17,10 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
 import { SearchComponent } from './search/search.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { FavoriteComponent} from './favorite/favorite.component';
+import { WareStorageComponent } from './ware-storage/ware-storage.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
+  {path:'ware-storage/:id', component: WareStorageComponent },
   {path:'search/:search',component:SearchComponent},
   {path:'profile',component:ProfileComponent},
   {path:'sign-in', component:SigninComponent},
@@ -26,7 +28,7 @@ const routes: Routes = [
   {path:'contract-farming', component:ContractFarmingComponent},
   {path:'services',component:EquipmentsComponent},
   {path:'book-service', component:EquipementsDetailsComponent},
-  {path:'storage/:id',component:StorageComponent},
+  {path:'cold-storage/:id',component:StorageComponent},
   {path:'about-us',component:AbouUsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'equipment-details/:id',component:EquipementsDetailsComponent},
