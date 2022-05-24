@@ -17,6 +17,7 @@ import { MyStorageComponent } from './my-storage/my-storage.component';
 import { SearchComponent } from './search/search.component';
 import { StorageDetailsComponent } from './storage-details/storage-details.component';
 import { FavoriteComponent} from './favorite/favorite.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'search/:search',component:SearchComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'favorite',component:FavoriteComponent},
   {path:'storage-details/:id',component:StorageDetailsComponent},
   {path:"mystorage",component:MyStorageComponent},
+  {path:'warehouse/:id',component:WarehouseComponent},
   {path:"**",component:ErrorhandlingComponent},
  
 ];

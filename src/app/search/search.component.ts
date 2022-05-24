@@ -9,37 +9,29 @@ import { StorageService } from '../service/storage.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  services:any;
+  storages:any;
+  text:any;
   
-  products:any[]=[];
-  storage:any[]=[];
-  constructor(private userService: UserService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
-    this.activatedRouter.snapshot.paramMap.get('search')
-    console.log(this.activatedRouter.snapshot.paramMap.get('search'));
-
-    this.userService.User_search().subscribe(data=>{
-      this.products = data;
-      console.log(data);
-    })
-    // this.storageService.getStorage().subscribe(result => {
-    //   console.log("storage")
-    //   console.log(result);
-    // })
+  constructor(private userService: UserService,private storageService: StorageService,
+    private activatedRouter:ActivatedRoute,private router: Router) {
+      router.events.subscribe(event=>{
+        if(event instanceof NavigationEnd){
+          this.text = this.activatedRouter.snapshot.paramMap.get('search')
+          console.log(this.activatedRouter.snapshot.paramMap.get('search'));
+      
+          this.userService.User_product(this.text).subscribe(data=>{
+            
+            this.storages = data.storage;
+            this.services = data.service;
+          })
+        }
+      })
+    
     
 }
 
-    final:any[]=[];
-    public search:string="";
-    public searchStorages:string="";
-
-    ngOnInit(): void {
-
-      // this.router.events.subscribe(event=>{
-      //   this.search =""+ this.activatedRouter.snapshot.paramMap.get('search');
-      //   if(event instanceof NavigationEnd){
-      //     this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
-      //   }
-      //  })
-      
+    ngOnInit(): void { 
       }
   
 }

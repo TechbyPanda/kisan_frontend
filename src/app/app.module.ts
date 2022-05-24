@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSliderModule } from '@angular/material/slider';
@@ -67,7 +68,7 @@ import {
 
 
 import { StDetailsComponent } from './st-details/st-details.component';
-import { FilterPipe } from './pipe/filter.pipe';
+
 import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
@@ -76,6 +77,7 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
 import { FavoriteComponent } from './favorite/favorite.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WarehouseComponent } from './warehouse/warehouse.component';
 
 
 
@@ -114,19 +116,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         ScratchComponent,
         SearchComponent,
         StDetailsComponent,
-        FilterPipe,
+  
         CommentComponent,
         StorageCommentComponent,
         HistoryDetailsComponent,
         TermsConditionComponent,
         FavoriteComponent,
+        WarehouseComponent,
         
 
 
   ],
 
   imports: [
-
+    Ng2SearchPipeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

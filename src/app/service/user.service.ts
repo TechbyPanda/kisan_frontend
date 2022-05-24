@@ -10,6 +10,7 @@ export class UserService {
   // sign_Up = 'http://localhost:3000/user/signup';
   // signIn = 'http://localhost:3000/user/signin';
   search = "http://localhost:3000/customer/search";
+  search_product = "http://localhost:3000/customer/search-product";
   contractFarming = 'http://localhost:3000/contract/contract-farming';
   profile = 'http://localhost:3000/customer/view/';
   sign_Up = 'http://localhost:3000/customer/signup';
@@ -30,6 +31,11 @@ export class UserService {
     return this.http.post<any>(this.favorite,{
       tool_id:tool_id,
       user_id:user_id
+    });
+  }
+  User_product(text:any){
+    return this.http.post<any>(this.search_product,{
+      text:text
     });
   }
   User_search(){

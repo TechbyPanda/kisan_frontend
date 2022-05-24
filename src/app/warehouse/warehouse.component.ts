@@ -8,30 +8,19 @@ import {StorageCommentComponent} from '../storage-comment/storage-comment.compon
 import {NgbOffcanvas, OffcanvasDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 declare let Razorpay:any
 @Component({
-  selector: 'app-storage',
-  templateUrl: './storage.component.html',
-  styleUrls: ['./storage.component.css']
+  selector: 'app-warehouse',
+  templateUrl: './warehouse.component.html',
+  styleUrls: ['./warehouse.component.css']
 })
-export class StorageComponent implements OnInit {
-totalLength?:number;
-page:number =1;
-price?:any;
-
-
-  constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
-    
-
+export class WarehouseComponent implements OnInit {
+  totalLength?:number;
+  page:number =1;
+  price?:any;
+  constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) { 
     this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
       this.storage = data;
     })
 
-    // this.storageService.getStorage().subscribe(data => {
-    //   this.storage=data;
-    //   this.totalLength = data.length;
-    //   console.log(this.storage)
-      
-    //   console.log(this.storage.id)
-    // })
   }
   checks=[];
   service_item(id:any){
@@ -225,5 +214,4 @@ trackByIndex(index: number, obj: any): any {
   console.log(obj);
   return index;
 }
-
-  }
+}
