@@ -16,8 +16,14 @@ export class Navbar4Component implements OnInit {
   constructor(private _location: Location,private userService: UserService,
     private router: Router,public dialog: MatDialog,private ac : ActivatedRoute,public translate: TranslateService) {
     translate.addLangs(['hi', 'en']);
-    translate.setDefaultLang('hi');
+    translate.setDefaultLang('en');
     
+  }
+  cold_Storage(){
+    this.router.navigate(['/cold-storage',this.cold])
+  }
+  ware_Storage(){
+    this.router.navigate(['/ware-storage',this.ware])
   }
   switchLang(lang: string) {
     this.translate.use(lang);

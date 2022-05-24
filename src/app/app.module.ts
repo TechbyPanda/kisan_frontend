@@ -67,7 +67,6 @@ import {
 
 
 import { StDetailsComponent } from './st-details/st-details.component';
-import { FilterPipe } from './pipe/filter.pipe';
 import { CommentComponent } from './comment/comment.component';
 import { StorageCommentComponent } from './storage-comment/storage-comment.component';
 import { HistoryDetailsComponent } from './history-details/history-details.component';
@@ -76,6 +75,7 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
 import { FavoriteComponent } from './favorite/favorite.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WareStorageComponent } from './ware-storage/ware-storage.component';
 
 
 
@@ -114,12 +114,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         ScratchComponent,
         SearchComponent,
         StDetailsComponent,
-        FilterPipe,
         CommentComponent,
         StorageCommentComponent,
         HistoryDetailsComponent,
         TermsConditionComponent,
         FavoriteComponent,
+        WareStorageComponent,
         
 
 
