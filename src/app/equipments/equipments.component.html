@@ -16,11 +16,10 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
             <h1>{{item.name}}</h1>
-            <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">Book
-                Now</button>
-            <button mat-raised-button class="view_more" (click)="service_item(item._id)">View More</button>
+            <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">{{'Book Now'|translate}}</button>
+            <button mat-raised-button class="view_more" (click)="service_item(item._id)">{{'View More'|translate}}</button>
 
-            <p class="description">Description : {{item.description}}</p>
+            <p class="description">{{'Description'|translate}} : {{item.description}}</p>
             <h4>Price : {{item.charges}}</h4>
             <div class="reviews">
                 <i class="fas fa-star"></i>
