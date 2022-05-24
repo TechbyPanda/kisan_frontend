@@ -7,6 +7,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+::ng-deep :root{
+  --orange:#f1b814;
+  --pink:#bd1e51;
+  --purple:#490b3d;
+}
+
 #container{
   width:inherit;
   height:inherit;
