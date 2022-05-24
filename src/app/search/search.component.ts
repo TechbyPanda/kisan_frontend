@@ -33,12 +33,12 @@ export class SearchComponent implements OnInit {
 
     ngOnInit(): void {
 
-      // this.router.events.subscribe(event=>{
-      //   this.search =""+ this.activatedRouter.snapshot.paramMap.get('search');
-      //   if(event instanceof NavigationEnd){
-      //     this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
-      //   }
-      //  })
+      this.router.events.subscribe(event=>{
+        this.search =""+ this.activatedRouter.snapshot.paramMap.get('search');
+        if(event instanceof NavigationEnd){
+          this.search = ''+this.activatedRouter.snapshot.paramMap.get('search');
+        }
+      })
       
       }
   

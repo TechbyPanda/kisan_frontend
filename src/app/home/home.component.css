@@ -55,11 +55,16 @@ button:disabled {
     opacity: 0.5;
 }
 
+.batch{
+    border-left:5px solid var(--orange);
+    background-color:rgba(241, 184, 20, 0.2)!important;}
+
 .items {
     width: 100%;
     border: 1px solid var(--pink);
     border-radius: 10px;
 }
+
 
 mat-checkbox {
     margin: 10px;
