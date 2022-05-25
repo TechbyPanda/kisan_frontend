@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
       loop: true,
       typeSpeed: 80,
       deleteSpeed: 80,
-      typeColor: 'red'
+      typeColor: 'white'
     })
 
     const target2 = document.querySelector('.typing2')
@@ -88,30 +88,30 @@ export class HomeComponent implements OnInit {
       loop: true,
       typeSpeed: 80,
       deleteSpeed: 80,
-      typeColor: 'red'
+      typeColor: 'white'
     })
     
     writer
-      .changeTypeColor('#f1b814')
+      // .changeTypeColor('#f1b814')
       .type('Better')
-      .rest(1000)
+      .rest(5000)
       .clear()
-      .changeTypeColor('#bd1e51')
+      // .changeTypeColor('#bd1e51')
       .type('Easier')
-      .rest(1000)
+      .rest(5000)
       .clear()
-      .changeTypeColor('#490b3d')
+      // .changeTypeColor('#490b3d')
       .type('Faster')
-      .rest(1000)
+      .rest(5000)
       .clear()
       .start()
 
       writer2
-      .changeTypeColor('#bd1e51')
+      // .changeTypeColor('#bd1e51')
       .type('Dream To ')
-      .rest(1000)
+      .rest(5000)
       .type('Reality')
-      .rest(1000)
+      .rest(8000)
       .start()
   }
 
