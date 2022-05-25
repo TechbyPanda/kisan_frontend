@@ -202,11 +202,13 @@
                             </mat-form-field>
 
                             <div class="duration">
-                                <label for="">
-                        {{'Booking Date'|translate}} 
-                 <input #date="ngModel" type="date" [(ngModel)]="bookingDate" matInput required="true">
-                 <mat-hint *ngIf="date.errors?.['required']">{{'Dates are Required.'|translate}}</mat-hint>
-                    </label>
+
+                                <label for="">Booking Date </label>
+                                <input #date="ngModel" type="date" [(ngModel)]="bookingDate" matInput required="true">
+                 <mat-hint *ngIf="date.errors?.['required']">Dates are Required.</mat-hint>
+                    
+
+                          
                             </div>
 
                             <mat-form-field appearance="legacy">
@@ -214,8 +216,11 @@
                                 <input (keyup)="checkWeighted($event)" #weight matInput>
                             </mat-form-field>
 
+                            
+
                             <mat-checkbox #term="ngModel" [(ngModel)]="selected" class="example-margin" required="true"><a data-bs-toggle="modal" data-bs-target="#exampleModal">{{'Terms and Condition'|translate}}</a></mat-checkbox><br>
                             <mat-hint *ngIf="term.errors?.['required']">{{'Chek-Out Our Terms & Condition.'|translate}}</mat-hint>
+
                         </div>
                     </div>
                 </div>
