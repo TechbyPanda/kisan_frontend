@@ -24,14 +24,14 @@
                     <div class="dropdown">
                         <i class="fa-solid fa-user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-up">Signup</a></li>
-                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-in">Signin</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" (click)="openDialog()">Signout</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">My Storage</a></li>
+                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-up">{{'SignUp'|translate}}</a></li>
+                            <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-in">{{'SignIn'|translate}}</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" (click)="openDialog()">{{'SignOut'|translate}}</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">{{'My Storage'|translate}</a></li>
 
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="favorite">Your Favorite</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="profile">Your Profile</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="history">Your Service</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="favorite">{{'Your Favorite'|translate}}</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="profile">{{'Your Profile'|translate}}</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="history">{{'Your Service'|translate}}</a></li>
                         </ul>
                     </div>
 

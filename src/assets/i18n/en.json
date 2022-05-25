@@ -7,7 +7,7 @@
     "We work to make your production":"We work to make your production",
     "So that you can change your":"So that you can change your",
     "Get Start":"Get Start",
-    "We assure you of our best service at all times vs assuring you of our best services always.We are here To help you":"We assure you of our best service at all times vs assuring you of our best services always.We are here To help you.",
+    "We assure you of our best service at all times.We are here To help you":"We assure you of our best service at all times.We are here To help you.",
     "Services":"Services",
     "Store Foodstuf for time period untill you required. We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition":"Store Foodstuf for time period untill you required. We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition",
     "Cold Storage":"Cold Storage",
@@ -57,6 +57,20 @@
     "Login Form":"Login Form",
     "Enter your password":"Enter your password",
     "Login":"Login",
-    "Forgotten Password ?":"Forgotten Password ?"
+    "Forgotten Password ?":"Forgotten Password ?",
+    "SignUp":"SignUp",
+    "SignIn":"SignIn",
+    "SignOut":"SignOut",
+    "My Storage":"My Storage",
+    "Your Favorite":"Your Favorite",
+    "Your Profile":"Your Profile",
+    "Your Service":"Your Service",
+    "Enter your phone no.":"Enter your phone no.",
+    "Enter your occupation":"Enter your occupation",
+    "Password is required.":"Password is required.",
+    "Register":"Register",
+    "Confirm your password":"Confirm your password",
+    "I agree with terms and conditions":"I agree with terms and conditions",
+    "Registration Form":"Registration Form"
 
 }
