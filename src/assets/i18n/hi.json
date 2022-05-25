@@ -16,7 +16,7 @@
     "We work to make your production":"हम आपका उत्पादन करने के लिए काम करते हैं",
     "So that you can change your":"ताकि आप अपना बदल सकें",
     "Get Start":"शुरू करो",
-    "We assure you of our best service at all times vs assuring you of our best services always.We are here To help you":"हम आपको हर समय हमारी सर्वोत्तम सेवा का आश्वासन देते हैं बनाम आपको हमेशा हमारी सर्वोत्तम सेवाओं का आश्वासन देते हैं। हम आपकी सहायता के लिए यहां हैं।",
+    "We assure you of our best service at all times.We are here To help you":"हम आपको हमेशा हमारी सर्वोत्तम सेवाओं का आश्वासन देते हैं। हम आपकी सहायता के लिए यहां हैं।",
     "Services":"सेवाएं",
     "Store Foodstuf for time period untill you required . We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition":"जब तक आपको आवश्यकता न हो तब तक खाद्य पदार्थों को समय-समय पर स्टोर करें। हम आधुनिक प्रशीतन तकनीक प्रदान करते हैं जिससे कृषि उत्पादों को उनकी प्राकृतिक स्थिति में न्यूनतम परिवर्तन के साथ स्टोर करना संभव हो जाता है ।",
     "Cold Storage":"शीतगृह",
@@ -43,7 +43,7 @@
     "Enter your description here":"अपना विवरण यहां दर्ज करें",
     "Name is required.":"नाम आवश्यक है।",
     "Email is Required.":"ईमेल की जरूरत है।",
-    "Number is required.":"संख्या की आवश्यकता है।",
+    "Number is required.":"संख्या की आवश्यक है।",
     "Address is required.":"पता आवश्यक है।",
     "Area is required.":"क्षेत्र अनिवार्य है।",
     "Dates are required.":"तिथियां अनिवार्य हैं।",
@@ -67,11 +67,20 @@
     "Login Form":"प्रवेश फार्म",
     "Enter your password":"अपना पासवर्ड डालें",
     "Login":"लॉग इन करें",
-    "Forgotten Password ?":"पासवर्ड भूल गए ?"
-
-
-
-    
-
+    "Forgotten Password ?":"पासवर्ड भूल गए ?",
+    "SignUp":"साइनअप करें",
+    "SignIn":"साइन इन करें",
+    "SignOut":"साइनआउट करें",
+    "My Storage":"मेरा भंडारण",
+    "Your Favorite":"मेरा पसंदीदा",
+    "Your Profile":"आपकी प्रोफ़ाइल",
+    "Your Service":"आपकी सेवाएं",
+    "Enter your phone no.":"अपना फोन नंबर दर्ज करें।",
+    "Enter your occupation":"अपना पेशा दर्ज करें",
+    "Password is required.":"पासवर्ड आवश्यक है।",
+    "Register":"पंजीकृत करें",
+    "Confirm your password" :"अपने पासवर्ड की पुष्टि करें।",
+    "I agree with terms and conditions":"मुझे नियम व शर्तें मंजूर हैं|",
+    "Registration Form":"पंजीकरण फॉर्म"
 
 }
