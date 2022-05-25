@@ -13,9 +13,9 @@
     position:relative;
 }
 .banner{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/cold_storage3.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/ware_banner.jpg');
     width:100%;
-    height:350px;
+    height:auto;
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -33,6 +33,8 @@
     font-size:24px;
     color: #FEFFED;
     text-align: center;
+    width: 70%;
+    line-height: 35px;
 }
 
 button{
