@@ -58,13 +58,18 @@ button:disabled {
 .batch{
     padding:10px;
 
-    border-left:5px solid var(--orange);
-    background-color:rgba(241, 184, 20, 0.2)!important;}
+    color:var(--orange);}
 
 .items {
     width: 100%;
     border: 1px solid var(--pink);
     border-radius: 10px;
+}
+
+.value img{
+    width:100px;
+    width:100px;
+    margin:auto;
 }
 
 
