@@ -22,10 +22,7 @@
             <p class="description">{{'Description'|translate}} : {{item.description}}</p>
             <h4>Price : {{item.charges}}</h4>
             <div class="reviews">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
             </div>
             <div class="icons">
                 <i (click)="openDialog(item._id)" class="fa-solid fa-comment"></i>
