@@ -43,19 +43,21 @@
     text-align: center;
 }
 
-button {
+/* button {
     padding: 5px;
     border-radius: 10px;
     color: var(--pink);
     background-color: white;
     font-size: 20px;
-}
+} */
 
 button:disabled {
     opacity: 0.5;
 }
 
 .batch{
+    padding:10px;
+
     border-left:5px solid var(--orange);
     background-color:rgba(241, 184, 20, 0.2)!important;}
 
@@ -432,6 +434,9 @@ button:hover {
     margin-top: 5px;
     font-size: 20px;
     margin: 0 0 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
 }
 
 .box h2 {
@@ -460,4 +465,17 @@ button:hover {
     letter-spacing: 2px;
     transition: 0.2s;
     border: 1px solid var(--pink);
+}
+
+.owl-next{
+    left:-30px !important;
+}
+
+.owl-prev{
+    right:-30px !important;
+}
+
+.owl-next,.owl-prev{
+    position:absolute!important;
+    top:90px;
 }

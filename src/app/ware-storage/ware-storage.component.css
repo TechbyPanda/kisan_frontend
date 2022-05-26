@@ -16,7 +16,7 @@
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../../assets/img/ware_banner.jpg');
     width:100%;
     height:auto;
-    padding:20px;
+    padding:30px;
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -101,7 +101,7 @@ mat-checkbox{
 }
 
 .cards2:hover .left2_img{
-    top:-30px;
+    /* top:-30px; */
     box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
 }
 
@@ -116,14 +116,14 @@ mat-checkbox{
 }
 
 .cards2 .view_more{
-    background-color:var(--orange);
-    margin-right:10px;
-    border:none;
-    padding:5px;
-    font-size:20px;
-    color: white;
-    border-radius:10px;
-    border:1px solid var(--orange);
+    background-color: white;
+    margin-right: 27px;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--orange);
+    border-radius: 10px;
+    border: 2px solid var(--orange);
 }
 
 .cards2 h3{

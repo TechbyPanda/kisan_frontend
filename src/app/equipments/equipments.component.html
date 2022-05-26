@@ -16,21 +16,22 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
             <h1>{{item.name}}</h1>
-            <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">{{'Book Now'|translate}}</button>
-            <button mat-raised-button class="view_more" (click)="service_item(item._id)">{{'View More'|translate}}</button>
+            
 
             <p class="description">{{'Description'|translate}} : {{item.description}}</p>
             <h4>Price : {{item.charges}}</h4>
+            <button mat-raised-button class="view_more" (click)="service_item(item._id)">{{'View More'|translate}}</button>
+            <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">{{'Book Now'|translate}}</button>
             <div class="reviews">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <div class="icons">
+            <!-- <div class="icons">
                 <i (click)="openDialog(item._id)" class="fa-solid fa-comment"></i>
                 <i (click)="favorite(item._id)" class="fas fa-share-alt"></i>
-            </div>
+            </div> -->
         </div>
     </div>
 
