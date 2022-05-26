@@ -235,3 +235,10 @@ button:hover{
     float:right;
     margin-top:45px;
 }
+
+/* star ratting css */
+
+ngb-rating {
+    color: #FFC107;
+    font-size: 30px;
+}

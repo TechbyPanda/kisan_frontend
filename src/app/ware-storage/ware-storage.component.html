@@ -18,15 +18,8 @@
             <p class="mt-3"><span class="fruit" *ngFor="let item of st.items">{{item.name}} </span></p>
             <p class="description">Description : {{st.storage_description}}</p>
             <div class="reviews">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
             </div>
-            <!-- <div class="icons">
-                <i (click)="openDialog(st._id)" class="fa-solid fa-comment"></i>
-                <i class="fas fa-share-alt"></i>
-            </div> -->
         </div>
     </div>
 </div>
