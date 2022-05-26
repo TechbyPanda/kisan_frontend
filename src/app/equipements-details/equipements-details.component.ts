@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { AdminService } from '../service/admin.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-equipements-details',
   templateUrl: './equipements-details.component.html',
@@ -8,14 +10,23 @@ import { AdminService } from '../service/admin.service';
 })
 export class EquipementsDetailsComponent implements OnInit {
 
-  constructor(private activatedRouter : ActivatedRoute,private adminService : AdminService) { }
-  id:any;
+  constructor(private router:Router,private offcanvasService: NgbOffcanvas,private activatedRouter : ActivatedRoute,private adminService : AdminService) { }
+  
    contact:any;     
   date:any;
   email:any;
   details:any;
   userId:any;
   user:any;
+  bookingDate:any;
+  username:any;
+  orderList:any=[];
+  total:any;
+  address:any;
+ id:any= sessionStorage.getItem("id");
+  tid:any;
+  price:any;
+  name:any;
   ngOnInit(): void {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
    this.adminService.service_Details(this.id).subscribe(data=>{
@@ -37,4 +48,38 @@ export class EquipementsDetailsComponent implements OnInit {
      })
 
   }
+  
+  items:any=[]
+  single_items:any='';
+  closeResult='';
+  duration:any;
+
+  private getDismissReason(reason: any): string {
+    if (reason === OffcanvasDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on the backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  open(content:any) {
+    if(sessionStorage.getItem('id')){
+      this.offcanvasService.open(content, {ariaLabelledBy: 'offcanvas-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }else{
+      this.router.navigate(['sign-in']);
+    }
+  }
+
+  setData(id:any,price:any,name:any){
+    this.tid = id;
+    this.price = price;
+    this.name = name;
+    this.total = price;
+}
 }

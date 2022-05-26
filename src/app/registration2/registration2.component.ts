@@ -28,11 +28,11 @@ export class Registration2Component implements OnInit {
     this.userService.User_Signup(this.user).subscribe(data=>{
       console.log(data);
     
-      this.router.navigate(['signin']);
+      this.router.navigate(['sign-in']);
     },err=>{
       console.log(err);
       if(err instanceof HttpErrorResponse){
-        if(err.status == 401){
+        if(err.status == 400){
           alert(err);
         }
         else if(err.status == 500){

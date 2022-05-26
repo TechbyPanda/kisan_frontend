@@ -1,8 +1,55 @@
-<div class="wrap mt-1">
+<div class="wrap">
+    <div class="box">
+        <div class="box_img">
+            <img src="{{details.images}}" alt="">
+        </div>
+        <div class="box_content">
+            <h1>{{details.name}}</h1>
+            <p>Address : {{details.location}}</p>
+            <button mat-raised-button class="book_now" (click)="setData(details._id,details.charges,details.name)">{{'Book Now'|translate}}</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="wrap mt-1">
     <div class="product">
         <div class="product-img">
             <img src="{{details.images}}" alt="">
-            <!-- <span class="tag">new</span> -->
+    
         </div>
         <div class="product-listing">
             <div class="content">
@@ -24,5 +71,5 @@
         </div>
     </div>
     
-</div>
+</div> -->
 <!-- //carasol -->

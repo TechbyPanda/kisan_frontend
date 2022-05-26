@@ -25,24 +25,5 @@ export class RegistrationPageComponent implements OnInit {
         alert("data not found");
       })
     }
-  // public signInUser(){
-  //   this._authService.signInUser(this.user).subscribe(data=>{
-  //     sessionStorage.setItem('token',data.token);
-  //     sessionStorage.setItem('userId',data.result._id);
-  //     this.taoster.success("Login Success","Success");
-  //     this.router.navigate(['dashboard']);
-  //   },err=>{
-  //     console.log(err);
-  //     if(err instanceof HttpErrorResponse){
-  //       if(err.status == 401){
-  //         this.taoster.error("Invalid User","Error");
-  //       }
-  //       else if(err.status == 500){
-  //         this.taoster.error("Internal Server Error","Error");
-
-  //       }
-  //     }
-  //   });
-  // }
-
+  
 }
