@@ -8,6 +8,9 @@ import { UserService } from '../service/user.service';
 import {StorageCommentComponent} from '../storage-comment/storage-comment.component';
 import {NgbOffcanvas, OffcanvasDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 declare let Razorpay:any
+import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-storage-details',
   templateUrl: './storage-details.component.html',
@@ -17,7 +20,7 @@ export class StorageDetailsComponent implements OnInit {
   constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,
     public storageService: StorageService,private router:Router,
     private userService:UserService,private activatedRoute :ActivatedRoute,
-    private adminService : AdminService) {}
+    private adminService : AdminService, private notifyService:ToastrService) {}
 
  
   id:any;
@@ -34,7 +37,18 @@ export class StorageDetailsComponent implements OnInit {
      this.details = data;
      console.log(this.details[0].items[0].name);
      
-   })
+   },err=>{
+    console.log(err);
+    if(err instanceof HttpErrorResponse){
+      if(err.status == 400){
+        this.notifyService.error("user already exists...");
+      }
+      else if(err.status == 500){
+        this.notifyService.warning("Something is wrong..!")
+      // alert(err);
+    }
+  }
+})
    
   }
   bookService(picker:any,name:any,email:any,mobile:any,address:any){

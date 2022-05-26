@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -104,7 +103,7 @@ import { WareStorageComponent } from './ware-storage/ware-storage.component';
     Homepage2Component,
 
     HistoryComponent,
-
+    
       ServiceDialogComponent,
 
       ConfirmComponent,

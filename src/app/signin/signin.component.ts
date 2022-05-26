@@ -22,7 +22,8 @@ export class SigninComponent implements OnInit {
   name:any;
   provider:any;
   email:any;
-  constructor(private userService: UserService, private router: Router, private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
+  constructor(private userService: UserService, private router: Router,
+     private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
   
   ngOnInit(): void {
     

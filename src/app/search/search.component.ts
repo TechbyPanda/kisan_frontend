@@ -14,7 +14,8 @@ export class SearchComponent implements OnInit {
   storages:any;
   text:any;
   
-  constructor(private userService: UserService,private storageService: StorageService,private activatedRouter:ActivatedRoute,private router: Router) {
+  constructor(private userService: UserService,private storageService: StorageService,
+    private activatedRouter:ActivatedRoute,private router: Router) {
    this.text=  this.activatedRouter.snapshot.paramMap.get('search')
    router.events.subscribe(event=>{
     if(event instanceof NavigationEnd){
@@ -39,6 +40,14 @@ export class SearchComponent implements OnInit {
     ngOnInit(): void {
 
       }
+      service_item(id:any){
+        alert(id);
+        console.log(id);
+        this.router.navigate(['storage-details',id]);
+      }
+      service(id:any){
+        this.router.navigate(['equipment-details',id]);
+  }
   
 }
 

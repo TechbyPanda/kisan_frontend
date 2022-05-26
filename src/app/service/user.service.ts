@@ -9,9 +9,9 @@ export class UserService {
 
   // sign_Up = 'http://localhost:3000/user/signup';
   // signIn = 'http://localhost:3000/user/signin';
-  search = "http://localhost:3000/customer/search";
-  contractFarming = 'http://localhost:3000/contract/contract-farming';
-  profile = 'http://localhost:3000/customer/view/';
+  search = "https://krishi-backend.herokuapp.com/customer/search";
+  contractFarming = 'https://krishi-backend.herokuapp.com/contract/contract-farming';
+  profile = 'https://krishi-backend.herokuapp.com/customer/view/';
   sign_Up = 'http://localhost:3000/customer/signup';
   signIn = 'http://localhost:3000/customer/signin';
   favorite = "http://localhost:3000/fav/favorite";

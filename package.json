@@ -31,6 +31,7 @@
     "ngx-pagination": "^5.1.1",
     "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",
+    "scratch-card-package": "^1.1.6",
     "t-writer.js": "^1.0.4",
     "tslib": "^2.3.0",
     "typewriter-effect": "^2.18.2",

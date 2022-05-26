@@ -1,19 +1,20 @@
 <div class="container d-flex flex-wrap">
-  <div class="card m-4" style="width: 18rem;" *ngFor="let country of storages">
-    <img src="{{country.image}}" class="card-img-top" width="280" height="190" alt="...">
+  <div class="card m-4" style="width: 18rem;" *ngFor="let store of storages">
+    <img src="{{store.image}}" class="card-img-top" width="280" height="190" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{store.name}}</h5>
+      <p class="card-text">{{store.storage_description}}</p>
+      <button class="view_more" (click)="service_item(store._id)"  mat-raised-button>View More</button>
+      <a href="#" class="btn btn-warning">View More</a>
     </div>
   </div>
 
-  <div class="card m-4" style="width: 18rem;" *ngFor="let country of services">
-    <img src="{{country.images}}" class="card-img-top" width="280" height="190" alt="...">
+  <div class="card m-4" style="width: 18rem;" *ngFor="let service of services">
+    <img src="{{service.images}}" class="card-img-top" width="280" height="190" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{service.name}}</h5>
+      <p class="card-text">{{service.description}}</p>
+      <button mat-raised-button class="view_more" (click)="service(service._id)">{{'View More'|translate}}</button>
     </div>
   </div>
 </div>
