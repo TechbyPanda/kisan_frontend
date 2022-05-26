@@ -17,16 +17,16 @@
 
 <!-- banner ends -->
 
-<div class="container product_container shadow-lg my-5 text-center service-text bg-light rounded batch" >
+<!-- <div class="container product_container shadow-lg my-5 text-center service-text bg-light rounded batch" >
     <h1>{{'We assure you of our best service at all times.We are here To help you'|translate}}' </h1>
-</div>
+</div> -->
 
 <div class="container product_container m-auto bg-white shadow-sm rounded my-5" >
     <div class="row p-3">
             <div class="head p-2">
                 <h1 style="margin:10px;font-size:28px" class="fw-bold m-auto">{{'Services'|translate}}</h1>
             </div>
-            <div class="col-12 service_col">
+            <div class="col-12 service_col mt-5">
                 <owl-carousel-o [options]="customOptions">
                 <ng-template carouselSlide *ngFor="let services of serviced">
                     <div class="box">
@@ -56,7 +56,7 @@
     <div class="head p-2">
         <h1 style="margin:10px; font-size:28px;" class="m-auto fw-bold">{{'Cold Storage'|translate}}</h1>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
             <owl-carousel-o [options]="customOptions">
 
@@ -84,7 +84,7 @@
     <div class="head p-2">
         <h1 style="margin:10px; font-size:28px;" class="m-auto fw-bold">{{'Ware House'|translate}}</h1>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
             <owl-carousel-o [options]="customOptions">
 
@@ -201,14 +201,12 @@
 
                             </mat-form-field>
 
-                            <div class="duration">
+                            <div class="duration mt-2 mb-2">
 
-                                <label for="">Booking Date </label>
+                                <label for="" class="me-3">Booking Date </label>
                                 <input #date="ngModel" type="date" [(ngModel)]="bookingDate" matInput required="true">
-                 <mat-hint *ngIf="date.errors?.['required']">Dates are Required.</mat-hint>
-                    
-
-                          
+                                <mat-hint *ngIf="date.errors?.['required']">Dates are Required.</mat-hint>
+                                    
                             </div>
 
                             <mat-form-field appearance="legacy">

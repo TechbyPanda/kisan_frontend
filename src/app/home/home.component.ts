@@ -121,22 +121,26 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: true,
-    margin:10,
+    margin:5,
     navSpeed: 700,
-    navText: ['<', '>'],
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
+    dotsEach:20,
+    navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
     nav:true,
     responsive: {
       0: {
         items: 1
       },
       400: {
-        items: 2
+        items: 2.5
       },
       740: {
-        items: 3
+        items: 2.5
       },
       940: {
-        items: 3
+        items: 2.5
       },
     },
   }

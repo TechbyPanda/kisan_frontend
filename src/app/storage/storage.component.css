@@ -17,8 +17,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     width:100%;
-    height:350px;
-    padding:20px;
+    height:auto;
+    padding:30px;
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -118,14 +118,14 @@ mat-checkbox{
 }
 
 .cards2 .view_more{
-    background-color:var(--orange);
-    margin-right:10px;
-    border:none;
-    padding:5px;
-    font-size:20px;
-    color: white;
-    border-radius:10px;
-    border:1px solid var(--orange);
+    background-color: white;
+    margin-right: 27px;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--orange);
+    border-radius: 10px;
+    border: 2px solid var(--orange);
 }
 
 .cards2 h3{
