@@ -19,15 +19,8 @@
             <button class="view_more " (click)="service_item(st._id)"  mat-raised-button>View More</button>
             <button mat-raised-button  class="book_now" (click)="setdata(st)" (click)="open(content)">Book Now</button>
             <div class="reviews">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
             </div>
-            <!-- <div class="icons">
-                <i (click)="openDialog(st._id)" class="fa-solid fa-comment"></i>
-                <i class="fas fa-share-alt"></i>
-            </div> -->
         </div>
     </div>
 </div>

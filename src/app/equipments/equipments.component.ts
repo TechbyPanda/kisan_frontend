@@ -25,7 +25,8 @@ export class EquipmentsComponent implements OnInit {
   paginate:any;
   totalLength?:number;
   page:number = 1;
-   mobile:any;
+  mobile:any;
+  starRating = 0;
 
   constructor(private offcanvasService: NgbOffcanvas,private dataService:ServicesService,public dialog: MatDialog,private notifyService:ToastrService,private adminService : AdminService,private userService: UserService,private router:Router) { }
 
@@ -36,7 +37,7 @@ export class EquipmentsComponent implements OnInit {
   orderList:any=[];
   total:any;
   address:any;
- id:any= sessionStorage.getItem("id");
+  id:any= sessionStorage.getItem("id");
   tid:any;
   price:any;
   name:any;

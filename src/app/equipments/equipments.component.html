@@ -23,10 +23,7 @@
             <button mat-raised-button class="view_more" (click)="service_item(item._id)">{{'View More'|translate}}</button>
             <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">{{'Book Now'|translate}}</button>
             <div class="reviews">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
             </div>
             <!-- <div class="icons">
                 <i (click)="openDialog(item._id)" class="fa-solid fa-comment"></i>

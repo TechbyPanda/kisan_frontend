@@ -16,6 +16,7 @@ export class WareStorageComponent implements OnInit {
   totalLength?:number;
   page:number =1;
   price?:any;
+  starRating = 0;
   
   
     constructor(private offcanvasService: NgbOffcanvas,public dialog:MatDialog,public storageService: StorageService,private router:Router,private userService:UserService,private activatedRoute :ActivatedRoute) {
