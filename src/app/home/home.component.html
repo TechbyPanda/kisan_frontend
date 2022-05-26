@@ -47,7 +47,7 @@
     <!-- cold storage starts -->
 
 
-<div class="container text-center shadow-lg my-5 bg-white rounded batch"> 
+<div class="container text-center shadow-sm my-5 bg-white rounded batch"> 
     <h1>{{'Store Foodstuf for time period untill you required . We provide Modern refrigeration techniques which made it possible to store agricultural products with a minimum of change in their natural condition'| translate}}.</h1>
 </div>
 
@@ -104,6 +104,29 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-center m-5" style="font-size:28px;">OUR <strong>VALUES</strong></h1>
+    <div class="d-flex flex-wrap justify-content-around">
+        <div class="card value p-3 border-0 m-3">
+            <img src="../../assets/img/Group 11.png" alt="">
+            <h2 class="text-center fw-bold mt-3">INTEGRITY</h2>
+        </div>
+        <div class="card value p-3 border-0 m-3">
+            <img src="../../assets/img/Group 10.png" alt="">
+            <h2 class="text-center fw-bold mt-3">CUSTOMER CENTRICITY</h2>
+        </div>
+        <div class="card value p-3 border-0 m-3">
+            <img src="../../assets/img/Group 6.png" alt="">
+            <h2 class="text-center fw-bold mt-3">SUSTANIBILITY</h2>
+        </div>
+        <div class="card value p-3 border-0 m-3">
+            <img src="../../assets/img/Group 7.png" alt="">
+            <h2 class="text-center fw-bold mt-3">QUALITY</h2>
+        </div>
+    </div>
+</div>
+
         <!-- <iframe title="vimeo-player" src="https://player.vimeo.com/video/247268253?h=6d2fc0d729" width="640" height="360" frameborder="0" allowfullscreen></iframe> -->
 
 
@@ -147,10 +170,10 @@
                         </mat-form-field>
 
 
-                <mat-form-field appearance="legacy">
+                <!-- <mat-form-field appearance="legacy">
                     <mat-label>Enter the weight</mat-label>
                     <input (keyup)="checkWeight($event,item.name)" #weight disabled="{{!item.selected}}" required="true" matInput>
-                </mat-form-field>
+                </mat-form-field> -->
     
                 <button [disabled]="true" id="{{'btn'+item.name}}"class="ok" (click)="itemsData(item,bookingDate.value,endDate.value,weight.value)">ok</button>
             </div>    

@@ -112,6 +112,11 @@ footer .social_icons li,
 
 
 /* @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@1&display=swap'); */
+::ng-deep :root{
+  --orange:#f1b814;
+  --pink:#bd1e51;
+  --purple:#490b3d;
+}
 
 body{
   min-height: 100vh;
@@ -120,7 +125,7 @@ body{
 }
 footer{
   /* position: fixed; */
-  background: #810000;
+  background: var(--purple);
   width: 100%;
   bottom: 0;
   left: 0;
@@ -254,7 +259,7 @@ footer .content .link-boxes .box{
   width: calc(100% + 55px);
   outline: none;
   border: 2px solid #AFAFB6;
-  background: #810000;
+  background: var(--purple);
   border-radius: 4px;
   padding: 0 15px;
   font-size: 15px;
@@ -281,7 +286,7 @@ footer .content .link-boxes .box{
 }
 footer .bottom-details{
   width: 100%;
-  background: #810000;
+  background: var(--purple);
 }
 footer .bottom-details .bottom_text{
   max-width: 1250px;
