@@ -65,7 +65,9 @@
 
                 <ng-template carouselSlide *ngFor="let data of coldData">
                     <div class="storage_card">
-                        <h3>{{data.name}}</h3>
+                        <h3 style="white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">{{data.name}}</h3>
                         <p>Items : <span *ngFor="let item of data.items">{{item.name}}, </span></p>
                         <p>Address : {{data.location}}</p>
                         <div class="button">
@@ -93,7 +95,9 @@
             <owl-carousel-o [options]="customOptions">
                 <ng-template carouselSlide *ngFor="let data of wareData">
                     <div class="storage_card">
-                        <h3>{{data.name}}</h3>
+                        <h3 style="white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">{{data.name}}</h3>
                         <p>Items : <span *ngFor="let item of data.items">{{item.name}}, </span></p>
                         <p>Address : {{data.location}}</p>
                         <div class="button">
