@@ -58,7 +58,7 @@ export class SigninComponent implements OnInit {
     })
   }
     signIn(){
-      alert("called");
+    
         this.userService.sign_In(this.user).subscribe(data=>{
           this.notifyService.success("Sing In Successfully..!!")
             sessionStorage.setItem("token",data.token);

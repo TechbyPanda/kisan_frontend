@@ -23,11 +23,12 @@ starRating = 0;
 
     this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
       this.storage = data;
+      console.log(data);
     })
   }
   checks=[];
   service_item(id:any){
-    alert(id);
+    
     console.log(id);
     this.router.navigate(['storage-details',id]);
   }

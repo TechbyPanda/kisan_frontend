@@ -39,6 +39,9 @@ export class SearchComponent implements OnInit {
     ngOnInit(): void {
 
       }
-  
+      showService(id:any){
+        console.log(id);
+        this.router.navigate(['storage-details',id]);
+      }
 }
 

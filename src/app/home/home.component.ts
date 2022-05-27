@@ -183,21 +183,27 @@ export class HomeComponent implements OnInit {
   //   });
   // }
   service_item(id:any){
-    alert(id);
+  
     console.log(id);
     this.router.navigate(['storage-details',id]);
   }
   serviceItem(id:any){
-    alert(id);
+    
     console.log(id);
     this.router.navigate(['equipment-details',id]);
+  }
+  showCold(){
+    this.router.navigate(['cold-storage',this.cold])
+  }
+  showStorage(){
+    this.router.navigate(['ware-storage',this.ware])
   }
   setdata(items:any){
     this.single_items=items;
     console.log(items._id);
   }
   saved(){
-    alert("data");
+    
     if(this.isLoggedIn()){
       this.onPay(this.total);
       this.orderList = [{bookingDate:this.bookingDate,tool_id:this.tid}];
