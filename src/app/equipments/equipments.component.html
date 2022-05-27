@@ -16,7 +16,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12 p-2 right2">
             <h1>{{item.name}}</h1>
-            
+
 
             <p class="description">{{'Description'|translate}} : {{item.description}}</p>
             <h4>Price : {{item.charges}}</h4>
@@ -84,7 +84,7 @@
                         <input (keyup)="checkWeight($event)" #weight matInput>
                     </mat-form-field>
 
-                    <mat-checkbox #term="ngModel" [(ngModel)]="selected" class="example-margin" required="true"><a (click)="opentoDialog()">Terms and Condition</a></mat-checkbox><br>
+                    <mat-checkbox #term="ngModel" [(ngModel)]="selected" class="example-margin" required="true"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Terms and Condition</a></mat-checkbox><br>
                     <mat-hint *ngIf="term.errors?.['required']">Chek-Out Our Terms & Condition.</mat-hint>
                 </div>
             </div>

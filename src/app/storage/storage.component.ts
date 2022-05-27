@@ -23,6 +23,7 @@ starRating = 0;
 
     this.storageService.getStorageById(this.activatedRoute.snapshot.paramMap.get('id')).subscribe(data => {
       this.storage = data;
+      console.log(data);
     })
   }
   checks=[];
