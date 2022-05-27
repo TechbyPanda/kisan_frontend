@@ -22,7 +22,8 @@ export class SigninComponent implements OnInit {
   name:any;
   provider:any;
   email:any;
-  constructor(private userService: UserService, private router: Router, private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
+  constructor(private userService: UserService, private router: Router,
+     private socialAuthservice: SocialAuthService , private notifyService:ToastrService) { }
   
   ngOnInit(): void {
     
@@ -46,7 +47,10 @@ export class SigninComponent implements OnInit {
         console.log(err);
         if(err instanceof HttpErrorResponse){
           if(err.status == 400){
-            this.notifyService.error("user already exists...");
+            this.notifyService.error("user does not exists...");
+          }
+          else if(err.status== 404){
+                this.notifyService.error("password does not match! Please Try Again..")
           }
           else if(err.status == 500){
             this.notifyService.warning("Something is wrong..!")
