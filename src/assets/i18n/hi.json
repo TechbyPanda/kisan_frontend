@@ -81,6 +81,7 @@
     "Register":"पंजीकृत करें",
     "Confirm your password" :"अपने पासवर्ड की पुष्टि करें।",
     "I agree with terms and conditions":"मुझे नियम व शर्तें मंजूर हैं|",
-    "Registration Form":"पंजीकरण फॉर्म"
+    "Registration Form":"पंजीकरण फॉर्म",
+    "A password must be six characters including one uppercase letter, one special character and alphanumeric characters.":"एक पासवर्ड छह अक्षरों का होना चाहिए जिसमें एक अपरकेस अक्षर, एक विशेष वर्ण और अल्फ़ान्यूमेरिक वर्ण शामिल हैं।"
 
 }
