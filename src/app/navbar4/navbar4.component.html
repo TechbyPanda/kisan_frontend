@@ -27,7 +27,7 @@
                             <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-up">{{'SignUp'|translate}}</a></li>
                             <li><a *ngIf='!isLoggedIn()' class="dropdown-item" routerLink="sign-in">{{'SignIn'|translate}}</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item" (click)="openDialog()">{{'SignOut'|translate}}</a></li>
-                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">{{'My Storage'|translate}</a></li>
+                            <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="mystorage">{{'My Storage'|translate}}</a></li>
 
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="favorite">{{'Your Favorite'|translate}}</a></li>
                             <li><a *ngIf='isLoggedIn()' class="dropdown-item" routerLink="profile">{{'Your Profile'|translate}}</a></li>

@@ -25,6 +25,7 @@
     <div class="row p-3">
             <div class="head p-2">
                 <h1 style="margin:10px;font-size:28px" class="fw-bold m-auto">{{'Services'|translate}}</h1>
+                     <hr>
             </div>
             <div class="col-12 service_col mt-5">
                 <owl-carousel-o [options]="customOptions">
@@ -83,11 +84,11 @@
 <div class="container m-auto my-5 bg-white shadow-sm rounded " >
     <div class="head p-2">
         <h1 style="margin:10px; font-size:28px;" class="m-auto fw-bold">{{'Ware House'|translate}}</h1>
+        <hr>
     </div>
     <div class="row mt-5">
         <div class="col-12">
             <owl-carousel-o [options]="customOptions">
-
                 <ng-template carouselSlide *ngFor="let data of wareData">
                     <div class="storage_card">
                         <h3>{{data.name}}</h3>
