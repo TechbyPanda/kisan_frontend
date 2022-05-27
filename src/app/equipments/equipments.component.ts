@@ -110,6 +110,7 @@ export class EquipmentsComponent implements OnInit {
   title = 'payment';
 onPay(amount:any){
   var amt = parseInt(amount);
+  alert(amt);
   if(this.isLoggedIn()){
   this.userService.createOrder(amount).subscribe(data=>{
       console.log(data);

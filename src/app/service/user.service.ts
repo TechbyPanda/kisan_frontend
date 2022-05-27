@@ -19,8 +19,8 @@ export class UserService {
   // signIn = 'http://localhost:3000/customer/signin';
   // favorite = "http://localhost:3000/fav/favorite";
   favorite = "https://krishi-backend.herokuapp.com/fav/favorite";
-  orderApi = "https://krishi-backend.herokuapp.com/order/pay";
-  // orderApi = 'http://localhost:3000/order/pay';
+  //orderApi = "https://krishi-backend.herokuapp.com/order/pay";
+  orderApi = 'http://localhost:3000/order/pay';
 
   // edit_profile = 'http://localhost:3000/customer/edit-profile/';
   edit_profile = "https://krishi-backend.herokuapp.com/customer/edit-profile/";
