@@ -68,6 +68,7 @@
     "Enter your phone no.":"Enter your phone no.",
     "Enter your occupation":"Enter your occupation",
     "Password is required.":"Password is required.",
+    "A password must be six characters including one uppercase letter, one special character and alphanumeric characters.":"A password must be six characters including one uppercase letter, one special character and alphanumeric characters.",
     "Register":"Register",
     "Confirm your password":"Confirm your password",
     "I agree with terms and conditions":"I agree with terms and conditions",
