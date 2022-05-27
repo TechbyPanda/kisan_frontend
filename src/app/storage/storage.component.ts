@@ -28,7 +28,7 @@ starRating = 0;
   }
   checks=[];
   service_item(id:any){
-    alert(id);
+    
     console.log(id);
     this.router.navigate(['storage-details',id]);
   }
