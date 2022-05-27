@@ -19,7 +19,7 @@
 
 
             <p class="description">{{'Description'|translate}} : {{item.description}}</p>
-            <h4>Price : {{item.charges}}</h4>
+            <h4>Charges : {{item.charges|currency:'INR'}}/sqft</h4>
             <button mat-raised-button class="view_more" (click)="service_item(item._id)">{{'View More'|translate}}</button>
             <button mat-raised-button class="book_now" (click)="setData(item._id,item.charges,item.name)" (click)="open(content)">{{'Book Now'|translate}}</button>
             <div class="reviews">

@@ -80,3 +80,9 @@
 .product_card_content .price{
     float:right;
 }
+
+p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
