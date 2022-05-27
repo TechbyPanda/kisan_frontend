@@ -4,11 +4,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-  service = 'http://localhost:3000/service/view-services';
-  service_details = 'http://localhost:3000/service/view-services/';
-  storage_details = 'http://localhost:3000/storage/view/'
-  user = 'http://localhost:3000/user/view/';
-  customer = 'http://localhost:3000/machinary/book-machines/'
+  // service = 'http://localhost:3000/service/view-services';
+  service = "https://krishi-backend.herokuapp.com/service/view-services";
+  service_details = "https://krishi-backend.herokuapp.com/service/view-services/"
+  // service_details = 'http://localhost:3000/service/view-services/';
+  // storage_details = 'http://localhost:3000/storage/view/';
+  storage_details = "https://krishi-backend.herokuapp.com/storage/view/";
+  user = "https://krishi-backend.herokuapp.com/user/view";
+  // user = 'http://localhost:3000/user/view/';
+  // customer = 'http://localhost:3000/machinary/book-machines/';
+  customer = "https://krishi-backend.herokuapp.com/machinary/book-machines";
   constructor(private http:HttpClient) { }
   service_Api(){
     return this.http.get<any>(this.service);

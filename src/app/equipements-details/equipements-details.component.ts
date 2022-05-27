@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {MatDialog,  MatDialogConfig} from '@angular/material/dialog';
 import { AdminService } from '../service/admin.service';
+import { UserService } from '../service/user.service';
+import { Router } from '@angular/router';
+import { Service } from '../model/service';
+import { ToastrService } from 'ngx-toastr';
+import { ServicesService } from '../service/services.service';
+
+import { HttpErrorResponse } from '@angular/common/http';
+declare let Razorpay:any
+import { NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-equipements-details',
   templateUrl: './equipements-details.component.html',
@@ -8,8 +18,22 @@ import { AdminService } from '../service/admin.service';
 })
 export class EquipementsDetailsComponent implements OnInit {
 
-  constructor(private activatedRouter : ActivatedRoute,private adminService : AdminService) { }
-  id:any;
+  constructor(private offcanvasService: NgbOffcanvas,private dataService:ServicesService,
+  public dialog: MatDialog,private notifyService:ToastrService,private adminService : AdminService,private userService: UserService,private router:Router,
+  private activatedRouter : ActivatedRoute) { }
+  
+  
+  service: Service = new Service("", "", "", "", false, false,"","");
+  bookingDate:any;
+  username:any;
+  orderList:any=[];
+  total:any;
+  address:any;
+  id:any= sessionStorage.getItem("id");
+  tid:any;
+  price:any;
+  name:any;
+
    contact:any;     
   date:any;
   email:any;
@@ -37,4 +61,144 @@ export class EquipementsDetailsComponent implements OnInit {
      })
 
   }
+  
+  setData(id:any,price:any,name:any){
+    this.tid = id;
+    this.price = price;
+    this.name = name;
+    this.total = price;
+}
+
+items:any=[]
+single_items:any='';
+closeResult='';
+duration:any;
+
+
+open(content:any) {
+  if(sessionStorage.getItem('id')){
+    this.offcanvasService.open(content, {ariaLabelledBy: 'offcanvas-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }else{
+    this.router.navigate(['sign-in']);
+  }
+}
+
+private getDismissReason(reason: any): string {
+  if (reason === OffcanvasDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on the backdrop';
+  } else {
+    return `with: ${reason}`;
+  }
+}
+
+
+isLoggedIn(){
+  return this.userService.checkToken();
+}
+
+public checkWeight(event:any){
+  
+  if(event.target.value){
+    this.total = this.price  * event.target.value*1;
+    this.service.duration = event.target.value;
+  }
+}
+setdata(items:any){
+  this.single_items=items;
+  console.log(items._id);
+}
+
+
+service_item(id:any){
+      this.router.navigate(['equipment-details',id]);
+}
+
+
+
+title = 'payment';
+onPay(amount:any){
+var amt = parseInt(amount);
+if(this.isLoggedIn()){
+this.userService.createOrder(amount).subscribe(data=>{
+    console.log(data);
+     alert(data.id);
+     alert("first api called");
+    var options = {
+    "key": "rzp_test_MqoJug1nXNqVws", // Enter the Key ID generated from the Dashboard
+    "amount": amt*10, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "http://localhost:3000/order/payment-status",
+    "prefill": {
+        "name": "Devika Kushwah",
+        "email": "devikakushwah29@gmail.com",
+        "contact": "8770784399"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+console.log(options);
+alert("dear++++"+options);
+var rzp1 = new Razorpay(options);
+
+  rzp1.open()
+    
+  })
+}
+}
+favorite(tool_id:any){
+  const user_id = sessionStorage.getItem("id");
+  this.userService.User_favorite(tool_id,user_id).subscribe(data=>{
+    alert(data);
+    alert("data saved");
+  })
+}
+
+// openDialog(id:any): void {
+//   this.dialog.open(CommentComponent,{data:id});
+// }
+
+selected:any;
+save(){
+  
+    this.onPay(this.total);
+    this.orderList = [{bookingDate:this.bookingDate,tool_id:this.tid}];
+
+    this.service.userId = this.id;
+    this.service.payment = true;
+    this.service.total = this.total;
+   this.service.orderList = this.orderList;
+   this.dataService.serviceOrder(this.service).subscribe(data =>{
+     alert(data);
+     console.log(data);
+     this.notifyService.success("Order Booked Successfully..!!")
+
+    },err=>{
+     console.log(err);
+     if(err instanceof HttpErrorResponse){
+       if(err.status == 400){
+         this.notifyService.error("user already exists...");
+       }
+       else if(err.status == 500){
+         this.notifyService.warning("Something is wrong..!")
+       // alert(err);
+     }
+   }
+   })
+
+
+}
 }

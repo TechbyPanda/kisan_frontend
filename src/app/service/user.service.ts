@@ -7,20 +7,32 @@ import { ContractFarming } from '../model/contract-farming';
 })
 export class UserService {
 
-  // sign_Up = 'http://localhost:3000/user/signup';
-  // signIn = 'http://localhost:3000/user/signin';
-  search = "http://localhost:3000/customer/search";
+  // search = "http://localhost:3000/customer/search";
+  search = "https://krishi-backend.herokuapp.com/customer/search";
   contractFarming = 'http://localhost:3000/contract/contract-farming';
-  profile = 'http://localhost:3000/customer/view/';
-  sign_Up = 'http://localhost:3000/customer/signup';
-  signIn = 'http://localhost:3000/customer/signin';
-  favorite = "http://localhost:3000/fav/favorite";
-  orderApi = 'http://localhost:3000/order/pay';
-  edit_profile = 'http://localhost:3000/customer/edit-profile/';
-  view_favorite = 'http://localhost:3000/fav/view/';
-  search_product = "http://localhost:3000/customer/search-product";
+ //contractFarming = "https://krishi-backend.herokuapp.com/contract/contract-farming";
+  // profile = 'http://localhost:3000/customer/view/';
+  profile = "https://krishi-backend.herokuapp.com/customer/view/"
+  // sign_Up = 'http://localhost:3000/customer/signup';
+  sign_Up = "https://krishi-backend.herokuapp.com/customer/signup";
+  signIn = "https://krishi-backend.herokuapp.com/customer/signin";
+  // signIn = 'http://localhost:3000/customer/signin';
+  // favorite = "http://localhost:3000/fav/favorite";
+  favorite = "https://krishi-backend.herokuapp.com/fav/favorite";
+  orderApi = "https://krishi-backend.herokuapp.com/order/pay";
+  // orderApi = 'http://localhost:3000/order/pay';
+
+  // edit_profile = 'http://localhost:3000/customer/edit-profile/';
+  edit_profile = "https://krishi-backend.herokuapp.com/customer/edit-profile/";
+
+  // view_favorite = 'http://localhost:3000/fav/view/';
+  view_favorite = "https://krishi-backend.herokuapp.com/fav/view/";
+
+  // search_product = "http://localhost:3000/customer/search-product";
+  search_product = "https://krishi-backend.herokuapp.com/customer/search-product";
   //contractFarming = 'http://localhost:4000/user/contract-farming';
-  googleApi = "http://localhost:3000/customer/googleSignin";
+  // googleApi = "http://localhost:3000/customer/googleSignin";
+  googleApi = "https://krishi-backend.herokuapp.com/customer/googleSignin";
   signin= "https://sociallogin1.herokuapp.com/user/googleSignin"
   // signin = "http://localhost:3000/googleLogin/googleSignin"
   constructor(private http: HttpClient) { }
