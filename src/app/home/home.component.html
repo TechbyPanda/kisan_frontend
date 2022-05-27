@@ -72,7 +72,7 @@
                     </div>
                 </ng-template>
             </owl-carousel-o>
-            <button mat-flat-button Style="color:#f1b814;float:right;" routerLink="storage">{{'View More'|translate}}</button>
+            <button mat-flat-button Style="color:#f1b814;float:right;" (click)="showCold()">{{'View More'|translate}}</button>
         </div>
     </div>
 </div>
@@ -94,13 +94,13 @@
                         <p>Items : <span *ngFor="let item of data.items">{{item.name}}, </span></p>
                         <p>Address : {{data.location}}</p>
                         <div class="button">
-                            <button mat-raised-button (click)="service_item(data._id)" style="background-color:#f1b814;color:white;">{{'View More'|translate}}</button>
-                            <button mat-raised-button (click)="setdata(data)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" style="background-color:#bd1e51;color:white;">{{'Book Now'|translate}}</button>
+                            <button mat-raised-button style="background-color:#f1b814;color:white;">{{'View More'|translate}}</button>
+                            <button mat-raised-button style="background-color:#bd1e51;color:white;">{{'Book Now'|translate}}</button>
                         </div>
                     </div>
                 </ng-template>
             </owl-carousel-o>
-            <button mat-flat-button Style="color:#f1b814;float:right;" routerLink="storage">{{'View More'|translate}}</button>
+            <button mat-flat-button Style="color:#f1b814;float:right;" (click)="showStorage()">{{'View More'|translate}}</button>
         </div>
     </div>
 </div>
