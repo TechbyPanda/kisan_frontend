@@ -9,14 +9,14 @@ export class UserService {
 
   // search = "http://localhost:3000/customer/search";
   search = "https://krishi-backend.herokuapp.com/customer/search";
-  //contractFarming = 'http://localhost:3000/contract/contract-farming';
- contractFarming = "https://krishi-backend.herokuapp.com/contract/contract-farming";
+  contractFarming = 'http://localhost:3000/contract/contract-farming';
+ //contractFarming = "https://krishi-backend.herokuapp.com/contract/contract-farming";
   // profile = 'http://localhost:3000/customer/view/';
   profile = "https://krishi-backend.herokuapp.com/customer/view/"
-   //sign_Up = 'http://localhost:3000/customer/signup';
-  sign_Up = "https://krishi-backend.herokuapp.com/customer/signup";
-  signIn = "https://krishi-backend.herokuapp.com/customer/signin";
-   //signIn = 'http://localhost:3000/customer/signin';
+   sign_Up = 'http://localhost:3000/customer/signup';
+  //sign_Up = "https://krishi-backend.herokuapp.com/customer/signup";
+ // signIn = "https://krishi-backend.herokuapp.com/customer/signin";
+   signIn = 'http://localhost:3000/customer/signin';
   // favorite = "http://localhost:3000/fav/favorite";
   favorite = "https://krishi-backend.herokuapp.com/fav/favorite";
   //orderApi = "https://krishi-backend.herokuapp.com/order/pay";

@@ -54,5 +54,7 @@ export class Registration2Component implements OnInit {
     }
     )
   }
-
+  signIn(){
+    this.router.navigate(['sign-in']);
+  }
 }

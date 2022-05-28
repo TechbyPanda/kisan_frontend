@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit {
     
     this.socialAuthservice.authState.subscribe(data=>{
       this.socialUser=data
-      alert(data);
+
       this.name = data.name;
       this.email = data.email;
       this.provider = data.provider
@@ -105,5 +105,7 @@ export class SigninComponent implements OnInit {
   signOut(){
     this.socialAuthservice.signOut();
   }
-
+  signUp(){
+    this.router.navigate(['sign-up']);
+  }
 }
