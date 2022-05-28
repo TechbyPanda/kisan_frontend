@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Typewriter from '../../t-writer';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AdminService } from '../service/admin.service';
@@ -20,7 +20,7 @@ import { Service } from '../model/service';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewChecked {
   
   totalLength?:number;
   cold='627d4516c47afab2189efbce';
@@ -145,6 +145,22 @@ export class HomeComponent implements OnInit {
     },
   }
 
+  @ViewChild('carouselHolder', { static: false })
+  carouselHolder!: ElementRef;
+  isCarouselFor1stTabVisible = false;
+
+  ngAfterViewChecked() {
+    this.showCarousel();
+  }
+
+  showCarousel(): void {
+    if (this.carouselHolder.nativeElement.clientWidth > 0 && !this.isCarouselFor1stTabVisible) {
+      setTimeout(() => {
+        // console.log(this.carouselHolder.nativeElement);
+        this.isCarouselFor1stTabVisible =  true;
+      }, 0);
+    }
+  }
 
   storage:any;
 

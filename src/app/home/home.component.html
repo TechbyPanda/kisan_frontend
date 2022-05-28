@@ -87,9 +87,10 @@
         <h1 style="margin:10px; font-size:28px;" class="m-auto fw-bold">{{'Ware House'|translate}}</h1>
     </div>
     <div class="row mt-5">
-        <div class="col-12">
+        <div class="col-12" #carouselHolder>
+        <ng-container *ngIf="isCarouselFor1stTabVisible">
             <owl-carousel-o [options]="customOptions">
-
+                
                 <ng-template carouselSlide *ngFor="let data of wareData">
                     <div class="storage_card">
                         <h3 style="white-space: nowrap;
@@ -104,6 +105,7 @@
                     </div>
                 </ng-template>
             </owl-carousel-o>
+        </ng-container>
             <button mat-flat-button Style="color:#f1b814;float:right;" (click)="showStorage()">{{'View More'|translate}}</button>
         </div>
     </div>
